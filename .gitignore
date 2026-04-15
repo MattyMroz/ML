@@ -1,3 +1,6 @@
+# GitHub Copilot customizations (portable framework – not tracked in this repo)
+.github/
+
 # uv – virtual environment only (lock file & .python-version are committed)
 .venv/
 

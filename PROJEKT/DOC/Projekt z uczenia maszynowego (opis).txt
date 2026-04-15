@@ -1,0 +1,260 @@
+Wprowadzenie do uczenia maszynowego (prowadzący dr inż. Krzysztof Smółka) 
+ 
+Strona 1 z 4 
+ 
+Projekt z uczenia maszynowego 
+Projekt z przedmiotu Wprowadzenie do uczenia maszynowego jest projektem grupowym, powinien składać się z 
+maksymalnie 3 osób. W szczególnych przypadkach, po uzgodnieniu z prowadzącym, zadania może się podjąć 
+pojedyncza osoba.  
+Każdy członek zespołu zbiera trzy różne zbiory danych (datasets) na zadany temat, np. nowotwory mózgu – dane mogą 
+być tabelaryczne (forma  preferowana) lub w formie zbiorów opisanych zdjęć.  
+W raporcie należy opisać dane, podając źródło i cechy, oraz znaleźć przynajmniej 3 prace naukowe dotyczące danego 
+zbioru i jego metryk. Następnie każdy wybiera jeden zbiór danych do klasyfikacji lub regresji. Na koniec przedstawia się 
+wyniki w tabeli i wnioski z projektu. 
+Opis wymagań dla projektu  
+1. Cel projektu 
+Celem pracy jest zbadanie wybranego problemu tematycznego (np. diagnostyka nowotworów mózgu) poprzez 
+zebranie i analizę różnorodnych publicznych zbiorów danych, a następnie przetestowanie klasycznych lub głębokich 
+metod ML w zadaniu klasyfikacji bądź regresji. Efektem jest raport prezentujący: 
+ 
+opis i analizę wszystkich pozyskanych danych, 
+ 
+krótki przegląd literatury z wynikami dotychczasowych badań, 
+ 
+autorskie eksperymenty, wyniki i ich porównanie, 
+ 
+wnioski oraz rekomendacje. 
+2. Organizacja grupy 
+ 
+Liczba osób w zespole od 1 (po uzgodnieniu) do 3. 
+ 
+Każdy członek samodzielnie wyszukuje, pobiera i wstępnie dokumentuje trzy zbiory danych (tabelaryczne lub 
+obrazy) – zbiory w grupie nie mogą się powtarzać (UWAGA: po uzgodnieniu z prowadzącym można zmniejszyć 
+ilość zbiorów). 
+ 
+Po etapie eksploracji każdy wybiera jeden ze „swoich” zbiorów do dalszej analizy modelowej. 
+ 
+Wspólnie zespół przygotowuje część wprowadzającą, tabelę zbiorczą wyników i wnioski. 
+3. Wymagania dotyczące zbiorów danych 
+1. Źródło: publiczne repozytorium/naukowy data-portal (np. UCI, Kaggle, TCIA itp.), przy czym w danym źródle 
+należy sprawdzić, czy nie było źródła wcześniejszego. 
+2. Opis metadanych (w tabeli lub akapicie): 
+o 
+nazwa i link, 
+o 
+licencja, 
+o 
+rozmiar (liczba próbek, cech/wymiarów, łączna objętość), 
+o 
+typ danych (tabular, obrazy 2D/3D, multimodal), 
+o 
+krótkie wyjaśnienie cech / etykiet. 
+
+
+Wprowadzenie do uczenia maszynowego (prowadzący dr inż. Krzysztof Smółka) 
+ 
+Strona 2 z 4 
+ 
+3. Jakość i przygotowanie: wspomnieć o brakach danych, balansie klas, pre-processing (skalowanie, kodowanie 
+itp.). 
+4. Przegląd literatury 
+Dla każdego z wybranych zbiorów danych należy podać ≥ 3 publikacje (peer-review, konferencja lub czasopismo), które: 
+ 
+wykorzystują dokładnie ten zbiór (lub jego część), 
+ 
+raportują mierzalne wyniki (np. accuracy, F1, AUC, MAE). W raporcie należy zacytować i wpisać osiągnięte 
+metryki do tabeli porównawczej. 
+5. Eksperymenty ML (indywidualne) 
+ 
+Dobór zadań: 
+o 
+klasyfikacja – jeśli etykiety dyskretne (np. typ nowotworu), 
+o 
+regresja – jeśli etykiety ciągłe (np. czas przeżycia, wielkość guza). 
+ 
+Minimalny zakres (jeden wybrany algorytm): 
+o 
+klasyczny (np. Logistic Regression, Random Forest, Linear Regression) lub model bardziej złożony (np. 
+CNN, Gradient Boosting). 
+o 
+należy uzasadnić wybór. 
+ 
+Preprocessing: wszystko co konieczne 😊 
+ 
+Walidacja: min. k-fold (k ≥ 5), train/val/test przy ewentualnym strojeniu hiperparametrów, wykorzystanie 
+stratyfikacji danych oraz jeśli będzie to koniecznie zastosowanie właściwych technik dla danych 
+niezbalansowanych. 
+ 
+Raportowane metryki: accuracy/F1/AUC lub RMSE/MAE + przedział ufności lub odchylenie std. 
+ 
+Reprodukcyjność: link do kodu (dołączonego pliku). 
+6. Struktura raportu 
+a) Tytuł – trzeba wskazać na podstawie zawartości – „zadanie kreatywne”, zatem nie może być tytuł w postaci 
+Raport z przedmiotu Wprowadzenie do uczenia maszynowego 😊 
+b) Autorzy – w kolejności, która później jest kontynuowana 
+c) Wstęp – kontekst medyczny/tematyczny, motywacja dotycząca danego tematu 😊 
+d) Materiały i metody 
+o 
+Zbiory danych (metadane) - 1 wspólna tabela lub może być w formie opisowej, ale musi być 
+ujednolicone dla wszystkich osób. 
+o 
+Wskazanie wybranego zbioru danych i wykorzystanej metody (lub metod) ML oraz najważniejsze 
+informacje o zastosowanych technikach i parametrach (x ilość osób). 
+e) Eksperymenty i wyniki 
+o 
+Benchmarki z literatury – musi być źródło i wskazanie jaką metodę (-y) zastosowano i jakie wyniki 
+osiągnięto (tabela zbiorcza) 
+o 
+Wyniki zespołu (tabela zbiorcza) 
+
+
+Wprowadzenie do uczenia maszynowego (prowadzący dr inż. Krzysztof Smółka) 
+ 
+Strona 3 z 4 
+ 
+f) Dyskusja – interpretacja, porównanie z pracami wcześniej 
+g) Wnioski 
+h) Aneksy – np. listy cech, dodatkowe informacje lub wykresy jeśli są wymagane. 
+i) 
+Bibliografia (APA/IEEE) 
+7. Tabela zbiorcza wyników (przykład) 
+Lp.  
+Dataset 
+Zadanie 
+Wyniki z literatury – model 
+(odniesienie do bibliografii) 
+Model z zespołu 
+(podstawowe 
+parametry) 
+Wynik zespołu  
+1.1* 
+ABC 2021 
+Określenie czasu przeżycia od 
+zakończenia radioterapii 
+MSE = 1.87 – regresja liniowa (Kowalski 
+at al. 2013) 
+MSE = 1.55 – regresja wielomianowa 
+(Nowak, Iksiński 2018) 
+Random Forest (200 
+drzew) 
+MSE = 1.68 ± 0.01 
+ 
+ 
+ 
+ 
+ 
+ 
+* nr_osoby_wg_listy_autorów.nr_zbioru_danych 
+8. Pliki do oddania (w formie zip poprzez platformę Wikamp) 
+/raport.pdf  (.doc)             ← gotowy raport 
+/data/ 
+   dataset1/…              ← oryginalne pliki (nazwa zbioru) + ewentualne README i inne pliki, jeśli były 
+   dataset2/… 
+   … 
+/notebooks/ 
+   osoba1_dataset.ipynb ← osoba, to imię i nazwisko a dataset, to nazwa zbioru 
+   osoba2_ dataset.ipynb 
+   … 
+/env/requirements.txt      ← listy pakietów (pip/conda) jeśli wymagane coś więcej 
+9. Kod obliczeniowy 
+ 
+Notatniki Jupyter „samowystarczalne”: importy, pobranie danych z lokalnej ścieżki /data/..., uruchamialne 
+w środowisku bez-GPU. 
+ 
+Komentarze Markdown wyjaśniające kroki – bez szerszych opisów, tabele z podsumowaniami metryk. 
+10. Wnioski końcowe 
+Raport musi zawierać krytyczną analizę: 
+ 
+które cechy/dane najbardziej wpłynęły na wynik, 
+ 
+ograniczenia (np. mała liczebność, bias, overfitting), 
+ 
+propozycje ulepszeń (większy zbiór, fine-tuning). 
+Termin oddania: ustalony przez prowadzącego. 
+
+
+Wprowadzenie do uczenia maszynowego (prowadzący dr inż. Krzysztof Smółka) 
+ 
+Strona 4 z 4 
+ 
+Ocena = 40% jakość raportu + 30% poprawność metod (indywidualnie) + 20% dokumentacja kodu (indywidualnie) 
++ 10% estetyka i organizacja repozytorium. 
+Informacje pomocnicze 
+Narzędzia: 
+ 
+Google 
+Dataset 
+Search: 
+wyszukiwarka 
+danych 
+(hasło: 
+medical, 
+biomedical, 
+health) 
+https://datasetsearch.research.google.com   
+ 
+Papers 
+With 
+Code 
+– 
+Medical: 
+zestawienie 
+prac 
+z 
+otwartym 
+kodem 
+i 
+danymi 
+https://paperswithcode.com/    
+ 
+Google Scholar: wyszukiwarka publikacji naukowych, https://scholar.google.pl 
+Źródła (przykładowe): 
+Nazwa 
+Typ danych 
+Link 
+UCI Machine Learning Repository 
+Dane 
+tabelaryczne, 
+biomedyczne, 
+np. 
+choroba serca, cukrzyca 
+https://archive.ics.uci.edu/ml/index.php 
+Kaggle Datasets 
+Różnorodne (obrazy, EHR, CSV, czasowe, 
+genetyczne) 
+https://www.kaggle.com/datasets  
+OpenML 
+Dane do ML (w tym biomedyczne), 
+klasyfikacja, regresja 
+https://www.openml.org 
+Zenodo 
+Repozytorium danych badawczych, często 
+medycznych 
+https://zenodo.org 
+Figshare 
+Dane badawcze, także kliniczne i genetyczne 
+https://figshare.com 
+GEO (Gene Expression Omnibus) 
+Mikromacierze, RNA-seq, dane genetyczne 
+https://www.ncbi.nlm.nih.gov/geo/ 
+TCGA (The Cancer Genome Atlas) 
+Genomika nowotworów (zwykle z obrazami 
+z TCIA) 
+https://www.cancer.gov/tcga  
+eICU Collaborative Research Database 
+Dane z ICU (jak MIMIC), wieloośrodkowe 
+https://eicu-crd.mit.edu 
+UK Biobank 
+Obrazy, dane kliniczne, genotypy – dostęp 
+warunkowy 
+https://www.ukbiobank.ac.uk 
+TCIA (The Cancer Imaging Archive) 
+Obrazy medyczne (MRI, CT, PET), maski, 
+dane onkologiczne 
+https://www.cancerimagingarchive.net  
+PhysioNet 
+Sygnały biomedyczne (EKG, EEG, oddech, 
+ICU), dane kliniczne 
+https://physionet.org 
+ 
+Warto również w narzędziu Google Scholar wyszukać review na dany temat  hasłami na temat źródeł danych 😊 

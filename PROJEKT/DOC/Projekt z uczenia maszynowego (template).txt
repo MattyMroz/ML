@@ -1,0 +1,29 @@
+Tytuł projektu
+Autorzy: <Imię Nazwisko 1>1, <Imię Nazwisko 2>2, <Imię Nazwisko 3>3
+Data: <DD.MM.RRRR>
+Streszczenie
+<Podsumowanie 150–250 słów>
+Słowa kluczowe: <słowo kluczowe 1>; <słowo kluczowe 2>; <słowo kluczowe 3>
+Wstęp
+<Treść ...>
+Materiały i metody
+<Treść ...>
+Zbiory danych
+<Opis wszystkich zebranych zbiorów danych.>
+Tabela 1 Zestaw metadanych (przykład)
+Metody uczenia maszynowego
+<Wskazanie zbioru danych, opis wymaganego przygotowania danych, modeli itp.>
+Eksperymenty i wyniki
+<Opis konfiguracji eksperymentalnej, podziału danych, ustawień.>
+Tabela 2. Wyniki eksperymentów (przykład)
+* nr_osoby_wg_listy_autorów.nr_zbioru_danych
+Dyskusja
+<Interpretacja wyników, porównanie z literaturą, ograniczenia.>
+Wnioski
+<Kluczowe wnioski.>
+Bibliografia
+<Zestawienie źródeł (publikacji) według stylu APA lub IEEE.>
+Załączniki
+< Opis struktury załączników>
+Aneksy
+< np. listy cech, dodatkowe informacje lub wykresy jeśli są wymagane>
