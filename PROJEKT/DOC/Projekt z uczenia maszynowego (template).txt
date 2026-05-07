@@ -1,4 +1,4 @@
-Tytuł projektu
+ytuł projektu
 Autorzy: <Imię Nazwisko 1>1, <Imię Nazwisko 2>2, <Imię Nazwisko 3>3
 Data: <DD.MM.RRRR>
 Streszczenie
