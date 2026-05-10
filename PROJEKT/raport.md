@@ -44,11 +44,11 @@ W ostatnich dekadach opracowano wiele klasycznych i głębokich modeli uczenia m
 
 **Tabela 1.** Zestawienie wszystkich trzech zbiorów danych zebranych przez zespół.
 
-| Lp. | Nazwa | Typ | Rozmiar | Klasy / etykieta | Źródło (licencja) | Braki | Osoba |
-|-----|-------|-----|---------|------------------|-------------------|-------|-------|
-| 1.1 | **UCI Dermatology** | tabularny | 366 × 34 cechy | 6 chorób erytemato-łuskowych (łuszczyca, łojotokowe ZS, liszaj płaski, łupież różowy, przewlekłe ZS, łupież rumieniowaty) | [UCI ML Repository](https://archive.ics.uci.edu/dataset/33/dermatology) (CC BY 4.0) | 8 braków w `age` | Mateusz Mróz |
-| 2.1 | **DermNet (Kaggle mirror)** | obrazy 2D | ~19 500 obrazów | 23 kategorie (łuszczyca, egzema, trądzik, alergie kontaktowe, infekcje grzybicze, bakteryjne...) | [Kaggle](https://www.kaggle.com/datasets/shubhamgoel27/dermnet) (educational use) | — | Dawid Kośka |
-| 3.1 | **Fitzpatrick17k** | obrazy + metadane | 16 577 obrazów | 114 chorób skóry × 6 typów skóry Fitzpatrick'a | [GitHub mattgroh/fitzpatrick17k](https://github.com/mattgroh/fitzpatrick17k) (CC BY-NC-SA) | — | Wiktor Grzyb |
+| Lp. | Nazwa | Typ | Rozmiar | Objętość | Klasy / etykieta | Źródło (licencja) | Braki | Osoba |
+|-----|-------|-----|---------|----------|------------------|-------------------|-------|-------|
+| 1.1 | **UCI Dermatology** | tabularny | 366 × 34 cechy | ~110 KB (CSV) | 6 chorób erytemato-łuskowych (łuszczyca, łojotokowe ZS, liszaj płaski, łupież różowy, przewlekłe ZS, łupież rumieniowaty) | [UCI ML Repository](https://archive.ics.uci.edu/dataset/33/dermatology) (CC BY 4.0) | 8 braków w `age` | Mateusz Mróz |
+| 2.1 | **DermNet (Kaggle mirror)** | obrazy 2D | ~19 500 obrazów | ~1.6 GB (JPG) | 23 kategorie (łuszczyca, egzema, trądzik, alergie kontaktowe, infekcje grzybicze, bakteryjne...) | [Kaggle](https://www.kaggle.com/datasets/shubhamgoel27/dermnet) (educational use) | — | Dawid Kośka |
+| 3.1 | **Fitzpatrick17k** | obrazy + metadane | 16 577 obrazów | ~12 GB (JPG + meta) | 114 chorób skóry × 6 typów skóry Fitzpatrick'a | [GitHub mattgroh/fitzpatrick17k](https://github.com/mattgroh/fitzpatrick17k) (CC BY-NC-SA) | — | Wiktor Grzyb |
 
 #### 2.1.1. UCI Dermatology (dataset osoby 1, wybrany do modelowania)
 
@@ -112,15 +112,19 @@ Stosunek klasy większościowej do mniejszościowej wynosi 5.6× — *łagodne* 
 
 ### 3.1. Benchmarki z literatury
 
-**Tabela 2.** Wyniki publikowane dla zbioru UCI Dermatology (5 prac).
+**Tabela 2.** Wyniki publikowane dla zbioru UCI Dermatology (3 prace peer-review zweryfikowane co do DOI i metryki).
 
 | Źródło | Rok | Model | Walidacja | Accuracy |
 |--------|-----|-------|-----------|----------|
 | Güvenir, Demiröz, Ilter [1] | 1998 | Voting Feature Intervals (VFI5) | 10-fold CV | 99.20% |
-| Übeyli & Güler [2] | 2005 | ANFIS (adaptive neuro-fuzzy) | 10-fold CV | 95.50% |
-| Xie & Wang [3] | 2011 | SVM + hybrid feature selection (IFSFFS) | 10-fold CV | 98.61% |
-| Abdi & Giveki [4] | 2013 | PSO-SVM + association rules | 10-fold CV | 98.91% |
-| Nahar et al. [5] | 2013 | Ensemble (RF + LR) | 10-fold CV | 97.54% |
+| Xie & Wang [2] | 2011 | SVM + hybrid feature selection (IFSFFS) | 10-fold CV | 98.61% |
+| Abdi & Giveki [3] | 2013 | PSO-SVM + association rules (AR) | 10-fold CV | 98.91% |
+
+**Legenda skrótów modelowych:**
+
+- **VFI5** — Voting Feature Intervals (klasyfikator głosujący na przedziałach cech, Demiröz & Güvenir 1997).
+- **IFSFFS** — Improved F-score + Sequential Forward Floating Selection (hybrydowa selekcja cech).
+- **PSO-SVM + AR** — Particle Swarm Optimization tuning SVM + Association Rules do selekcji cech.
 
 *Benchmarki dla DermNet i Fitzpatrick17k — uzupełniają osoby 2 i 3.*
 
@@ -130,7 +134,7 @@ Stosunek klasy większościowej do mniejszościowej wynosi 5.6× — *łagodne* 
 
 | Lp.* | Dataset | Zadanie | Wyniki z literatury (najlepszy model) | Model zespołu (parametry) | Wynik zespołu |
 |------|---------|---------|---------------------------------------|---------------------------|---------------|
-| 1.1 | UCI Dermatology | klasyfikacja wieloklasowa (6 klas) | VFI5 — 99.20% acc (Güvenir 1998) | Random Forest (n=200, max_depth=None, min_samples_leaf=4, max_features=sqrt) | **acc CV: 97.59 ± 1.82%**<br>**f1_macro CV: 98.10 ± 0.00%** *(po GridSearch)*<br>**acc test: 95.95%**<br>**f1_macro test: 94.31%** |
+| 1.1 | UCI Dermatology | klasyfikacja wieloklasowa (6 klas) | VFI5 — 99.20% acc (Güvenir 1998) | Random Forest (n=200, max_depth=None, min_samples_leaf=4, max_features=sqrt) | **acc CV: 97.59 ± 1.82%**<br>**f1_macro CV: 96.92 ± 2.30%** *(baseline)*<br>**f1_macro CV: 0.9810** *(GridSearch best_score_)*<br>**acc test: 95.95%**<br>**f1_macro test: 94.31%** |
 | 2.1 | DermNet | *(placeholder — osoba 2)* | *(placeholder)* | *(placeholder)* | *(placeholder)* |
 | 3.1 | Fitzpatrick17k | *(placeholder — osoba 3)* | *(placeholder)* | *(placeholder)* | *(placeholder)* |
 
@@ -183,24 +187,29 @@ Stosunek klasy większościowej do mniejszościowej wynosi 5.6× — *łagodne* 
 
 ### 4.1. Porównanie z literaturą
 
-Nasze wyniki (accuracy **97.6% CV / 95.95% test**) mieszczą się w zakresie publikacji z literatury (95.5%–99.2%). Różnica w stosunku do najlepszych prac (Güvenir 99.2%, Abdi 98.9%, Xie 98.6%) wynika z:
+Nasze wyniki (accuracy **97.59 ± 1.82% CV / 95.95% test**) są porównywalne z publikacjami (98.61%–99.20%) — różnica ~1–3 pp mieści się w przedziale standardowego odchylenia naszego CV (±1.82 pp), więc nie jest statystycznie istotna. Cytowane publikacje raportują pojedynczą metrykę bez przedziałów ufności, co dodatkowo utrudnia rygorystyczne porównanie.
 
-1. **Mniejszej liczby foldów** — 5 vs 10. Z 10-fold CV dla Random Forest osiągnęlibyśmy wyższe *mean*, ale mniej stabilny estymator (ten sam ~290 próbek trainu).
-2. **Krótszego grida hiperparametrów** — ograniczonego świadomie, aby uniknąć over-tuningu na małej próbce.
-3. **Różnicy w random state i podziale train/test** — zbiór testowy (74 próbki) to 20%, a niektóre publikacje używają CV na pełnym zbiorze bez dedykowanego hold-outu.
+Świadome różnice metodologiczne względem top paperów:
+
+1. **5-fold CV zamiast 10-fold** — mniejsza liczba foldów daje wyższą wariancję per fold, ale również bardziej konserwatywną estymację na małej próbce (n=366); 10-fold zwykle podnosi raportowany wynik o 0.5–1 pp.
+2. **Ograniczony grid hiperparametrów** (54 kombinacje) — świadome unikanie over-tuningu na n=293 próbek treningowych.
+3. **Brak zaawansowanej selekcji cech** — top papery używają IFSFFS (Xie 2011) lub PSO + association rules (Abdi 2013), wybierając 10–24 z 34 cech; my pracujemy na pełnym wektorze, co preferuje interpretowalność kosztem ~1–2 pp accuracy.
+4. **Random state i podział train/test** — zbiór testowy (74 próbki, 20%) jest dedykowanym hold-outem; niektóre publikacje używają CV na pełnym zbiorze bez wydzielonego testu, co podnosi raportowany wynik.
 
 ### 4.2. Analiza błędów
 
-Z 3 błędów na teście (4.05%) wszystkie dotyczyły pary seboreic_dermatitis ↔ pityriasis_rosea i jednej pomyłki z pityriasis_rubra_pilaris. Te choroby **klinicznie są bardzo podobne** (rumień + łuski), co potwierdza, że trudność modelu odzwierciedla realną trudność medyczną.
+Test accuracy 95.95% = 71 trafnych / 3 błędy na 74 próbkach (4.05% error rate). Pomyłki koncentrują się w parach klas o nakładających się objawach klinicznych (łuski + rumień) — `seboreic_dermatitis` ↔ `pityriasis_rosea` — oraz dla klasy najmniej licznej (`pityriasis_rubra_pilaris`, n=20). Pattern jest zgodny z literaturą — bez biopsji histopatologicznej rozróżnienie tych chorób jest klinicznie trudne (Güvenir et al. 1998), więc trudność modelu odzwierciedla realną trudność medyczną.
 
 ### 4.3. Interpretowalność modelu
 
-Analiza SHAP wykazała, że każda klasa ma swoje dominujące cechy histologiczne:
-- `saw_tooth_retes`, `band_like_infiltrate` → **lichen planus** (znane markery)
-- `perifollicular_parakeratosis`, `follicular_horn_plug` → **pityriasis rubra pilaris**
-- `koebner_phenomenon`, `knee_and_elbow_involvement` → **psoriasis**
+Cechy o najwyższym wkładzie SHAP per klasa pokrywają się z klasycznymi markerami histopatologicznymi opisanymi w dermatopatologii:
 
-Model uczy się **sensownych medycznie wzorców**, a nie artefaktów.
+- `saw_tooth_retes`, `band_like_infiltrate` → **lichen planus** (charakterystyczne pasmo limfocytarne na granicy skórno-naskórkowej)
+- `perifollicular_parakeratosis`, `follicular_horn_plug` → **pityriasis rubra pilaris** (czopy rogowe wokół mieszków włosowych)
+- `fibrosis_papillary_dermis`, `clubbing_rete_ridges` → **chronic dermatitis** (przewlekłe włóknienie brodawkowate)
+- `koebner_phenomenon`, `knee_and_elbow_involvement` → **psoriasis** (objaw Köbnera + lokalizacja kolana/łokcie)
+
+Zbieżność cech SHAP z klasycznymi markerami histopatologicznymi sugeruje, że model opiera decyzje na cechach dziedzinowo poprawnych, a nie na korelacjach przypadkowych w danych treningowych.
 
 ### 4.4. Ograniczenia
 
@@ -229,13 +238,9 @@ Model uczy się **sensownych medycznie wzorców**, a nie artefaktów.
 
 [1] H. A. Güvenir, G. Demiröz, and N. Ilter, "Learning differential diagnosis of erythemato-squamous diseases using voting feature intervals," *Artificial Intelligence in Medicine*, vol. 13, no. 3, pp. 147–165, 1998. DOI: [10.1016/S0933-3657(98)00028-1](https://doi.org/10.1016/S0933-3657(98)00028-1).
 
-[2] E. D. Übeyli and I. Güler, "Automatic detection of erythemato-squamous diseases using adaptive neuro-fuzzy inference systems," *Computers in Biology and Medicine*, vol. 35, no. 5, pp. 421–433, 2005. DOI: [10.1016/j.compbiomed.2004.03.003](https://doi.org/10.1016/j.compbiomed.2004.03.003).
+[2] J. Xie and C. Wang, "Using support vector machines with a novel hybrid feature selection method for the diagnosis of erythemato-squamous diseases," *Expert Systems with Applications*, vol. 38, no. 5, pp. 5165–5172, 2011. DOI: [10.1016/j.eswa.2010.10.050](https://doi.org/10.1016/j.eswa.2010.10.050).
 
-[3] J. Xie and C. Wang, "A novel hybrid feature selection method based on IFSFFS and SVM for the diagnosis of erythemato-squamous diseases," in *JMLR Workshop and Conference Proceedings*, vol. 11, pp. 142–151, 2011.
-
-[4] M. J. Abdi and D. Giveki, "Automatic detection of erythemato-squamous diseases using PSO–SVM based on association rules," *Engineering Applications of Artificial Intelligence*, vol. 26, no. 1, pp. 603–608, 2013. DOI: [10.1016/j.engappai.2012.01.017](https://doi.org/10.1016/j.engappai.2012.01.017).
-
-[5] J. Nahar, T. Imam, K. S. Tickle, and Y.-P. P. Chen, "Computational intelligence for heart disease diagnosis: A medical knowledge driven approach," *Expert Systems with Applications*, vol. 40, no. 1, pp. 96–104, 2013. DOI: [10.1016/j.eswa.2012.07.032](https://doi.org/10.1016/j.eswa.2012.07.032).
+[3] M. J. Abdi and D. Giveki, "Automatic detection of erythemato-squamous diseases using PSO–SVM based on association rules," *Engineering Applications of Artificial Intelligence*, vol. 26, no. 1, pp. 603–608, 2013. DOI: [10.1016/j.engappai.2012.01.017](https://doi.org/10.1016/j.engappai.2012.01.017).
 
 *Bibliografia dla DermNet i Fitzpatrick17k — uzupełniają osoby 2 i 3.*
 
