@@ -2,8 +2,8 @@
 
 **Autorzy:**
 1. Mateusz Mróz, 251190
-2. Dawid Kośka, XXXXXX
-3. Wiktor Grzyb, XXXXXX
+2. Dawid Kośka, 251171
+3. Wiktor Grzyb, 251151
 
 **Data:** DD.MM.2026
 **Przedmiot:** Wprowadzenie do uczenia maszynowego (dr inż. Krzysztof Smółka)
