@@ -81,3 +81,6 @@ Dane **nie są wersjonowane w repo** (rozmiar). Szczegółowe instrukcje pobrani
 - ⏳ Osoba 2 (Dawid Kośka) — DermNet: do zrobienia
 - ⏳ Osoba 3 (Wiktor Grzyb) — Fitzpatrick17k: do zrobienia
 - ⏳ Raport `raport.md` — szablon gotowy, sekcje osób 2/3 do uzupełnienia
+
+RAPORT:
+https://tulodz-my.sharepoint.com/:w:/r/personal/251171_edu_p_lodz_pl/_layouts/15/Doc.aspx?sourcedoc=%7B8C7C7873-01DE-4A1D-91ED-C16DDDFA64FF%7D&file=ML_Sprawozdanie.docx&fromShare=true&action=default&mobileredirect=true
