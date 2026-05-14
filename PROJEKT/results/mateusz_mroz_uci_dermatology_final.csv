@@ -1,0 +1,2 @@
+author,dataset,task,best_model,params,cv_accuracy_mean,cv_f1_macro_mean,test_accuracy,test_f1_macro
+Mateusz Mróz (251190),UCI Dermatology,klasyfikacja wieloklasowa (6 klas),Random Forest (tuned),"{'model__max_depth': None, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 4, 'model__n_estimators': 200}",0.975978959672706,0.9809593837535016,0.9594594594594594,0.9430756843800321
