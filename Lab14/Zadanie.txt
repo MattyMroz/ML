@@ -1,0 +1,9 @@
+W zadaniu wykorzystany ma być zbiór Bike Sharing Dataset, a dokładniej plik day.csv, zawierający dzienne dane dotyczące wypożyczeń rowerów. Analiza ma koncentrować się na problemie zmiany danych w czasie, czyli data drift, oraz na sprawdzeniu, czy zmiana rozkładu jednej z cech może wpływać na jakość modelu predykcyjnego.
+
+Zmienną docelową ma być liczba wypożyczeń rowerów cnt, natomiast jako cechy wejściowe mają zostać wykorzystane wybrane informacje pogodowe i czasowe, takie jak temp, hum, windspeed, mnth oraz yr. Model regresyjny ma zostać zbudowany na danych z roku 2011, a następnie sprawdzony na danych z roku 2012, traktowanych jako przyszłe dane.
+
+Najpierw należy ocenić jakość modelu na danych walidacyjnych z 2011 roku, a następnie porównać ją z jakością uzyskaną dla roku 2012. Jeżeli błąd predykcji dla 2012 roku będzie wyraźnie większy, może to wskazywać na model drift, czyli pogorszenie działania modelu w czasie.
+
+Osobno należy sprawdzić data drift dla wybranej cechy, porównując rozkłady w 2011 i 2012 roku. Można to zrobić za pomocą histogramu oraz testu Kołmogorowa-Smirnowa. Jeżeli rozkłady istotnie się różnią, będzie to oznaczać, że warunki wejściowe modelu zmieniły się w czasie.
+
+Na końcu należy krótko skomentować, czy model działa gorzej na danych z 2012 roku, czy widoczna jest zmiana rozkładu wybranej cechy oraz czy taka zmiana mogła być jedną z przyczyn spadku jakości predykcji.
