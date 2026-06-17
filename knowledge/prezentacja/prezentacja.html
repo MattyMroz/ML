@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ocena eksperymentu A/B/C - przycisk w e-commerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-tint: #fbfdfb;
+  --panel: #f6f8f6;
+  --ink: #14181a;
+  --ink-soft: #2c3338;
+  --ink-mute: #5b656c;
+  --ink-faint: #8a9298;
+  --line: #e4e9e6;
+  --line-soft: #eef2ef;
+
+  --green: #1f9254;
+  --green-ink: #0f6c3b;
+  --green-soft: #e8f6ed;
+  --green-line: #bfe6cd;
+
+  --red: #d23b3b;
+  --red-ink: #b02525;
+  --red-soft: #fdecec;
+  --red-line: #f6cccc;
+
+  --amber: #e08a16;
+  --amber-ink: #b56c08;
+  --amber-soft: #fdf3e0;
+  --amber-line: #f3dcae;
+
+  --gray-btn: #8d9298;
+  --green-btn: #1f9254;
+  --orange-btn: #e08a16;
+
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Inter Tight", "Inter", Arial, sans-serif;
+  --body: "Inter", Arial, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); color: var(--ink); }
+body { font-family: var(--body); -webkit-font-smoothing: antialiased; position: relative; }
+
+#deck {
+  position: fixed; inset: 0; height: 100vh;
+  display: flex; flex-wrap: nowrap;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 5; will-change: transform;
+}
+.slide {
+  width: 100vw; height: 100vh; flex: 0 0 100vw;
+  position: relative; padding: 58px 76px 70px; overflow: hidden;
+  background: var(--bg);
+}
+.slide[data-tone="green"]   { background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%); }
+.slide[data-tone="red"]     { background: linear-gradient(180deg, #ffffff 0%, #fef6f6 100%); }
+.slide[data-tone="amber"]   { background: linear-gradient(180deg, #ffffff 0%, #fefaf2 100%); }
+.slide[data-tone="neutral"] { background: linear-gradient(180deg, #ffffff 0%, #f8faf9 100%); }
+
+.slide-inner {
+  max-width: 1320px; width: 100%; height: 100%; margin: 0 auto;
+  display: grid; align-content: center; gap: 34px; position: relative;
+}
+.layout-left .slide-inner  { grid-template-columns: 1.02fr 0.98fr; gap: 54px; }
+.layout-right .slide-inner { grid-template-columns: 0.98fr 1.02fr; gap: 54px; }
+.layout-right .copy { order: 2; }
+.layout-right .plate-wrap { order: 1; }
+.layout-full .slide-inner { grid-template-columns: 1fr; max-width: 1140px; }
+
+/* chrome */
+.slide-chrome {
+  position: absolute; top: 24px; left: 0; right: 0; padding: 0 76px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--sans); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint);
+  pointer-events: none; z-index: 4;
+}
+.slide-chrome .left, .slide-chrome .right { display: inline-flex; align-items: center; gap: 12px; }
+.mark {
+  width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-weight: 900; font-size: 11px; color: var(--ink);
+}
+.slide-chrome b { color: var(--ink-soft); }
+.step-badge {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+  padding: 3px 8px; border-radius: 5px; border: 1px solid var(--line); color: var(--ink-mute); background: #fff;
+}
+.step-badge.orig { border-color: var(--ink-faint); color: var(--ink-soft); }
+.step-badge.eval { border-color: var(--ink); color: var(--ink); }
+.slide-foot {
+  position: absolute; bottom: 24px; left: 0; width: 38%; max-width: 460px; padding: 0 76px;
+  display: flex; justify-content: flex-start; align-items: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint);
+  pointer-events: none; z-index: 4;
+}
+.slide-foot span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.counter { color: var(--ink-soft); background: var(--panel); padding: 3px 9px; border: 1px solid var(--line); border-radius: 5px; }
+
+/* big step number watermark */
+.stepnum {
+  position: absolute; top: 40px; right: 70px; z-index: 1;
+  font-family: var(--sans); font-weight: 900; font-size: 150px; line-height: 1;
+  color: rgba(20,24,26,0.045); pointer-events: none; letter-spacing: -0.04em;
+}
+
+/* copy column */
+.copy { display: flex; flex-direction: column; gap: 18px; position: relative; z-index: 2; }
+.eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 11px; color: var(--ink-mute);
+}
+.eyebrow::before { content: ""; width: 20px; height: 2px; border-radius: 2px; background: currentColor; display: inline-block; }
+.eyebrow.g { color: var(--green-ink); }
+.eyebrow.r { color: var(--red-ink); }
+.eyebrow.a { color: var(--amber-ink); }
+
+h1, h2 { font-family: var(--sans); font-weight: 900; letter-spacing: -0.01em; line-height: 1.03; color: var(--ink); }
+h1 { font-size: clamp(40px, 5.2vw, 76px); max-width: 14ch; }
+h2 { font-size: clamp(34px, 4.2vw, 56px); max-width: 16ch; }
+h2.sm { font-size: clamp(30px, 3.5vw, 46px); }
+h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; }
+.dot { color: var(--green); }
+.dot.r { color: var(--red); }
+.dot.a { color: var(--amber); }
+
+.lead { font-size: 17px; line-height: 1.56; color: var(--ink-soft); max-width: 50ch; }
+.body { font-size: 15.5px; line-height: 1.58; color: var(--ink-soft); max-width: 54ch; }
+.meta { margin-top: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--ink-faint); }
+
+/* legend (cover) */
+.legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.legend .chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.03em;
+  padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
+}
+.legend .swatch { width: 11px; height: 11px; border-radius: 50%; }
+.legend .g .swatch { background: var(--green); } .legend .g { border-color: var(--green-line); }
+.legend .r .swatch { background: var(--red); }   .legend .r { border-color: var(--red-line); }
+.legend .a .swatch { background: var(--amber); } .legend .a { border-color: var(--amber-line); }
+
+/* roadmap on cover */
+.roadmap { display: grid; gap: 7px; margin-top: 2px; }
+.roadmap .rm {
+  display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: center;
+  font-size: 14px; color: var(--ink-soft);
+}
+.roadmap .rm b { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+
+/* ribbon */
+.ribbon {
+  display: inline-flex; align-items: center; gap: 9px; width: fit-content;
+  padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-soft); background: #fff;
+}
+.ribbon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-faint); }
+.ribbon.ok  { border-color: var(--green-line); background: var(--green-soft); color: var(--green-ink); }
+.ribbon.ok::before { background: var(--green); }
+.ribbon.bad { border-color: var(--red-line); background: var(--red-soft); color: var(--red-ink); }
+.ribbon.bad::before { background: var(--red); }
+.ribbon.fix { border-color: var(--amber-line); background: var(--amber-soft); color: var(--amber-ink); }
+.ribbon.fix::before { background: var(--amber); }
+
+/* plate: source quote */
+.plate-wrap { position: relative; min-height: 0; z-index: 2; }
+.plate {
+  position: relative; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--bg-tint); padding: 28px; overflow: hidden;
+  box-shadow: 0 18px 44px rgba(20, 24, 26, 0.05);
+}
+.plate-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.plate-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.source-text { font-family: var(--body); font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+.source-text strong { color: var(--ink); font-weight: 700; }
+.source-text .quote {
+  display: block; font-family: var(--serif); font-style: italic;
+  font-size: 23px; line-height: 1.42; color: var(--ink);
+  border-left: 4px solid var(--ink-faint); padding-left: 20px; margin-top: 14px;
+}
+.source-text .quote + .quote { margin-top: 18px; }
+.source-text .quote.r { border-color: var(--red); }
+.source-text .quote.g { border-color: var(--green); }
+.source-text .quote.compact { font-size: 19px; line-height: 1.4; }
+.source-list { display: grid; gap: 10px; margin-top: 4px; }
+.source-list span {
+  display: block; border: 1px solid var(--line); background: #fff;
+  border-radius: 9px; padding: 11px 13px; font-size: 14px; line-height: 1.42; color: var(--ink-soft);
+}
+.source-list span strong { font-family: var(--sans); }
+.source-list .ok strong  { color: var(--green-ink); }
+.source-list .bad strong { color: var(--red-ink); }
+.source-list .fix strong { color: var(--amber-ink); }
+.source-list .ok  { border-color: var(--green-line); background: var(--green-soft); }
+.source-list .bad { border-color: var(--red-line);   background: var(--red-soft); }
+.source-list .fix { border-color: var(--amber-line); background: var(--amber-soft); }
+
+/* tiles */
+.grid-2, .grid-3 { display: grid; gap: 15px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tile {
+  padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px;
+  background: #fff; display: flex; flex-direction: column; gap: 9px;
+}
+.tile .sign {
+  width: 28px; height: 28px; border-radius: 8px; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-weight: 900; font-size: 14px;
+}
+.tile strong { font-family: var(--sans); font-size: 16px; line-height: 1.16; color: var(--ink); }
+.tile span { font-size: 13.5px; line-height: 1.44; color: var(--ink-mute); }
+.tile.ok  { background: var(--green-soft); border-color: var(--green-line); }
+.tile.bad { background: var(--red-soft);   border-color: var(--red-line); }
+.tile.fix { background: var(--amber-soft); border-color: var(--amber-line); }
+.tile.ok .sign  { background: var(--green); }
+.tile.bad .sign { background: var(--red); }
+.tile.fix .sign { background: var(--amber); }
+.tile.ok strong  { color: var(--green-ink); }
+.tile.bad strong { color: var(--red-ink); }
+.tile.fix strong { color: var(--amber-ink); }
+
+/* compact verdict-row tiles (eval slides) */
+.eval-rows { display: grid; gap: 12px; }
+.eval-row {
+  display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 11px; background: #fff;
+}
+.eval-row .sign {
+  width: 30px; height: 30px; border-radius: 8px; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-weight: 900; font-size: 15px;
+}
+.eval-row strong { font-family: var(--sans); font-size: 16px; color: var(--ink); display: block; margin-bottom: 2px; }
+.eval-row span { font-size: 14px; line-height: 1.46; color: var(--ink-mute); }
+.eval-row.ok  { background: var(--green-soft); border-color: var(--green-line); }
+.eval-row.bad { background: var(--red-soft);   border-color: var(--red-line); }
+.eval-row.fix { background: var(--amber-soft); border-color: var(--amber-line); }
+.eval-row.ok .sign  { background: var(--green); }
+.eval-row.bad .sign { background: var(--red); }
+.eval-row.fix .sign { background: var(--amber); }
+.eval-row.ok strong  { color: var(--green-ink); }
+.eval-row.bad strong { color: var(--red-ink); }
+.eval-row.fix strong { color: var(--amber-ink); }
+
+/* button specs (variants slide) */
+.button-row { display: grid; gap: 12px; }
+.button-spec {
+  border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px;
+  display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; background: #fff;
+}
+.mini-button {
+  min-height: 40px; border-radius: 8px; color: #fff; display: grid; place-items: center;
+  font-family: var(--sans); font-size: 11.5px; font-weight: 800; text-align: center; padding: 0 6px;
+  box-shadow: 0 4px 10px rgba(20,24,26,0.08);
+}
+.btn-a { background: var(--gray-btn); }
+.btn-b { background: var(--green-btn); min-height: 50px; font-size: 12.5px; }
+.btn-c { background: var(--orange-btn); min-height: 50px; font-size: 12.5px; }
+.button-spec .tag { font-family: var(--sans); font-size: 15px; font-weight: 800; color: var(--ink); }
+.button-spec .desc { font-size: 13px; color: var(--ink-mute); line-height: 1.35; margin-top: 2px; }
+
+/* change matrix */
+.matrix {
+  display: grid; grid-template-columns: 1.1fr repeat(3, 0.78fr);
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 13.5px;
+}
+.matrix div { padding: 11px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+.matrix div:nth-child(4n) { border-right: 0; }
+.matrix div:nth-last-child(-n+4) { border-bottom: 0; }
+.matrix .head { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-faint); background: var(--panel); }
+.matrix .base { color: var(--ink-mute); }
+.matrix .chg  { background: var(--red-soft); color: var(--red-ink); font-weight: 700; }
+
+/* verdict */
+.big-verdict { border-top: 1px solid var(--line); padding-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: start; }
+.score-wrap { text-align: center; }
+.score { font-family: var(--sans); font-weight: 900; font-size: clamp(70px, 8vw, 116px); line-height: 0.86; color: var(--amber-ink); }
+.score small { display: block; font-size: 18px; color: var(--ink-faint); font-weight: 700; margin-top: 4px; letter-spacing: 0.02em; }
+
+/* progress + nav */
+.deck-progress { position: fixed; left: 0; right: 0; bottom: 0; height: 3px; background: var(--line-soft); z-index: 30; }
+.deck-progress .bar { height: 100%; width: 0%; background: var(--green); transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1); }
+#nav {
+  position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 30;
+  display: flex; gap: 7px; padding: 7px 12px; border-radius: 999px;
+  background: rgba(255,255,255,0.9); border: 1px solid var(--line); backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(20,24,26,0.07);
+}
+#nav .ndot { width: 6px; height: 6px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; background: #cfd6d2; transition: all 0.3s ease; }
+#nav .ndot.active { width: 20px; border-radius: 999px; background: var(--green); }
+
+/* overview */
+#overview { position: fixed; inset: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); display: none; overflow-y: auto; padding: 54px 50px; }
+.ov-head { display: flex; justify-content: space-between; margin-bottom: 28px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); }
+.ov-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; max-width: 1320px; margin: 0 auto; }
+.ov-card { cursor: pointer; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #fff; transition: border-color 0.2s; }
+.ov-card.active { border: 2px solid var(--green); }
+.ov-thumb { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; position: relative; pointer-events: none; background: var(--bg); }
+.ov-thumb .clone { width: 100vw; height: 100vh; transform: scale(0.164); transform-origin: top left; position: absolute; top: 0; left: 0; }
+.ov-label { padding: 8px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); display: flex; justify-content: space-between; }
+
+@media (max-width: 1080px) {
+  .slide { padding: 50px 44px 58px; }
+  .slide-chrome, .slide-foot { padding: 0 44px; }
+  .layout-left .slide-inner, .layout-right .slide-inner { grid-template-columns: 1fr; gap: 26px; }
+  .layout-right .copy, .layout-right .plate-wrap { order: initial; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .stepnum { font-size: 96px; right: 44px; }
+}
+@media (max-width: 700px) {
+  html, body { overflow: auto; }
+  #deck { position: static; display: block; height: auto; transition: none; }
+  .slide { width: 100%; height: auto; min-height: 100vh; padding: 42px 22px 62px; }
+  .slide-chrome, .slide-foot { padding: 0 22px; font-size: 9px; }
+  h1 { font-size: 38px; } h2 { font-size: 30px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .matrix { grid-template-columns: 1fr; }
+  .matrix div { border-right: 0; }
+  .button-spec { grid-template-columns: 96px 1fr; }
+  .stepnum { display: none; }
+  #nav, #hint { display: none; }
+}
+</style>
+</head>
+<body>
+<div id="deck">
+
+  <!-- 01 - OKŁADKA -->
+  <section class="slide layout-left" data-slide-kind="okladka">
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Ocena eksperymentu</b> · e-commerce</span></div><div class="right"><span>01 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Wstęp do uczenia maszynowego · projekt A/B/C</span>
+        <h1>Ocena eksperymentu <em>punkt po punkcie</em><span class="dot">.</span></h1>
+        <p class="lead">Sklep internetowy testuje wygląd przycisku „Dodaj do koszyka”. Przechodzę przez cały projekt w jego oryginalnej kolejności: każdy punkt najpierw cytuję, a potem oceniam.</p>
+        <div class="legend">
+          <span class="chip g"><span class="swatch"></span>dobrze</span>
+          <span class="chip r"><span class="swatch"></span>błąd</span>
+          <span class="chip a"><span class="swatch"></span>poprawka</span>
+        </div>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Plan prezentacji · 6 punktów oryginału</div>
+          <div class="roadmap">
+            <div class="rm"><b>1</b><span>Scenariusz i cel</span></div>
+            <div class="rm"><b>2</b><span>Grupy A / B / C</span></div>
+            <div class="rm"><b>3</b><span>Hipoteza badawcza</span></div>
+            <div class="rm"><b>4</b><span>Zmienna zależna (konwersja)</span></div>
+            <div class="rm"><b>5</b><span>Randomizacja (modulo 3)</span></div>
+            <div class="rm"><b>6</b><span>Analiza wyników i czas</span></div>
+          </div>
+          <div class="meta">Każdy punkt = slajd „oryginał” + slajd „ocena”</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Strzałki ← / → · scroll · ESC = przegląd</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 1: SCENARIUSZ ===================== -->
+
+  <!-- 02 - PKT 1 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="1 · scenariusz">
+    <div class="stepnum">1</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 1</b> · scenariusz</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>02 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 1 - <em>scenariusz i cel</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Sklep internetowy. Wielu użytkowników ogląda produkt, niewielu dodaje do koszyka. Autorzy chcą sprawdzić, czy zmiana wyglądu przycisku pomoże.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 1</div>
+          <div class="source-text">
+            <span class="quote">„Zauważyliśmy, że wielu użytkowników odwiedza stronę z opisem produktu, ale stosunkowo niewielu z nich decyduje się na dodanie go do koszyka.”</span>
+            <span class="quote">„Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Najpierw oryginał, na kolejnym slajdzie ocena</span></div>
+  </section>
+
+  <!-- 03 - PKT 1 OCENA -->
+  <section class="slide layout-left" data-slide-kind="1 · ocena" data-tone="red">
+    <div class="stepnum">1</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 1</b> · scenariusz</span></div><div class="right"><span class="step-badge eval">ocena</span><span>03 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 1</span>
+        <h2 class="sm">Mówią „sprzedaż”, mierzą <em>koszyk</em><span class="dot r">.</span></h2>
+        <span class="ribbon bad">Cel biznesowy ≠ metryka</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="eval-rows">
+          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Dobry, mierzalny problem</strong><span>Realny scenariusz e-commerce - idealny do testu A/B/C.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Cel to „sprzedaż”, a badanie mierzy koszyk</strong><span>Dodanie do koszyka to etap pośredni - część osób nigdy nie zapłaci.</span></div></div>
+          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Albo mierzyć zakup, albo jasno napisać, że badamy tylko etap koszyka.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Punkt 1 z 6</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 2: GRUPY ===================== -->
+
+  <!-- 04 - PKT 2 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="2 · grupy">
+    <div class="stepnum">2</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 2</b> · grupy A/B/C</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>04 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 2 - <em>trzy warianty</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Jedna grupa kontrolna i dwie eksperymentalne. Każda dostaje inny przycisk na stronie produktu.</p>
+        <span class="ribbon">A kontrolna · B i C eksperymentalne</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 2 (tabela wariantów)</div>
+          <div class="button-row">
+            <div class="button-spec"><div class="mini-button btn-a">Dodaj do koszyka</div><div><div class="tag">A · kontrolna</div><div class="desc">Szary przycisk „Dodaj do koszyka”.</div></div></div>
+            <div class="button-spec"><div class="mini-button btn-b">Dodaj do koszyka</div><div><div class="tag">B · eksperyment 1</div><div class="desc">Duży, zielony przycisk „Dodaj do koszyka”.</div></div></div>
+            <div class="button-spec"><div class="mini-button btn-c">Kup teraz</div><div><div class="tag">C · eksperyment 2</div><div class="desc">Duży, pomarańczowy przycisk „Kup teraz”.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu, pkt 2</span></div>
+  </section>
+
+  <!-- 05 - PKT 2 OCENA -->
+  <section class="slide layout-left" data-slide-kind="2 · ocena" data-tone="red">
+    <div class="stepnum">2</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 2</b> · grupy A/B/C</span></div><div class="right"><span class="step-badge eval">ocena</span><span>05 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 2 · najpoważniejsza wada</span>
+        <h2 class="sm">Zmieniają <em>kilka rzeczy</em> naraz<span class="dot r">.</span></h2>
+        <p class="body">B zmienia kolor i rozmiar. C zmienia kolor, rozmiar i tekst. Jeśli C wygra - nie wiadomo, co zadziałało. To konfundacja zmiennych.</p>
+        <span class="ribbon bad">Brak komórki „szary · Kup teraz”</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Macierz zmian względem kontroli A</div>
+          <div class="matrix">
+            <div class="head">Element</div><div class="head">A</div><div class="head">B</div><div class="head">C</div>
+            <div>Kolor</div><div class="base">szary</div><div class="chg">zielony</div><div class="chg">pomarańcz.</div>
+            <div>Rozmiar</div><div class="base">standard</div><div class="chg">duży</div><div class="chg">duży</div>
+            <div>Tekst</div><div class="base">Dodaj…</div><div class="base">Dodaj…</div><div class="chg">Kup teraz</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Czerwone = element zaburzający czysty test</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 3: HIPOTEZA ===================== -->
+
+  <!-- 06 - PKT 3 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="3 · hipoteza">
+    <div class="stepnum">3</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 3</b> · hipoteza</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>06 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 3 - <em>hipoteza</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Autorzy zakładają, że wyrazistszy kolor i bezpośredni komunikat zwiększą uwagę i konwersję - i że najlepszy będzie wariant C.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 3</div>
+          <div class="source-text">
+            <span class="quote">„Spodziewamy się, że wariant C osiągnie najwyższe wyniki ze względu na budowanie poczucia pilności zakupu.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu, pkt 3</span></div>
+  </section>
+
+  <!-- 07 - PKT 3 OCENA -->
+  <section class="slide layout-left" data-slide-kind="3 · ocena" data-tone="red">
+    <div class="stepnum">3</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 3</b> · hipoteza</span></div><div class="right"><span class="step-badge eval">ocena</span><span>07 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 3</span>
+        <h2 class="sm">Brak hipotezy <em>zerowej</em><span class="dot r">.</span></h2>
+        <span class="ribbon bad">Hipoteza kierunkowa ↔ test bezkierunkowy</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="eval-rows">
+          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Jest jasne oczekiwanie kierunku</strong><span>Wiadomo, czego autorzy się spodziewają (C najlepsze).</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Brak pary H₀ / H₁</strong><span>Nie ma formalnej hipotezy zerowej - podstawy wnioskowania statystycznego.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Kierunkowa hipoteza, omnibusowy test</strong><span>Chi-kwadrat mówi „czy jest różnica”, a nie „która grupa lepsza”.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Punkt 3 z 6</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 4: ZMIENNA ZALEŻNA ===================== -->
+
+  <!-- 08 - PKT 4 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="4 · metryka">
+    <div class="stepnum">4</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · zmienna zależna</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>08 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 4 - <em>konwersja</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Zmienną zależną jest współczynnik konwersji - mierzony jako dodania do koszyka względem liczby unikalnych odwiedzających.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 4</div>
+          <div class="source-text">
+            <span class="quote">„…stosunek liczby użytkowników, którzy kliknęli przycisk i dodali produkt do koszyka, do całkowitej liczby unikalnych użytkowników, którzy odwiedzili daną stronę produktu.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu, pkt 4</span></div>
+  </section>
+
+  <!-- 09 - PKT 4 OCENA -->
+  <section class="slide layout-left" data-slide-kind="4 · ocena" data-tone="red">
+    <div class="stepnum">4</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · zmienna zależna</span></div><div class="right"><span class="step-badge eval">ocena</span><span>09 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 4</span>
+        <h2 class="sm">CR miesza <em>dwa</em> zdarzenia<span class="dot r">.</span></h2>
+        <span class="ribbon bad">Brak okna konwersji</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="eval-rows">
+          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Konwersja to trafny typ metryki</strong><span>Mierzalna, policzalna, sensowna dla sklepu.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>„Kliknęli i dodali” = dwa zdarzenia</strong><span>Jedna metryka powinna opisywać jedno czyste zdarzenie. I to wciąż nie zakup.</span></div></div>
+          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Wybrać jedno zdarzenie i określić okno konwersji (sesja / 24 h / dłużej).</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Punkt 4 z 6</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 5: RANDOMIZACJA ===================== -->
+
+  <!-- 10 - PKT 5 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="5 · randomizacja">
+    <div class="stepnum">5</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 5</b> · randomizacja</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>10 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 5 - <em>modulo 3</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Przydział na podstawie hasha ID lub cookie, a wynik operacji modulo 3 decyduje o grupie. Po powrocie użytkownik widzi ten sam wariant.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 5</div>
+          <div class="source-text">
+            <span class="quote compact">„Algorytm wykonuje na User ID lub zahashowanym identyfikatorze sesji operację modulo 3. […] 0 → A, 1 → B, 2 → C.”</span>
+            <span class="quote compact">„Jeśli użytkownik wróci następnego dnia, system wyświetli ten sam wariant.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu, pkt 5</span></div>
+  </section>
+
+  <!-- 11 - PKT 5 OCENA -->
+  <section class="slide layout-left" data-slide-kind="5 · ocena" data-tone="red">
+    <div class="stepnum">5</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 5</b> · randomizacja</span></div><div class="right"><span class="step-badge eval">ocena</span><span>11 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 5</span>
+        <h2 class="sm"><em>modulo 3</em> to nie losowanie<span class="dot r">.</span></h2>
+        <span class="ribbon bad">Brak soli eksperymentu i kontroli balansu (SRM)</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="eval-rows">
+          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Stały przydział użytkownika</strong><span>Dobre: po powrocie ten sam wariant, brak mieszania wersji.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>„mod 3” nie gwarantuje losowości</strong><span>Sekwencyjne ID albo wspólny hash dla wielu testów obciążają grupy.</span></div></div>
+          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Hash z solą eksperymentu, kontrola balansu grup (SRM), wykluczenie botów.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Punkt 5 z 6 · cookies bywają kruche</span></div>
+  </section>
+
+  <!-- ===================== PUNKT 6: ANALIZA ===================== -->
+
+  <!-- 12 - PKT 6 ORYGINAŁ -->
+  <section class="slide layout-right" data-slide-kind="6 · analiza">
+    <div class="stepnum">6</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 6</b> · analiza</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>12 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co napisali autorzy</span>
+        <h2>Punkt 6 - <em>analiza</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Test trwa 3 tygodnie. Najpierw chi-kwadrat dla wielu proporcji (α = 0,05), potem porównania parami z poprawką Bonferroniego.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał · pkt 6</div>
+          <div class="source-text">
+            <span class="quote compact">„Najpierw przeprowadzimy test Chi-kwadrat dla wielu proporcji […] poziom istotności 0.05.”</span>
+            <span class="quote compact">„Porównujemy wariant A z B, A z C oraz B z C […] poprawka Bonferroniego.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu, pkt 6</span></div>
+  </section>
+
+  <!-- 13 - PKT 6 OCENA -->
+  <section class="slide layout-left" data-slide-kind="6 · ocena" data-tone="red">
+    <div class="stepnum">6</div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 6</b> · analiza</span></div><div class="right"><span class="step-badge eval">ocena</span><span>13 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow r">Ocena punktu 6</span>
+        <h2 class="sm">Statystyka jest, plan <em>niepełny</em><span class="dot r">.</span></h2>
+      </div>
+      <div class="plate-wrap">
+        <div class="source-list">
+          <span class="ok"><strong>✓ Dobrze:</strong> chi-kwadrat dla wielu proporcji to właściwy test.</span>
+          <span class="ok"><strong>✓ Dobrze:</strong> poprawka Bonferroniego przy porównaniach parami.</span>
+          <span class="bad"><strong>! Brak analizy mocy:</strong> nie policzono liczebności próby (α, β, MDE).</span>
+          <span class="bad"><strong>! Brak progu sukcesu:</strong> jaki wzrost konwersji jest realnie istotny (np. +10%).</span>
+          <span class="bad"><strong>! Ryzyko peekingu:</strong> sztywne „3 tygodnie” bez reguły zakończenia. Czas ≠ moc.</span>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Punkt 6 z 6 · Bonferroni nie zastąpi analizy mocy</span></div>
+  </section>
+
+  <!-- ===================== WERDYKT ===================== -->
+
+  <!-- 14 - WERDYKT -->
+  <section class="slide layout-full" data-slide-kind="werdykt" data-tone="amber">
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Werdykt</b> · podsumowanie</span></div><div class="right"><span>14 / 14</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow a">Ocena końcowa - po wszystkich 6 punktach</span>
+        <h2>Dobry szkic, <em>niegotowy</em> eksperyment<span class="dot a">.</span></h2>
+      </div>
+      <div class="big-verdict">
+        <div class="score-wrap"><div class="score">6<span>/ 10</span></div></div>
+        <div class="copy">
+          <p class="lead">Sensowny temat, grupa kontrolna, randomizacja na poziomie użytkownika i dobry kierunek analizy. W tej formie pokaże jednak „który wariant”, nie „dlaczego” - i nie powinien ruszyć bez poprawek.</p>
+          <div class="grid-2" style="margin-top:2px;">
+            <div class="tile ok"><span class="sign">✓</span><strong>Największy plus</strong><span>Autorzy rozumieją ideę testu A/B/C i potrzebę statystyki.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Największy minus</strong><span>Kilka zmian naraz, „mod 3” zamiast randomizacji i mylenie sprzedaży z koszykiem.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Koniec · ESC = przegląd slajdów</span></div>
+  </section>
+
+</div>
+
+<div id="nav" aria-label="Nawigacja slajdów"></div>
+<div class="deck-progress"><div class="bar"></div></div>
+
+<script>
+(function () {
+  var deck = document.getElementById("deck");
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var nav = document.getElementById("nav");
+  var bar = document.querySelector(".deck-progress .bar");
+  var total = slides.length;
+  var idx = 0;
+  var lock = false;
+
+  slides.forEach(function (_, i) {
+    var b = document.createElement("button");
+    b.className = "ndot";
+    b.setAttribute("aria-label", "Slajd " + (i + 1));
+    b.onclick = function () { go(i); };
+    nav.appendChild(b);
+  });
+
+  function applySlide(n) {
+    idx = Math.max(0, Math.min(total - 1, n));
+    deck.style.transform = "translateX(" + (-idx * 100) + "vw)";
+    slides.forEach(function (s, i) { s.classList.toggle("active", i === idx); });
+    nav.querySelectorAll(".ndot").forEach(function (d, i) { d.classList.toggle("active", i === idx); });
+    bar.style.width = (((idx + 1) / total) * 100) + "%";
+  }
+  function go(n) {
+    if (lock) return;
+    applySlide(n);
+    lock = true;
+    setTimeout(function () { lock = false; }, 560);
+  }
+
+  var overviewOn = false;
+  var ov = document.createElement("div");
+  ov.id = "overview";
+  document.body.appendChild(ov);
+
+  function buildOverview() {
+    ov.innerHTML = "";
+    var head = document.createElement("div");
+    head.className = "ov-head";
+    head.innerHTML = "<span><b>Przegląd slajdów</b> · ESC zamyka</span><span>" +
+      String(idx + 1).padStart(2, "0") + " / " + String(total).padStart(2, "0") + "</span>";
+    ov.appendChild(head);
+    var grid = document.createElement("div");
+    grid.className = "ov-grid";
+    slides.forEach(function (s, i) {
+      var card = document.createElement("div");
+      card.className = "ov-card" + (i === idx ? " active" : "");
+      var thumb = document.createElement("div");
+      thumb.className = "ov-thumb";
+      var clone = s.cloneNode(true);
+      clone.className = clone.className.replace("active", "") + " clone";
+      thumb.appendChild(clone);
+      var label = document.createElement("div");
+      label.className = "ov-label";
+      label.innerHTML = "<b>" + String(i + 1).padStart(2, "0") + "</b><span>" + (s.dataset.slideKind || "") + "</span>";
+      card.appendChild(thumb);
+      card.appendChild(label);
+      card.onclick = function () { toggleOverview(); applySlide(i); };
+      grid.appendChild(card);
+    });
+    ov.appendChild(grid);
+  }
+  function toggleOverview() {
+    overviewOn = !overviewOn;
+    if (overviewOn) { buildOverview(); ov.style.display = "block"; }
+    else { ov.style.display = "none"; }
+  }
+
+  addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); toggleOverview(); return; }
+    if (overviewOn) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " " || e.key === "ArrowDown") { e.preventDefault(); go(idx + 1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp" || e.key === "ArrowUp") { e.preventDefault(); go(idx - 1); }
+    else if (e.key === "Home") { e.preventDefault(); go(0); }
+    else if (e.key === "End") { e.preventDefault(); go(total - 1); }
+  });
+
+  var wheelTO = null, wheelAcc = 0;
+  addEventListener("wheel", function (e) {
+    if (overviewOn) return;
+    wheelAcc += e.deltaY + e.deltaX;
+    if (Math.abs(wheelAcc) > 70) { go(idx + (wheelAcc > 0 ? 1 : -1)); wheelAcc = 0; }
+    clearTimeout(wheelTO);
+    wheelTO = setTimeout(function () { wheelAcc = 0; }, 150);
+  }, { passive: true });
+
+  var tx = 0, ty = 0;
+  addEventListener("touchstart", function (e) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  addEventListener("touchend", function (e) {
+    if (overviewOn) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    var dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { go(idx + (dx < 0 ? 1 : -1)); }
+  }, { passive: true });
+
+  applySlide(0);
+})();
+</script>
+</body>
+</html>
