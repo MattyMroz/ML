@@ -39,7 +39,7 @@ Punkt trzeci - hipoteza badawcza. Autorzy spodziewają się, cytuję, że „war
 
 ## Slajd 7 - Punkt 3: hipoteza (OCENA)
 
-Ocena. Na plus: jest jasno wyrażony kierunek oczekiwań - wiadomo, czego autorzy się spodziewają. Ale są dwa braki. Po pierwsze: nie ma formalnej pary hipotez - brakuje hipotezy zerowej i alternatywnej, a to podstawa wnioskowania statystycznego. Po drugie: hipoteza jest kierunkowa - mówi, że C będzie najlepsze - a planowany chi-kwadrat to test omnibus, czyli bezkierunkowy. On odpowiada tylko na pytanie „czy w ogóle jest różnica”, a nie „która grupa jest lepsza”.
+Ocena. Spójrzmy na pełną hipotezę z poprzedniego slajdu. Na plus: jest jasno wyrażony kierunek oczekiwań - wiadomo, czego autorzy się spodziewają, że wygra C. Ale są trzy problemy. Po pierwsze: nie ma formalnej pary hipotez - brakuje hipotezy zerowej i alternatywnej, a to podstawa wnioskowania statystycznego. Hipoteza zerowa to założenie, że żaden wariant nie różni się od pozostałych; to właśnie ją test ma próbować obalić. Po drugie: sama hipoteza miesza dwa mechanizmy naraz - w jednym zdaniu mówi o „wyrazistym kolorze ORAZ bezpośrednim komunikacie Kup teraz”. Jeśli C wygra, z samej hipotezy nie wynika, co zadziałało: kolor czy tekst. Po trzecie: brak progu - autorzy piszą tylko „wyższy współczynnik konwersji”, ale nie mówią, o ile; nie wiadomo, jaki wzrost uznają za sukces. (Osobny problem, że hipoteza jest kierunkowa, a chi-kwadrat bezkierunkowy, wróci jeszcze przy punkcie 6.)
 
 ---
 
@@ -69,7 +69,7 @@ Punkt szósty - analiza wyników. Test ma trwać trzy tygodnie. Autorzy planują
 
 ## Slajd 13 - Punkt 6: analiza (OCENA)
 
-Ocena. Kierunkowo to dobry plan. Na plus: chi-kwadrat dla wielu proporcji to właściwy test, a poprawka Bonferroniego przy porównaniach parami jest jak najbardziej na miejscu. Ale brakuje fundamentów decyzyjnych. Po pierwsze - analizy mocy: nie policzono wymaganej liczebności próby, czyli alfy, bety i minimalnego wykrywalnego efektu. Po drugie - progu sukcesu: jaki wzrost konwersji uznajemy za realnie ważny, na przykład plus dziesięć procent. Po trzecie - reguły zakończenia: sztywne „trzy tygodnie” bez zasady, kiedy wolno przerwać, otwiera drogę do peekingu. I pamiętajmy: sam czas nie gwarantuje mocy - przy małym ruchu trzy tygodnie i tak nie wystarczą.
+Ocena. Kierunkowo to dobry plan. Na plus: chi-kwadrat dla wielu proporcji to właściwy test, a poprawka Bonferroniego przy porównaniach parami jest jak najbardziej na miejscu. Ale są problemy. Po pierwsze - i tu wraca wątek z hipotezy - chi-kwadrat jest testem omnibus, bezkierunkowym: mówi tylko „czy w ogóle jest jakaś różnica między grupami”, a nie „która grupa jest lepsza”. A autorzy postawili hipotezę kierunkową, że wygra C. Sam chi-kwadrat tego nie potwierdzi - dopiero porównania parami. Po drugie - brak analizy mocy: nie policzono wymaganej liczebności próby, czyli alfy, bety i minimalnego wykrywalnego efektu. Po trzecie - reguła zakończenia: sztywne „trzy tygodnie” bez zasady, kiedy wolno przerwać, otwiera drogę do peekingu. I pamiętajmy: sam czas nie gwarantuje mocy - przy małym ruchu trzy tygodnie i tak nie wystarczą.
 
 ---
 
@@ -83,9 +83,9 @@ Podsumowując, po przejściu wszystkich sześciu punktów: moja ocena to mniej w
 
 1. **Scenariusz** - dobry problem ✓ · ale „sprzedaż” vs koszyk ✗
 2. **Grupy A/B/C** - są 3 grupy ✓ · ale kilka zmian naraz ✗ (główna wada)
-3. **Hipoteza** - jest kierunek ✓ · brak H₀, test omnibus vs hipoteza kierunkowa ✗
+3. **Hipoteza** - jest kierunek ✓ · brak H₀/H₁, brak progu sukcesu ✗
 4. **Zmienna zależna** - konwersja OK ✓ · łączy 2 zdarzenia, brak okna ✗
 5. **Randomizacja** - stały przydział ✓ · „mod 3” ≠ losowanie, brak soli/SRM ✗
-6. **Analiza** - chi-kwadrat + Bonferroni ✓ · brak mocy/progu/reguły STOP ✗
+6. **Analiza** - chi-kwadrat + Bonferroni ✓ · test omnibus vs hipoteza kierunkowa, brak mocy/reguły STOP ✗
 
 → **Werdykt: 6/10** - dobry szkic, niegotowy do realizacji.

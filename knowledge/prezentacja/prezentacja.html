@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ocena eksperymentu A/B/C - przycisk w e-commerce</title>
+<title>Ocena eksperymentu A/B/C - przycisk w&nbsp;e-commerce</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -84,9 +84,10 @@ body { font-family: var(--body); -webkit-font-smoothing: antialiased; position: 
 }
 .slide-chrome .left, .slide-chrome .right { display: inline-flex; align-items: center; gap: 12px; }
 .mark {
-  width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--ink);
+  height: 22px; padding: 0 8px; border-radius: 6px; border: 1.5px solid var(--ink);
   display: inline-flex; align-items: center; justify-content: center;
-  font-family: var(--sans); font-weight: 900; font-size: 11px; color: var(--ink);
+  font-family: var(--sans); font-weight: 800; font-size: 10.5px; letter-spacing: 0.04em;
+  line-height: 1; color: var(--ink); white-space: nowrap;
 }
 .slide-chrome b { color: var(--ink-soft); }
 .step-badge {
@@ -195,7 +196,8 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
 .source-text .quote + .quote { margin-top: 18px; }
 .source-text .quote.r { border-color: var(--red); }
 .source-text .quote.g { border-color: var(--green); }
-.source-text .quote.compact { font-size: 19px; line-height: 1.4; }
+.source-text .quote.compact { font-size: 16px; line-height: 1.42; padding-left: 16px; border-left-width: 3px; }
+.source-text .quote.compact + .quote.compact { margin-top: 14px; }
 .source-list { display: grid; gap: 10px; margin-top: 4px; }
 .source-list span {
   display: block; border: 1px solid var(--line); background: #fff;
@@ -347,7 +349,7 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="copy">
         <span class="eyebrow">Wstęp do uczenia maszynowego · projekt A/B/C</span>
         <h1>Ocena eksperymentu <em>punkt po punkcie</em><span class="dot">.</span></h1>
-        <p class="lead">Sklep internetowy testuje wygląd przycisku „Dodaj do koszyka”. Przechodzę przez cały projekt w jego oryginalnej kolejności: każdy punkt najpierw cytuję, a potem oceniam.</p>
+        <p class="lead">Sklep internetowy chce sprawdzić, czy zmiana wyglądu przycisku „Dodaj do koszyka” sprawi, że więcej osób doda produkt do koszyka.</p>
         <div class="legend">
           <span class="chip g"><span class="swatch"></span>dobrze</span>
           <span class="chip r"><span class="swatch"></span>błąd</span>
@@ -358,12 +360,12 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
         <div class="plate">
           <div class="plate-label">Plan prezentacji · 6 punktów oryginału</div>
           <div class="roadmap">
-            <div class="rm"><b>1</b><span>Scenariusz i cel</span></div>
+            <div class="rm"><b>1</b><span>Scenariusz i&nbsp;cel</span></div>
             <div class="rm"><b>2</b><span>Grupy A / B / C</span></div>
             <div class="rm"><b>3</b><span>Hipoteza badawcza</span></div>
-            <div class="rm"><b>4</b><span>Zmienna zależna (konwersja)</span></div>
-            <div class="rm"><b>5</b><span>Randomizacja (modulo 3)</span></div>
-            <div class="rm"><b>6</b><span>Analiza wyników i czas</span></div>
+            <div class="rm"><b>4</b><span>Co mierzymy (konwersja)</span></div>
+            <div class="rm"><b>5</b><span>Podział na grupy (losowanie)</span></div>
+            <div class="rm"><b>6</b><span>Analiza wyników i&nbsp;czas</span></div>
           </div>
           <div class="meta">Każdy punkt = slajd „oryginał” + slajd „ocena”</div>
         </div>
@@ -381,15 +383,14 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
-        <h2>Punkt 1 - <em>scenariusz i cel</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <h2>Punkt 1 - <em>scenariusz i&nbsp;cel</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
         <p class="body">Sklep internetowy. Wielu użytkowników ogląda produkt, niewielu dodaje do koszyka. Autorzy chcą sprawdzić, czy zmiana wyglądu przycisku pomoże.</p>
       </div>
       <div class="plate-wrap">
         <div class="plate">
-          <div class="plate-label">Oryginał · pkt 1</div>
+          <div class="plate-label">Oryginał · pkt 1 (pełny cytat)</div>
           <div class="source-text">
-            <span class="quote">„Zauważyliśmy, że wielu użytkowników odwiedza stronę z opisem produktu, ale stosunkowo niewielu z nich decyduje się na dodanie go do koszyka.”</span>
-            <span class="quote">„Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.”</span>
+            <span class="quote compact">„Zauważyliśmy, że wielu użytkowników odwiedza stronę z&nbsp;opisem produktu, ale stosunkowo niewielu z&nbsp;nich decyduje się na dodanie go do koszyka. Obecnie przycisk ma neutralny, szary kolor z&nbsp;napisem 'Dodaj do koszyka'. Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.”</span>
           </div>
         </div>
       </div>
@@ -410,12 +411,12 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="plate-wrap">
         <div class="eval-rows">
           <div class="eval-row ok"><span class="sign">✓</span><div><strong>Dobry, mierzalny problem</strong><span>Realny scenariusz e-commerce - idealny do testu A/B/C.</span></div></div>
-          <div class="eval-row bad"><span class="sign">!</span><div><strong>Cel to „sprzedaż”, a badanie mierzy koszyk</strong><span>Dodanie do koszyka to etap pośredni - część osób nigdy nie zapłaci.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Cel to „sprzedaż”, a&nbsp;badanie mierzy koszyk</strong><span>Dodanie do koszyka to etap pośredni - część osób nigdy nie zapłaci.</span></div></div>
           <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Albo mierzyć zakup, albo jasno napisać, że badamy tylko etap koszyka.</span></div></div>
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Punkt 1 z 6</span></div>
+    <div class="slide-foot"><span>Punkt 1 z&nbsp;6</span></div>
   </section>
 
   <!-- ===================== PUNKT 2: GRUPY ===================== -->
@@ -428,8 +429,8 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
         <h2>Punkt 2 - <em>trzy warianty</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
-        <p class="body">Jedna grupa kontrolna i dwie eksperymentalne. Każda dostaje inny przycisk na stronie produktu.</p>
-        <span class="ribbon">A kontrolna · B i C eksperymentalne</span>
+        <p class="body">Jedna grupa kontrolna i&nbsp;dwie eksperymentalne. Każda dostaje inny przycisk na stronie produktu.</p>
+        <span class="ribbon">A kontrolna · B i&nbsp;C eksperymentalne</span>
       </div>
       <div class="plate-wrap">
         <div class="plate">
@@ -453,7 +454,7 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="copy">
         <span class="eyebrow r">Ocena punktu 2 · najpoważniejsza wada</span>
         <h2 class="sm">Zmieniają <em>kilka rzeczy</em> naraz<span class="dot r">.</span></h2>
-        <p class="body">B zmienia kolor i rozmiar. C zmienia kolor, rozmiar i tekst. Jeśli C wygra - nie wiadomo, co zadziałało. To konfundacja zmiennych.</p>
+        <p class="body">B zmienia kolor i&nbsp;rozmiar. C zmienia kolor, rozmiar i&nbsp;tekst. Jeśli C wygra - nie wiadomo, co zadziałało. To konfundacja zmiennych.</p>
         <span class="ribbon bad">Brak komórki „szary · Kup teraz”</span>
       </div>
       <div class="plate-wrap">
@@ -481,13 +482,13 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
         <h2>Punkt 3 - <em>hipoteza</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
-        <p class="body">Autorzy zakładają, że wyrazistszy kolor i bezpośredni komunikat zwiększą uwagę i konwersję - i że najlepszy będzie wariant C.</p>
+        <p class="body">Autorzy zakładają, że wyrazistszy kolor i&nbsp;bezpośredni komunikat zwiększą uwagę i&nbsp;konwersję - i&nbsp;że najlepszy będzie wariant C.</p>
       </div>
       <div class="plate-wrap">
         <div class="plate">
-          <div class="plate-label">Oryginał · pkt 3</div>
+          <div class="plate-label">Oryginał · pkt 3 (pełny cytat)</div>
           <div class="source-text">
-            <span class="quote">„Spodziewamy się, że wariant C osiągnie najwyższe wyniki ze względu na budowanie poczucia pilności zakupu.”</span>
+            <span class="quote compact">„Zastosowanie bardziej wyrazistego koloru przycisku oraz bardziej bezpośredniego komunikatu ('Kup teraz') przyciągnie większą uwagę użytkowników, co przełoży się na wyższy współczynnik konwersji w&nbsp;porównaniu do obecnego, szarego przycisku. Spodziewamy się, że wariant C osiągnie najwyższe wyniki ze względu na budowanie poczucia pilności zakupu.”</span>
           </div>
         </div>
       </div>
@@ -502,18 +503,19 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow r">Ocena punktu 3</span>
-        <h2 class="sm">Brak hipotezy <em>zerowej</em><span class="dot r">.</span></h2>
-        <span class="ribbon bad">Hipoteza kierunkowa ↔ test bezkierunkowy</span>
+        <h2 class="sm">To przeczucie, nie <em>hipoteza</em><span class="dot r">.</span></h2>
+        <span class="ribbon bad">Brakuje punktu odniesienia i&nbsp;progu</span>
       </div>
       <div class="plate-wrap">
         <div class="eval-rows">
           <div class="eval-row ok"><span class="sign">✓</span><div><strong>Jest jasne oczekiwanie kierunku</strong><span>Wiadomo, czego autorzy się spodziewają (C najlepsze).</span></div></div>
-          <div class="eval-row bad"><span class="sign">!</span><div><strong>Brak pary H₀ / H₁</strong><span>Nie ma formalnej hipotezy zerowej - podstawy wnioskowania statystycznego.</span></div></div>
-          <div class="eval-row bad"><span class="sign">!</span><div><strong>Kierunkowa hipoteza, omnibusowy test</strong><span>Chi-kwadrat mówi „czy jest różnica”, a nie „która grupa lepsza”.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Brak założenia „nic się nie zmieni”</strong><span>Nie ma punktu odniesienia - że może żaden przycisk nie zadziała. To go test ma obalić.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Hipoteza miesza kolor i&nbsp;tekst</strong><span>Wyrazisty kolor ORAZ komunikat „Kup teraz” - jeśli C wygra, nie wiadomo, co zadziałało.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>Brak progu sukcesu</strong><span>„Wyższy współczynnik konwersji” - ale o&nbsp;ile? Nie określono, co uznają za sukces.</span></div></div>
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Punkt 3 z 6</span></div>
+    <div class="slide-foot"><span>Punkt 3 z&nbsp;6</span></div>
   </section>
 
   <!-- ===================== PUNKT 4: ZMIENNA ZALEŻNA ===================== -->
@@ -521,18 +523,18 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
   <!-- 08 - PKT 4 ORYGINAŁ -->
   <section class="slide layout-right" data-slide-kind="4 · metryka">
     <div class="stepnum">4</div>
-    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · zmienna zależna</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>08 / 14</span></div></div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · co mierzymy</span></div><div class="right"><span class="step-badge orig">oryginał</span><span>08 / 14</span></div></div>
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
         <h2>Punkt 4 - <em>konwersja</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
-        <p class="body">Zmienną zależną jest współczynnik konwersji - mierzony jako dodania do koszyka względem liczby unikalnych odwiedzających.</p>
+        <p class="body">Autorzy mierzą konwersję - ile osób dodało produkt do koszyka w&nbsp;stosunku do wszystkich, którzy weszli na stronę produktu.</p>
       </div>
       <div class="plate-wrap">
         <div class="plate">
-          <div class="plate-label">Oryginał · pkt 4</div>
+          <div class="plate-label">Oryginał · pkt 4 (pełny cytat)</div>
           <div class="source-text">
-            <span class="quote">„…stosunek liczby użytkowników, którzy kliknęli przycisk i dodali produkt do koszyka, do całkowitej liczby unikalnych użytkowników, którzy odwiedzili daną stronę produktu.”</span>
+            <span class="quote compact">„Współczynnik konwersji (CR) - wyrażony w&nbsp;procentach stosunek liczby użytkowników, którzy kliknęli przycisk i&nbsp;dodali produkt do koszyka, do całkowitej liczby unikalnych użytkowników, którzy odwiedzili daną stronę produktu.”</span>
           </div>
         </div>
       </div>
@@ -543,22 +545,22 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
   <!-- 09 - PKT 4 OCENA -->
   <section class="slide layout-left" data-slide-kind="4 · ocena" data-tone="red">
     <div class="stepnum">4</div>
-    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · zmienna zależna</span></div><div class="right"><span class="step-badge eval">ocena</span><span>09 / 14</span></div></div>
+    <div class="slide-chrome"><div class="left"><span class="mark">A/B</span><span><b>Punkt 4</b> · co mierzymy</span></div><div class="right"><span class="step-badge eval">ocena</span><span>09 / 14</span></div></div>
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow r">Ocena punktu 4</span>
-        <h2 class="sm">CR miesza <em>dwa</em> zdarzenia<span class="dot r">.</span></h2>
-        <span class="ribbon bad">Brak okna konwersji</span>
+        <h2 class="sm">Wskaźnik miesza <em>dwie</em> rzeczy<span class="dot r">.</span></h2>
+        <span class="ribbon bad">Nie wiadomo, kiedy liczyć wynik</span>
       </div>
       <div class="plate-wrap">
         <div class="eval-rows">
-          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Konwersja to trafny typ metryki</strong><span>Mierzalna, policzalna, sensowna dla sklepu.</span></div></div>
-          <div class="eval-row bad"><span class="sign">!</span><div><strong>„Kliknęli i dodali” = dwa zdarzenia</strong><span>Jedna metryka powinna opisywać jedno czyste zdarzenie. I to wciąż nie zakup.</span></div></div>
-          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Wybrać jedno zdarzenie i określić okno konwersji (sesja / 24 h / dłużej).</span></div></div>
+          <div class="eval-row ok"><span class="sign">✓</span><div><strong>Mierzenie konwersji ma sens</strong><span>Łatwo policzyć i&nbsp;dobrze pasuje do sklepu.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>„Kliknęli i&nbsp;dodali” to dwie różne rzeczy</strong><span>Jeden wskaźnik powinien mierzyć jedno zdarzenie. I to wciąż nie zakup.</span></div></div>
+          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Wybrać jedno zdarzenie i&nbsp;ustalić, do kiedy je liczymy (ta sama wizyta, dzień, dłużej).</span></div></div>
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Punkt 4 z 6</span></div>
+    <div class="slide-foot"><span>Punkt 4 z&nbsp;6</span></div>
   </section>
 
   <!-- ===================== PUNKT 5: RANDOMIZACJA ===================== -->
@@ -570,15 +572,15 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
-        <h2>Punkt 5 - <em>modulo 3</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
-        <p class="body">Przydział na podstawie hasha ID lub cookie, a wynik operacji modulo 3 decyduje o grupie. Po powrocie użytkownik widzi ten sam wariant.</p>
+        <h2>Punkt 5 - <em>podział na grupy</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
+        <p class="body">Numer użytkownika (lub ciasteczka) dzielony jest przez 3, a&nbsp;reszta z&nbsp;dzielenia decyduje o&nbsp;grupie: 0 to A, 1 to B, 2 to C. Po powrocie ta sama osoba widzi ten sam wariant.</p>
       </div>
       <div class="plate-wrap">
         <div class="plate">
-          <div class="plate-label">Oryginał · pkt 5</div>
+          <div class="plate-label">Oryginał · pkt 5 (pełny cytat)</div>
           <div class="source-text">
-            <span class="quote compact">„Algorytm wykonuje na User ID lub zahashowanym identyfikatorze sesji operację modulo 3. […] 0 → A, 1 → B, 2 → C.”</span>
-            <span class="quote compact">„Jeśli użytkownik wróci następnego dnia, system wyświetli ten sam wariant.”</span>
+            <span class="quote compact">„System oparty na hashowaniu identyfikatora użytkownika (dla zalogowanych) lub identyfikatora pliku cookie (dla niezalogowanych gości). Algorytm wykonuje operację modulo 3: reszta 0 → grupa A, 1 → grupa B, 2 → grupa C.”</span>
+            <span class="quote compact">„Jeśli użytkownik odświeży stronę lub wróci następnego dnia, system odczyta jego identyfikator i&nbsp;wyświetli ten sam wariant, aby nie zaburzać doświadczenia (UX) i&nbsp;wyników eksperymentu.”</span>
           </div>
         </div>
       </div>
@@ -593,18 +595,18 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
     <div class="slide-inner">
       <div class="copy">
         <span class="eyebrow r">Ocena punktu 5</span>
-        <h2 class="sm"><em>modulo 3</em> to nie losowanie<span class="dot r">.</span></h2>
-        <span class="ribbon bad">Brak soli eksperymentu i kontroli balansu (SRM)</span>
+        <h2 class="sm">Ten podział to nie <em>losowanie</em><span class="dot r">.</span></h2>
+        <span class="ribbon bad">Nierówny podział i&nbsp;brak sprawdzenia grup</span>
       </div>
       <div class="plate-wrap">
         <div class="eval-rows">
           <div class="eval-row ok"><span class="sign">✓</span><div><strong>Stały przydział użytkownika</strong><span>Dobre: po powrocie ten sam wariant, brak mieszania wersji.</span></div></div>
-          <div class="eval-row bad"><span class="sign">!</span><div><strong>„mod 3” nie gwarantuje losowości</strong><span>Sekwencyjne ID albo wspólny hash dla wielu testów obciążają grupy.</span></div></div>
-          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Hash z solą eksperymentu, kontrola balansu grup (SRM), wykluczenie botów.</span></div></div>
+          <div class="eval-row bad"><span class="sign">!</span><div><strong>To nie jest prawdziwe losowanie</strong><span>Dzielenie numerów „co trzeci” może dać grupy systematycznie różne, a&nbsp;nie przypadkowe.</span></div></div>
+          <div class="eval-row fix"><span class="sign">→</span><div><strong>Poprawka</strong><span>Losować naprawdę przypadkowo, sprawdzić, czy grupy są równe, odrzucić boty.</span></div></div>
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Punkt 5 z 6 · cookies bywają kruche</span></div>
+    <div class="slide-foot"><span>Punkt 5 z&nbsp;6 · ciasteczka bywają zawodne</span></div>
   </section>
 
   <!-- ===================== PUNKT 6: ANALIZA ===================== -->
@@ -617,14 +619,14 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="copy">
         <span class="eyebrow">Co napisali autorzy</span>
         <h2>Punkt 6 - <em>analiza</em><span class="dot" style="color:var(--ink-faint)">.</span></h2>
-        <p class="body">Test trwa 3 tygodnie. Najpierw chi-kwadrat dla wielu proporcji (α = 0,05), potem porównania parami z poprawką Bonferroniego.</p>
+        <p class="body">Test trwa 3 tygodnie. Najpierw jeden test sprawdza, czy w&nbsp;ogóle jest różnica między grupami, potem porównania par grup z&nbsp;zabezpieczeniem przed przypadkowym wynikiem.</p>
       </div>
       <div class="plate-wrap">
         <div class="plate">
-          <div class="plate-label">Oryginał · pkt 6</div>
+          <div class="plate-label">Oryginał · pkt 6 (pełny cytat)</div>
           <div class="source-text">
-            <span class="quote compact">„Najpierw przeprowadzimy test Chi-kwadrat dla wielu proporcji […] poziom istotności 0.05.”</span>
-            <span class="quote compact">„Porównujemy wariant A z B, A z C oraz B z C […] poprawka Bonferroniego.”</span>
+            <span class="quote compact">Krok 1: „Najpierw przeprowadzimy statystyczny test Chi-kwadrat dla wielu proporcji. Pozwoli on sprawdzić, czy istnieje statystycznie istotna różnica między którymikolwiek z&nbsp;wariantów, przyjmując poziom istotności jako 0.05.”</span>
+            <span class="quote compact">Krok 2: „Porównujemy wariant A z&nbsp;B, A z&nbsp;C oraz B z&nbsp;C. Ponieważ robimy kilka porównań naraz, narzucamy sobie surowsze kryteria (poprawka Bonferroniego), aby ostateczny werdykt był wiarygodny.”</span>
           </div>
         </div>
       </div>
@@ -643,15 +645,15 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       </div>
       <div class="plate-wrap">
         <div class="source-list">
-          <span class="ok"><strong>✓ Dobrze:</strong> chi-kwadrat dla wielu proporcji to właściwy test.</span>
-          <span class="ok"><strong>✓ Dobrze:</strong> poprawka Bonferroniego przy porównaniach parami.</span>
-          <span class="bad"><strong>! Brak analizy mocy:</strong> nie policzono liczebności próby (α, β, MDE).</span>
-          <span class="bad"><strong>! Brak progu sukcesu:</strong> jaki wzrost konwersji jest realnie istotny (np. +10%).</span>
-          <span class="bad"><strong>! Ryzyko peekingu:</strong> sztywne „3 tygodnie” bez reguły zakończenia. Czas ≠ moc.</span>
+          <span class="ok"><strong>✓ Dobrze:</strong> wybrany test (chi-kwadrat) pasuje do porównania kilku grup.</span>
+          <span class="ok"><strong>✓ Dobrze:</strong> jest zabezpieczenie przed fałszywym wynikiem przy wielu porównaniach.</span>
+          <span class="bad"><strong>! Test nie wskazuje zwycięzcy:</strong> mówi tylko „czy jest różnica”, a&nbsp;nie „która grupa lepsza” - a&nbsp;autorzy obstawiają konkretną (C).</span>
+          <span class="bad"><strong>! Nie policzono, ilu użytkowników trzeba:</strong> bez tego nie wiadomo, czy danych wystarczy na wiarygodny wynik.</span>
+          <span class="bad"><strong>! Sztywne „3 tygodnie”:</strong> brak zasady, kiedy kończyć. Przy małym ruchu i&nbsp;tak za mało danych.</span>
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Punkt 6 z 6 · Bonferroni nie zastąpi analizy mocy</span></div>
+    <div class="slide-foot"><span>Punkt 6 z&nbsp;6 · dobre testy, ale brak planu wielkości próby</span></div>
   </section>
 
   <!-- ===================== WERDYKT ===================== -->
@@ -667,10 +669,10 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
       <div class="big-verdict">
         <div class="score-wrap"><div class="score">6<span>/ 10</span></div></div>
         <div class="copy">
-          <p class="lead">Sensowny temat, grupa kontrolna, randomizacja na poziomie użytkownika i dobry kierunek analizy. W tej formie pokaże jednak „który wariant”, nie „dlaczego” - i nie powinien ruszyć bez poprawek.</p>
+          <p class="lead">Sensowny temat, grupa kontrolna, randomizacja na poziomie użytkownika i&nbsp;dobry kierunek analizy. W tej formie pokaże jednak „który wariant”, nie „dlaczego” - i&nbsp;nie powinien ruszyć bez poprawek.</p>
           <div class="grid-2" style="margin-top:2px;">
-            <div class="tile ok"><span class="sign">✓</span><strong>Największy plus</strong><span>Autorzy rozumieją ideę testu A/B/C i potrzebę statystyki.</span></div>
-            <div class="tile bad"><span class="sign">!</span><strong>Największy minus</strong><span>Kilka zmian naraz, „mod 3” zamiast randomizacji i mylenie sprzedaży z koszykiem.</span></div>
+            <div class="tile ok"><span class="sign">✓</span><strong>Największy plus</strong><span>Autorzy rozumieją ideę testu A/B/C i&nbsp;potrzebę statystyki.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Największy minus</strong><span>Kilka zmian naraz, podział na grupy bez prawdziwego losowania i&nbsp;mylenie sprzedaży z&nbsp;koszykiem.</span></div>
           </div>
         </div>
       </div>
@@ -704,8 +706,8 @@ h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 600; 
   function applySlide(n) {
     idx = Math.max(0, Math.min(total - 1, n));
     deck.style.transform = "translateX(" + (-idx * 100) + "vw)";
-    slides.forEach(function (s, i) { s.classList.toggle("active", i === idx); });
-    nav.querySelectorAll(".ndot").forEach(function (d, i) { d.classList.toggle("active", i === idx); });
+    slides.forEach(function (s, i) { s.classList.toggle("active", i&nbsp;=== idx); });
+    nav.querySelectorAll(".ndot").forEach(function (d, i) { d.classList.toggle("active", i&nbsp;=== idx); });
     bar.style.width = (((idx + 1) / total) * 100) + "%";
   }
   function go(n) {
