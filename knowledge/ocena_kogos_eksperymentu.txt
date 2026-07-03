@@ -1,0 +1,38 @@
+1.	Wybrany scenariusz:
+•	Sklep internetowy (E-commerce)
+
+•	Zauważyliśmy, że wielu użytkowników odwiedza stronę z opisem produktu, ale stosunkowo niewielu z nich decyduje się na dodanie go do koszyka. Obecnie przycisk ma neutralny, szary kolor z napisem "Dodaj do koszyka". Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.
+
+2.	Grupa kontrolna oraz grupy eksperymentalne:
+
+Grupa	Rola	Wygląd przycisku
+A	Grupa kontrolna	Szary przycisk z tekstem 
+"Dodaj do koszyka"
+B	Grupa eksperymentalna 1	Duży, zielony przycisk z tekstem 
+"Dodaj do koszyka".
+C	Grupa eksperymentalna 2	Duży, pomarańczowy przycisk z tekstem "Kup teraz".
+
+3.	Hipoteza badawcza:
+•	Zastosowanie bardziej wyrazistego koloru przycisku oraz bardziej bezpośredniego komunikatu ("Kup teraz") przyciągnie większą uwagę użytkowników, co przełoży się na wyższy współczynnik konwersji w porównaniu do obecnego, szarego przycisku. Spodziewamy się, że wariant C osiągnie najwyższe wyniki ze względu na budowanie poczucia pilności zakupu.
+
+4.	Zmienna zależna:
+•	Współczynnik konwersji (CR) - wyrażony w procentach stosunek liczby użytkowników, którzy kliknęli przycisk i dodali produkt do koszyka, do całkowitej liczby unikalnych użytkowników, którzy odwiedzili daną stronę produktu.
+
+5.	Metoda randomizacji:
+a)	Mechanizm losujący: System oparty na hashowaniu identyfikatora użytkownika (dla zalogowanych) lub identyfikatora pliku cookie 
+(dla niezalogowanych gości).
+b)	Przydział: Algorytm wykonuję na User ID lub zahashowanym identyfikatorze sesji (dla niezalogowanych) operację modulo 3. Wynik tej operacji determinuje przydział do konkretnej grupy:
+•	Jeśli reszta z dzielenia wynosi 0, użytkownik trafia do grupy A (szary przycisk)
+•	Jeśli reszta z dzielenia wynosi 1, użytkownik trafia do grupy B (zielony przycisk).
+•	Jeśli reszta z dzielenia wynosi 2, użytkownik trafia do grupy C (pomarańczowy przycisk).
+
+c)	Jeśli użytkownik odświeży stronę lub wróci na nią następnego dnia, system odczyta jego identyfikator i wyświetli ten sam wariant, aby nie zaburzać doświadczenia (UX) i wyników eksperymentu.
+
+6.	Sposób analizy wyników:
+•	Czas trwania eksperymentu - 3 tygodnie.
+
+•	Krok 1 (Weryfikacja globalna): Najpierw przeprowadzimy statystyczny test Chi-kwadrat dla wielu proporcji. Pozwoli on sprawdzić, czy istnieje statystycznie istotna różnica między którymikolwiek z wariantów, przyjmując poziom istotności jako 0.05.
+
+•	Krok 2 (Szczegółowe porównania w parach): Jeśli z pierwszego kroku wyjdzie nam, że zmiana przycisku ogólnie wpłynęła na klientów, musimy dokładnie sprawdzić, który konkretnie wariant zadziałał najlepiej. W tym celu zestawiamy wyniki jeden na jednego (porównujemy wariant A z B, A z C oraz B z C).
+
+Ponieważ robimy kilka takich porównań naraz, rośnie ryzyko, że czystym przypadkiem trafimy na "fałszywy alarm" i uznamy jakiś wynik za sukces, choć wcale nim nie jest. Aby się przed tym zabezpieczyć, narzucamy sobie surowsze kryteria oceny (poprawka Bonferroniego). Dzięki temu ostateczny werdykt jest wiarygodny i mamy pewność, że "zwycięski" przycisk naprawdę działa lepiej, a nie jest to tylko zbieg okoliczności.

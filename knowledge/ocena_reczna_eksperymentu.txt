@@ -1,0 +1,50 @@
+﻿Ręczna ocena krytyczna projektu eksperymentu
+
+Przedmiot oceny:
+Oceniany projekt dotyczy eksperymentu A/B/C dla sklepu internetowego. W eksperymencie przewidziano jedną grupę kontrolną oraz dwie grupy eksperymentalne. Celem badania jest sprawdzenie, czy personalizacja rekomendacji produktów oraz dodanie komunikatu promocyjnego wpływają na konwersję użytkowników.
+
+1. Elementy eksperymentu zaprojektowane prawidłowo
+
+Pierwszym poprawnym elementem jest wybór realistycznego scenariusza badawczego. Sklep internetowy jest dobrym przykładem środowiska, w którym można prowadzić eksperymenty A/B/C, ponieważ zachowania użytkowników są mierzalne, a efekty zmian można obserwować za pomocą konkretnych danych, takich jak kliknięcia, dodania do koszyka i zakupy.
+
+Prawidłowo zaprojektowano również podział na trzy grupy. W projekcie występuje grupa kontrolna, która widzi obecną wersję strony, oraz dwie grupy eksperymentalne, które otrzymują zmodyfikowane wersje strony. Taki układ pozwala nie tylko porównać nową wersję z obecną, ale także sprawdzić, która z dwóch zmian daje lepszy efekt.
+
+Kolejnym dobrze zaprojektowanym elementem jest wskazanie zmiennej zależnej. Konwersja, rozumiana jako odsetek użytkowników dokonujących zakupu, jest trafną główną metryką dla sklepu internetowego. Dobrze dobrano także metryki pomocnicze, takie jak liczba kliknięć w produkty, czas spędzony na stronie, liczba dodań do koszyka i średnia wartość zamówienia. Dzięki temu analiza nie ogranicza się wyłącznie do jednego wskaźnika.
+
+Pozytywnie należy ocenić także zaproponowaną randomizację. Losowy przydział użytkowników do grup A, B i C zmniejsza ryzyko, że wyniki będą zależały od cech konkretnej grupy użytkowników, a nie od wprowadzonych zmian. Szczególnie ważne jest założenie, że randomizacja powinna odbywać się na poziomie użytkownika, a nie pojedynczej sesji. Dzięki temu ta sama osoba nie będzie widziała różnych wersji strony w kolejnych wejściach.
+
+Poprawnym elementem jest również wskazanie sposobu analizy wyników. Autorzy projektu przewidzieli obliczenie konwersji w każdej grupie oraz porównanie wyników między grupą kontrolną a grupami eksperymentalnymi. Wspomnienie o teście chi-kwadrat lub teście dla proporcji pokazuje, że projekt uwzględnia potrzebę sprawdzenia istotności statystycznej wyników.
+
+2. Aspekty wymagające modyfikacji
+
+Najważniejszą rzeczą wymagającą dopracowania jest precyzyjne określenie hipotez. Hipoteza badawcza jest zrozumiała, ale można ją sformułować dokładniej. Powinna jasno wskazywać, jaki efekt jest oczekiwany i dla której grupy. Na przykład: "Użytkownicy z grupy B i C osiągną wyższą konwersję niż użytkownicy z grupy A, a grupa C osiągnie wyższą konwersję niż grupa B". Taka forma ułatwia późniejszą analizę wyników.
+
+Projekt powinien też zawierać dokładniejszy opis liczebności próby. Sam podział 33,3% użytkowników na każdą grupę jest poprawny, ale nie wiadomo, ilu użytkowników musi znaleźć się w każdej grupie, aby wynik był wiarygodny. Przed rozpoczęciem eksperymentu należałoby oszacować minimalną liczebność próby, na przykład na podstawie obecnej konwersji sklepu i oczekiwanego minimalnego efektu.
+
+Kolejna rzecz do poprawy to czas trwania eksperymentu. W projekcie pojawia się propozycja dwóch tygodni, ale nie uzasadniono, dlaczego taki okres jest wystarczający. Eksperyment powinien trwać na tyle długo, aby objąć różne dni tygodnia, typowe wahania ruchu i zachowania użytkowników. Należy też unikać kończenia eksperymentu tylko dlatego, że chwilowo jedna wersja wygląda lepiej.
+
+Warto również doprecyzować, czy użytkownicy nowi i powracający będą analizowani razem, czy osobno. Zachowania tych grup mogą się różnić. Stały klient może inaczej reagować na rekomendacje niż osoba, która pierwszy raz odwiedza sklep. Brak takiego rozróżnienia może utrudnić interpretację wyników.
+
+Projekt powinien też mocniej uwzględnić możliwe czynniki zakłócające. Na wyniki mogą wpływać sezonowość, kampanie reklamowe prowadzone w tym samym czasie, zmiany cen, dostępność produktów, działania konkurencji albo różnice w źródłach ruchu. Jeżeli takie czynniki nie zostaną kontrolowane, trudno będzie stwierdzić, czy wzrost konwersji wynika z samej zmiany na stronie.
+
+Dopracowania wymaga także analiza grupy C. Dodanie komunikatu promocyjnego, na przykład darmowej dostawy, może zwiększyć konwersję, ale jednocześnie obniżyć marżę lub średnią wartość zamówienia. Dlatego sama konwersja nie wystarczy do pełnej oceny skuteczności tej wersji. Należy dodatkowo sprawdzić przychód, marżę i średnią wartość koszyka.
+
+3. Błędy, które należy bezwzględnie poprawić przed realizacją badania
+
+Pierwszym błędem, który trzeba poprawić przed uruchomieniem eksperymentu, jest brak jednoznacznie określonego kryterium sukcesu. Projekt wskazuje konwersję jako główną zmienną zależną, ale nie określa, jaki wzrost konwersji będzie uznany za praktycznie istotny. Przed rozpoczęciem badania należy ustalić, czy celem jest na przykład wzrost konwersji o 5%, 10% czy inną wartość.
+
+Drugim poważnym problemem jest brak planu dotyczącego wielokrotnych porównań. W eksperymencie porównywane są trzy grupy: A z B, A z C oraz B z C. Przy kilku porównaniach rośnie ryzyko przypadkowego uzyskania wyniku istotnego statystycznie. Należy zastosować odpowiednią korektę, na przykład korektę Bonferroniego, albo wcześniej określić jedno główne porównanie, które będzie podstawą decyzji.
+
+Trzecim błędem jest brak informacji o sposobie obsługi użytkowników, którzy korzystają z różnych urządzeń lub usuwają pliki cookies. Jeżeli ten sam użytkownik raz trafi do grupy A, a innym razem do grupy C, wyniki eksperymentu mogą zostać zafałszowane. Należy zapewnić spójny przydział użytkownika do grupy, najlepiej na podstawie identyfikatora konta lub trwałego identyfikatora użytkownika.
+
+Czwartym błędem jest niewystarczające określenie momentu pomiaru konwersji. Trzeba jasno ustalić, czy konwersja oznacza zakup w tej samej sesji, zakup w ciągu 24 godzin, czy zakup w dłuższym oknie czasowym. Bez tego wyniki mogą być nieporównywalne.
+
+Piątym elementem wymagającym poprawy jest brak planu monitorowania jakości danych. Przed realizacją badania należy upewnić się, że system poprawnie zapisuje przypisanie użytkownika do grupy, kliknięcia, dodania do koszyka i zakupy. Błędy w logowaniu danych mogłyby całkowicie podważyć wiarygodność eksperymentu.
+
+4. Podsumowanie oceny
+
+Projekt eksperymentu jest ogólnie poprawny i zawiera najważniejsze elementy wymagane w badaniu A/B/C: grupę kontrolną, dwie grupy eksperymentalne, zmienną zależną, randomizację oraz propozycję analizy statystycznej. Największą zaletą projektu jest logiczne powiązanie zmian na stronie z mierzalnym celem biznesowym, czyli konwersją.
+
+Jednocześnie projekt wymaga dopracowania przed faktyczną realizacją. Najważniejsze braki dotyczą dokładnego określenia hipotez, liczebności próby, kryterium sukcesu, kontroli czynników zakłócających oraz sposobu analizy wielu porównań. Bez tych elementów eksperyment mógłby dać wyniki trudne do interpretacji albo prowadzić do błędnych decyzji biznesowych.
+
+Moja końcowa ocena jest taka, że projekt stanowi dobrą podstawę do eksperymentu, ale nie powinien zostać przeprowadzony bez wcześniejszych poprawek metodologicznych. Po doprecyzowaniu planu analizy, sposobu pomiaru i kontroli jakości danych eksperyment mógłby dostarczyć wiarygodnych informacji o wpływie personalizacji i komunikatu promocyjnego na zachowania użytkowników sklepu internetowego.

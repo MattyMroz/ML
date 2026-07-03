@@ -1,0 +1,105 @@
+﻿Projekt eksperymentu A/B/C dla sklepu z luksusowymi bidonami
+
+Scenariusz
+
+Wybrany scenariusz to sklep internetowy sprzedający luksusowe bidony na wodę w cenie około 1000 zł. Produkt jest nietypowy, bo zwykły bidon można kupić dużo taniej. Dlatego klient musi zrozumieć, za co płaci: za design, jakość materiałów, trwałość, wygodę czyszczenia i poczucie posiadania produktu premium.
+
+Inspiracją jest sklep w stylu OKAPA, czyli marka pokazująca bidon jako dopracowany produkt premium, a nie zwykłe akcesorium do picia wody.
+
+1. Cel eksperymentu
+
+Celem eksperymentu jest sprawdzenie, czy inny sposób prezentacji drogiego bidonu zwiększy liczbę osób, które są gotowe kupić produkt lub przynajmniej dodać go do koszyka.
+
+Porównane zostaną trzy wersje strony produktu:
+
+Grupa A - kontrolna:
+Użytkownicy widzą zwykłą stronę produktu. Jest zdjęcie bidonu, cena, krótki opis i przycisk "Dodaj do koszyka".
+
+Grupa B - eksperymentalna:
+Użytkownicy widzą stronę z mocnym wyjaśnieniem wartości produktu. Strona pokazuje, dlaczego bidon kosztuje około 1000 zł: szkło borokrzemowe, aluminiowa obudowa, szczelne zamknięcie, łatwe rozkładanie do mycia, brak zapachu po napojach i trwałość na lata.
+
+Grupa C - eksperymentalna:
+Użytkownicy widzą wersję z grupy B, ale dodatkowo dostają elementy zmniejszające ryzyko zakupu: opinie klientów, informację o gwarancji, darmowy zwrot przez 30 dni oraz krótkie porównanie z tańszymi bidonami. Ta wersja ma przekonać osoby, które podoba produkt, ale boją się wydać około 1000 zł na bidon.
+
+2. Hipoteza badawcza
+
+Hipoteza badawcza:
+Lepsze pokazanie wartości luksusowego bidonu zwiększy konwersję w porównaniu ze zwykłą stroną produktu. Najlepszy wynik powinna mieć grupa C, bo oprócz wyjaśnienia wysokiej ceny zmniejsza też obawę przed zakupem.
+
+Hipoteza zerowa:
+Nie będzie istotnej różnicy w wynikach pomiędzy grupami A, B i C.
+
+3. Zmienna niezależna
+
+Zmienną niezależną jest wersja strony produktu:
+
+A - zwykła strona produktu,
+B - strona z dokładnym pokazaniem wartości i jakości bidonu,
+C - strona z pokazaniem wartości oraz dodatkowymi elementami zaufania, takimi jak opinie, gwarancja i zwroty.
+
+4. Zmienna zależna
+
+Główną zmienną zależną będzie konwersja zakupowa, czyli odsetek użytkowników, którzy kupili bidon.
+
+Ponieważ produkt jest drogi, warto mierzyć też wcześniejsze działania użytkownika:
+kliknięcie "Dodaj do koszyka",
+kliknięcie "Kup teraz",
+czas spędzony na stronie produktu,
+przejście do sekcji z informacjami o materiałach,
+porzucenie koszyka po zobaczeniu ceny.
+
+Najważniejszy wynik to zakup, ale przy tak drogim produkcie samo dodanie do koszyka też jest ważnym sygnałem zainteresowania.
+
+5. Metoda randomizacji
+
+Użytkownicy będą losowo przydzielani do jednej z trzech grup:
+
+33,3% do grupy A,
+33,3% do grupy B,
+33,3% do grupy C.
+
+Randomizacja powinna być wykonana na poziomie użytkownika, a nie pojedynczej wizyty. Oznacza to, że ta sama osoba za każdym razem widzi tę samą wersję strony. Dzięki temu wyniki nie będą mieszane, a użytkownik nie zobaczy raz wersji A, a później wersji C.
+
+Przydział można zapisać w koncie użytkownika albo w trwałym identyfikatorze przeglądarki. Boty, pracownicy firmy i testowe wejścia powinny być usunięte z analizy.
+
+6. Czas trwania eksperymentu
+
+Eksperyment powinien trwać co najmniej 2 tygodnie, żeby objąć dni robocze i weekendy. Nie powinno się kończyć testu po jednym lub dwóch dniach tylko dlatego, że jedna wersja chwilowo wygląda najlepiej.
+
+Przed startem trzeba ustalić minimalną liczbę użytkowników w każdej grupie. Jeśli sklep ma mały ruch, eksperyment powinien trwać dłużej, aż każda grupa będzie miała wystarczająco dużo danych do porównania.
+
+7. Sposób analizy wyników
+
+Po zakończeniu eksperymentu należy policzyć konwersję dla każdej grupy:
+
+konwersja = liczba osób, które kupiły bidon / liczba osób w danej grupie
+
+Przykład:
+Jeśli w grupie A było 3000 osób, a 30 kupiło bidon, konwersja wynosi 1%.
+
+Następnie trzeba porównać:
+A z B - czy samo lepsze wyjaśnienie wartości produktu pomaga,
+A z C - czy pełna wersja strony działa lepiej niż zwykła strona,
+B z C - czy opinie, gwarancja i łatwy zwrot dają dodatkowy efekt.
+
+Do analizy można użyć testu chi-kwadrat albo testu dla proporcji. Wynik powinien być uznany za istotny dopiero wtedy, gdy różnica nie wygląda na przypadkową, na przykład przy p < 0,05.
+
+Sama istotność statystyczna nie wystarczy. Trzeba też sprawdzić, czy efekt ma sens praktyczny. Na przykład wzrost konwersji z 1,0% do 1,1% może być za mały, żeby opłacało się przebudowywać stronę. Przed testem warto ustalić, że zwycięska wersja musi poprawić konwersję na przykład o minimum 10% względem grupy kontrolnej.
+
+8. Co trzeba kontrolować
+
+Żeby wyniki były uczciwe, w czasie eksperymentu nie powinno się zmieniać ceny bidonu, kosztu dostawy, dostępności produktu ani źródeł ruchu reklamowego. Jeśli jedna grupa dostanie więcej użytkowników z reklam premium, a inna więcej przypadkowych wejść, porównanie będzie słabsze.
+
+Warto osobno sprawdzić wyniki dla nowych i powracających użytkowników. Osoba, która pierwszy raz widzi bidon za 1000 zł, może reagować inaczej niż ktoś, kto oglądał go już wcześniej.
+
+9. Możliwy wniosek
+
+Jeśli grupa C osiągnie najwyższą konwersję i wynik będzie istotny statystycznie, można uznać, że przy drogim produkcie sama ładna prezentacja nie wystarcza. Klient musi też dostać konkretne powody zakupu i poczuć, że ryzyko jest małe.
+
+Jeśli grupa B będzie lepsza od A, ale C nie poprawi wyniku względem B, oznacza to, że najważniejsze jest wyjaśnienie wartości produktu, a opinie i gwarancja nie mają dużego dodatkowego wpływu.
+
+Jeśli żadna grupa eksperymentalna nie poprawi wyniku, może to oznaczać, że problemem nie jest strona, tylko zbyt wysoka cena, zły dobór klientów albo za małe zaufanie do marki.
+
+10. Podsumowanie
+
+Eksperyment pozwala sprawdzić, jak najlepiej sprzedawać bardzo drogi i nietypowy produkt, czyli bidon premium za około 1000 zł. Grupa kontrolna pokazuje obecny wynik, grupa B sprawdza wpływ lepszego wyjaśnienia ceny, a grupa C sprawdza wpływ dodatkowego zaufania i zmniejszenia ryzyka zakupu. Dzięki losowemu podziałowi użytkowników i analizie konwersji można ocenić, która wersja strony realnie działa najlepiej.

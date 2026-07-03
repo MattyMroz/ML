@@ -1,0 +1,41 @@
+﻿Ocena merytoryczna eksperymentu: test przycisku w sklepie internetowym
+
+Oceniany eksperyment dotyczy sklepu internetowego. Autorzy chcą sprawdzić, czy zmiana wyglądu przycisku na stronie produktu zwiększy liczbę dodań do koszyka. Porównują trzy warianty: obecny szary przycisk, duży zielony przycisk oraz duży pomarańczowy przycisk z tekstem "Kup teraz".
+
+1. Co zostało zaprojektowane prawidłowo
+
+Projekt ma sensowny punkt wyjścia. Problem jest konkretny: wielu użytkowników ogląda produkt, ale niewielu dodaje go do koszyka. To dobry przykład sytuacji, w której można użyć eksperymentu A/B/C.
+
+Poprawny jest też podział na trzy grupy. Jest grupa kontrolna A z obecną wersją przycisku oraz dwie grupy eksperymentalne B i C. Dzięki temu można porównać nowe warianty z aktualnym rozwiązaniem.
+
+Dobrze, że autorzy opisali randomizację na poziomie użytkownika. Stałe przypisanie użytkownika do jednej wersji strony jest ważne, bo ta sama osoba nie powinna raz widzieć wariantu A, a później wariantu C.
+
+Na plus wypada również plan analizy statystycznej. Test chi-kwadrat dla wielu proporcji jest odpowiedni do porównania kilku grup. Dobrze, że autorzy wspominają też o porównaniach parami i poprawce Bonferroniego, bo przy kilku porównaniach łatwo przypadkowo uznać coś za istotne.
+
+2. Co wymaga modyfikacji
+
+Największy problem polega na tym, że w wariantach zmienia się kilka rzeczy naraz. W grupie B zmienia się kolor i rozmiar przycisku, a w grupie C kolor, rozmiar i tekst. Jeżeli wariant C wygra, nie będzie wiadomo, czy zadziałał pomarańczowy kolor, większy rozmiar, tekst "Kup teraz", czy połączenie tych elementów.
+
+Drugi problem dotyczy zmiennej zależnej. Autorzy piszą o zwiększeniu sprzedaży, ale mierzą głównie kliknięcie i dodanie produktu do koszyka. To nie jest to samo co zakup. Użytkownik może dodać produkt do koszyka, ale później nie zapłacić. Dlatego główną metryką powinien być zakup albo przynajmniej trzeba jasno napisać, że badanie mierzy tylko etap dodania do koszyka.
+
+Warto też doprecyzować, co oznacza wariant "Kup teraz". Jeśli przycisk prowadzi do innego procesu niż "Dodaj do koszyka", to porównanie jest nieuczciwe. Wtedy testujemy nie tylko napis, ale też inny przebieg ścieżki zakupowej.
+
+Brakuje informacji o minimalnej liczbie użytkowników w każdej grupie. Same 3 tygodnie testu nie wystarczą, jeśli ruch w sklepie jest mały. Przed eksperymentem trzeba policzyć, ile obserwacji potrzeba, żeby wynik był wiarygodny.
+
+Brakuje też jasnego kryterium sukcesu. Autorzy powinni ustalić, jaki wzrost konwersji uznają za realnie ważny, na przykład wzrost dodania do koszyka o minimum 10% względem grupy kontrolnej.
+
+3. Błędy do poprawienia przed realizacją badania
+
+Przed startem trzeba rozdzielić testowane zmiany. Najlepiej najpierw testować tylko kolor przycisku przy tym samym rozmiarze i tym samym tekście. Osobny eksperyment można potem zrobić dla tekstu "Dodaj do koszyka" kontra "Kup teraz". Bez tego wynik będzie trudny do interpretacji.
+
+Trzeba poprawić metrykę. Jeśli celem jest sprzedaż, główną zmienną zależną powinna być konwersja zakupowa, czyli liczba zakupów podzielona przez liczbę użytkowników. Dodanie do koszyka może zostać jako metryka pomocnicza.
+
+Należy dopisać plan liczebności próby, minimalny oczekiwany efekt oraz zasadę zakończenia eksperymentu. Nie powinno się przerywać testu tylko dlatego, że po kilku dniach jeden wariant wygląda lepiej.
+
+Trzeba też kontrolować jakość danych: wykluczyć boty, pracowników firmy i testowe wejścia, sprawdzić czy grupy mają podobną liczbę użytkowników oraz czy użytkownicy faktycznie widzą przypisany wariant.
+
+4. Wniosek końcowy
+
+Projekt jest dobrym szkicem eksperymentu, ale nie jest jeszcze gotowy do realizacji. Ma poprawny ogólny pomysł, grupę kontrolną, randomizację i sensowny kierunek analizy statystycznej. Najpoważniejsze błędy to mieszanie kilku zmian naraz oraz niezgodność między deklarowanym celem sprzedażowym a mierzeniem tylko dodania do koszyka.
+
+Po poprawieniu tych elementów eksperyment mógłby być wartościowy. W obecnej formie wynik mógłby pokazać, że któryś wariant działa lepiej, ale nie dałby pewnej odpowiedzi, dlaczego tak się stało.

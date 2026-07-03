@@ -1,0 +1,882 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ocena eksperymentu A/B/C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --paper: #efe7d2;
+  --bone: #f8f1dd;
+  --ink: #15140f;
+  --ink-soft: #2a2620;
+  --ink-mute: #5a5448;
+  --ink-faint: #716a5c;
+  --line: rgba(21, 20, 15, 0.16);
+  --line-soft: rgba(21, 20, 15, 0.08);
+  --coral: #b3432e;
+  --green: #166c43;
+  --green-soft: #dbeede;
+  --red: #a63232;
+  --red-soft: #f1d6d2;
+  --amber: #a06518;
+  --amber-soft: #f3e2c0;
+  --gray-button: #77766f;
+  --orange-button: #d77522;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter Tight", "Inter", Arial, sans-serif;
+  --body: "Inter", Arial, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--paper); color: var(--ink); }
+body {
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(106, 92, 56, 0.07) 0, transparent 28%),
+    radial-gradient(circle at 88% 72%, rgba(106, 92, 56, 0.06) 0, transparent 32%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.16  0 0 0 0 0.12  0 0 0 0.055 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: auto, auto, 240px 240px;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+#deck {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 5;
+  will-change: transform;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  flex: 0 0 100vw;
+  position: relative;
+  padding: 64px 80px 80px;
+  overflow: hidden;
+}
+.slide-inner {
+  max-width: 1360px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  align-content: center;
+  gap: 40px;
+  position: relative;
+}
+.layout-left .slide-inner { grid-template-columns: 1fr 0.88fr; gap: 58px; }
+.layout-right .slide-inner { grid-template-columns: 0.88fr 1fr; gap: 58px; }
+.layout-right .copy { order: 2; }
+.layout-right .plate-wrap { order: 1; }
+.layout-full .slide-inner { grid-template-columns: 1fr; max-width: 1080px; }
+
+.slide-chrome {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  pointer-events: none;
+  z-index: 4;
+}
+.slide-chrome .left,
+.slide-chrome .right { display: inline-flex; align-items: center; gap: 14px; }
+.mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--ink);
+  background: rgba(239, 231, 210, 0.86);
+}
+.coral { color: var(--coral); }
+.slide-foot {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  pointer-events: none;
+  z-index: 4;
+}
+.counter {
+  color: var(--ink);
+  background: rgba(239, 231, 210, 0.86);
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.copy { display: flex; flex-direction: column; gap: 22px; }
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--coral);
+  display: inline-block;
+}
+h1, h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.02;
+  color: var(--ink);
+}
+h1 { font-size: clamp(42px, 5.5vw, 82px); max-width: 12ch; }
+h2 { font-size: clamp(42px, 4.9vw, 68px); max-width: 13ch; }
+h1 em, h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+}
+.dot { color: var(--coral); }
+.lead {
+  font-size: 17px;
+  line-height: 1.58;
+  color: var(--ink-soft);
+  max-width: 54ch;
+}
+.body {
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+.meta {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+.plate-wrap { position: relative; min-height: 0; }
+.plate {
+  position: relative;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: var(--bone);
+  min-height: 420px;
+  padding: 30px;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(21, 20, 15, 0.07);
+}
+.plate::before,
+.plate::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--ink-faint);
+  border-style: solid;
+  opacity: 0.65;
+}
+.plate::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.plate::after { right: 0; bottom: 0; border-width: 0 1px 1px 0; }
+.plate-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.source-text {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.source-text strong { color: var(--ink); }
+.source-text .quote {
+  display: block;
+  border-left: 3px solid var(--coral);
+  padding-left: 16px;
+  margin-top: 12px;
+}
+.source-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+.source-list span {
+  display: block;
+  border: 1px solid var(--line-soft);
+  background: rgba(255,255,255,0.28);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(247, 241, 222, 0.7);
+}
+.ribbon.ok { border-color: rgba(22,108,67,0.32); background: var(--green-soft); color: var(--green); }
+.ribbon.bad { border-color: rgba(166,50,50,0.32); background: var(--red-soft); color: var(--red); }
+.ribbon.fix { border-color: rgba(160,101,24,0.32); background: var(--amber-soft); color: var(--amber); }
+
+.grid-2, .grid-3 {
+  display: grid;
+  gap: 18px;
+}
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tile {
+  min-height: 154px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(247, 241, 222, 0.82);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tile .sign {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-weight: 900;
+}
+.tile strong {
+  font-family: var(--sans);
+  font-size: 20px;
+  line-height: 1.14;
+  color: var(--ink);
+}
+.tile span {
+  font-size: 14px;
+  line-height: 1.48;
+  color: var(--ink-soft);
+}
+.tile.ok { background: var(--green-soft); border-color: rgba(22,108,67,0.32); }
+.tile.bad { background: var(--red-soft); border-color: rgba(166,50,50,0.32); }
+.tile.fix { background: var(--amber-soft); border-color: rgba(160,101,24,0.32); }
+.tile.ok .sign { background: var(--green); }
+.tile.bad .sign { background: var(--red); }
+.tile.fix .sign { background: var(--amber); }
+
+.button-row {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+}
+.button-spec {
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: center;
+  background: rgba(255,255,255,0.26);
+}
+.mini-button {
+  min-height: 42px;
+  border-radius: 7px;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+}
+.btn-a { background: var(--gray-button); }
+.btn-b { background: var(--green); min-height: 52px; }
+.btn-c { background: var(--orange-button); min-height: 52px; }
+.button-spec strong { font-family: var(--sans); font-size: 16px; }
+.button-spec span { font-size: 13px; color: var(--ink-mute); line-height: 1.35; }
+
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 0.8fr);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.matrix div {
+  padding: 13px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 241, 222, 0.72);
+}
+.matrix div:nth-child(4n) { border-right: 0; }
+.matrix div:nth-last-child(-n+4) { border-bottom: 0; }
+.matrix .head { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+.matrix .badcell { background: var(--red-soft); color: var(--red); font-weight: 700; }
+.matrix .okcell { background: var(--green-soft); color: var(--green); font-weight: 700; }
+
+.big-verdict {
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.score {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(76px, 9vw, 136px);
+  line-height: 0.9;
+  color: var(--red);
+}
+
+.deck-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--line-soft);
+  z-index: 30;
+}
+.deck-progress .bar {
+  height: 100%;
+  width: 0%;
+  background: var(--coral);
+  transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#nav {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(239, 231, 210, 0.78);
+  border: 1px solid var(--line-soft);
+  backdrop-filter: blur(8px);
+}
+#nav .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(21,20,15,0.22);
+  transition: all 0.3s ease;
+}
+#nav .dot.active {
+  width: 22px;
+  border-radius: 999px;
+  background: var(--coral);
+}
+#hint {
+  position: fixed;
+  right: 28px;
+  bottom: 36px;
+  z-index: 30;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+#overview {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(239, 231, 210, 0.96);
+  backdrop-filter: blur(12px);
+  display: none;
+  overflow-y: auto;
+  padding: 60px 56px;
+}
+.ov-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.ov-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.ov-card {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bone);
+}
+.ov-card.active { border: 2px solid var(--coral); }
+.ov-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  pointer-events: none;
+  background: var(--paper);
+}
+.ov-thumb .clone {
+  width: 100vw;
+  height: 100vh;
+  transform: scale(0.18);
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ov-label {
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1080px) {
+  .slide { padding: 56px 48px 64px; }
+  .slide-chrome, .slide-foot { padding: 0 48px; }
+  .layout-left .slide-inner,
+  .layout-right .slide-inner { grid-template-columns: 1fr; gap: 34px; }
+  .layout-right .copy,
+  .layout-right .plate-wrap { order: initial; }
+  .plate { min-height: 320px; }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  html, body { overflow: auto; }
+  #deck { position: static; display: block; height: auto; transition: none; }
+  .slide { width: 100%; height: auto; min-height: 100vh; padding: 46px 24px 70px; }
+  .slide-chrome, .slide-foot { padding: 0 24px; font-size: 9px; letter-spacing: 0.12em; }
+  h1 { font-size: 42px; }
+  h2 { font-size: 36px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .matrix { grid-template-columns: 1fr; }
+  .matrix div { border-right: 0; }
+  #nav, #hint { display: none; }
+}
+</style>
+</head>
+<body>
+<div id="deck">
+  <section class="slide layout-left active" data-slide-kind="cover">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Ocena</b> · Eksperyment A/B/C</span></div><div class="right"><span class="coral">•</span><span>01 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Projekt badawczy · przycisk w e-commerce</span>
+        <h1>Krytyczna <em>ocena</em> eksperymentu<span class="dot">.</span></h1>
+        <p class="lead">Oceniamy projekt testu przycisku „Dodaj do koszyka” / „Kup teraz”. Werdykt: pomysł jest dobry, ale eksperyment w tej formie nie daje czystej odpowiedzi.</p>
+        <span class="ribbon bad">Główny problem: kilka zmian naraz</span>
+        <div class="meta">Prezentacja oceniająca · wersja z cytatami z oryginału</div>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginalny fragment</div>
+          <div class="source-text">
+            <strong>Scenariusz:</strong> sklep internetowy.
+            <span class="quote">„Obecnie przycisk ma neutralny, szary kolor z napisem 'Dodaj do koszyka'. Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Strzałki / scroll / ESC</span><span class="counter">01 / 10</span></div>
+  </section>
+
+  <section class="slide layout-right" data-slide-kind="evidence">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Oryginał</b> · warianty</span></div><div class="right"><span class="coral">•</span><span>02 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Co dokładnie testują?</span>
+        <h2>Trzy wersje <em>tego samego</em> miejsca<span class="dot">.</span></h2>
+        <p class="body">Na papierze to eksperyment A/B/C. Problem zaczyna się później: warianty różnią się nie jednym detalem, tylko kilkoma elementami jednocześnie.</p>
+        <span class="ribbon fix">To będzie ważne przy interpretacji wyniku</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginalne grupy</div>
+          <div class="button-row">
+            <div class="button-spec"><div class="mini-button btn-a">A</div><div><strong>Grupa kontrolna</strong><br><span>Szary przycisk z tekstem „Dodaj do koszyka”.</span></div></div>
+            <div class="button-spec"><div class="mini-button btn-b">B</div><div><strong>Eksperymentalna 1</strong><br><span>Duży, zielony przycisk z tekstem „Dodaj do koszyka”.</span></div></div>
+            <div class="button-spec"><div class="mini-button btn-c">C</div><div><strong>Eksperymentalna 2</strong><br><span>Duży, pomarańczowy przycisk z tekstem „Kup teraz”.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Źródło: opis eksperymentu</span><span class="counter">02 / 10</span></div>
+  </section>
+
+  <section class="slide layout-full" data-slide-kind="good">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Ocena</b> · co jest OK</span></div><div class="right"><span class="coral">•</span><span>03 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Elementy zaprojektowane prawidłowo</span>
+        <h2 class="ok-title">Najpierw: są mocne strony<span class="dot">.</span></h2>
+      </div>
+      <div class="grid-2">
+        <div class="tile ok"><span class="sign">✓</span><strong>Jest grupa kontrolna</strong><span>Wariant A pozwala porównać nowe przyciski z obecną wersją.</span></div>
+        <div class="tile ok"><span class="sign">✓</span><strong>Stały przydział użytkownika</strong><span>Autorzy chcą, aby użytkownik po powrocie widział ten sam wariant.</span></div>
+        <div class="tile ok"><span class="sign">✓</span><strong>Randomizacja ma sens</strong><span>Hash ID / cookie i modulo 3 to prosty, technicznie wykonalny sposób podziału.</span></div>
+        <div class="tile ok"><span class="sign">✓</span><strong>Analiza statystyczna jest zauważona</strong><span>Chi-kwadrat i poprawka Bonferroniego są dobrym kierunkiem.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Zielone = zaprojektowane dobrze</span><span class="counter">03 / 10</span></div>
+  </section>
+
+  <section class="slide layout-left" data-slide-kind="critical">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Błąd</b> · interpretacja</span></div><div class="right"><span class="coral">•</span><span>04 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Błąd bezwzględny</span>
+        <h2>Zmieniają <em>kilka rzeczy</em> naraz<span class="dot">.</span></h2>
+        <p class="lead">To jest najpoważniejsza wada projektu. Jeśli wariant C wygra, nie wiadomo, co zadziałało: kolor, rozmiar, tekst czy sama ścieżka „Kup teraz”.</p>
+        <span class="ribbon bad">Wynik będzie trudny do wyjaśnienia</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Macierz zmian</div>
+          <div class="matrix">
+            <div class="head">Element</div><div class="head">A</div><div class="head">B</div><div class="head">C</div>
+            <div>Kolor</div><div class="okcell">szary</div><div class="badcell">zielony</div><div class="badcell">pomarańczowy</div>
+            <div>Rozmiar</div><div class="okcell">standard</div><div class="badcell">duży</div><div class="badcell">duży</div>
+            <div>Tekst</div><div class="okcell">Dodaj do koszyka</div><div class="okcell">Dodaj do koszyka</div><div class="badcell">Kup teraz</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Czerwone = element zaburzający czysty test</span><span class="counter">04 / 10</span></div>
+  </section>
+
+  <section class="slide layout-right" data-slide-kind="metric">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Błąd</b> · metryka</span></div><div class="right"><span class="coral">•</span><span>05 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Cel nie zgadza się z pomiarem</span>
+        <h2>Sprzedaż to nie to samo co <em>koszyk</em><span class="dot">.</span></h2>
+        <p class="lead">Autorzy mówią o sprzedaży, ale jako konwersję opisują kliknięcie i dodanie produktu do koszyka. To etap pośredni, nie finalny zakup.</p>
+        <span class="ribbon bad">Metryka główna wymaga poprawy</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginalne sformułowania</div>
+          <div class="source-text">
+            <strong>Cel:</strong>
+            <span class="quote">„Chcemy przetestować, czy zmiana jego wyglądu zwiększy sprzedaż.”</span>
+            <strong style="display:block; margin-top:18px;">Zmienna zależna:</strong>
+            <span class="quote">„stosunek liczby użytkowników, którzy kliknęli przycisk i dodali produkt do koszyka...”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Dodanie do koszyka może zostać metryką pomocniczą</span><span class="counter">05 / 10</span></div>
+  </section>
+
+  <section class="slide layout-left" data-slide-kind="randomization">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Ocena</b> · randomizacja</span></div><div class="right"><span class="coral">•</span><span>06 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Randomizacja</span>
+        <h2>Prawie dobrze, ale trzeba dopiąć <em>dane</em><span class="dot">.</span></h2>
+        <p class="body">Sam pomysł z hashowaniem jest dobry. Przed startem trzeba jednak sprawdzić, czy grupy faktycznie są równe oraz jak traktować użytkowników bez konta.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Ocena randomizacji</div>
+          <div class="grid-2">
+            <div class="tile ok"><span class="sign">✓</span><strong>Stały wariant</strong><span>Dobry pomysł: użytkownik nie miesza wersji po odświeżeniu strony.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Cookies są kruche</strong><span>Gość może zmienić urządzenie, przeglądarkę albo usunąć cookies.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Brak kontroli balansu</strong><span>Trzeba sprawdzić, czy A/B/C mają podobne liczebności.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Boty i pracownicy</strong><span>Ruch testowy powinien zostać wykluczony z analizy.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Technicznie wykonalne, metodologicznie niedomknięte</span><span class="counter">06 / 10</span></div>
+  </section>
+
+  <section class="slide layout-right" data-slide-kind="analysis">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Ocena</b> · analiza</span></div><div class="right"><span class="coral">•</span><span>07 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Analiza wyników</span>
+        <h2>Statystyka jest, ale plan jest <em>niepełny</em><span class="dot">.</span></h2>
+        <p class="lead">Chi-kwadrat i Bonferroni to plus. Brakuje jednak liczebności próby, minimalnego efektu i jasnej zasady zakończenia testu.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Oryginał + ocena</div>
+          <div class="source-list">
+            <span><strong>✓ Oryginał:</strong> test Chi-kwadrat dla wielu proporcji, poziom istotności 0.05.</span>
+            <span><strong>✓ Oryginał:</strong> porównania parami A-B, A-C, B-C z poprawką Bonferroniego.</span>
+            <span><strong>! Brak:</strong> minimalna liczba użytkowników w grupie.</span>
+            <span><strong>! Brak:</strong> próg sukcesu, np. wzrost zakupów o 10%.</span>
+            <span><strong>! Brak:</strong> reguła, kiedy test wolno zakończyć.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Analiza dobra kierunkowo, za mało kompletna</span><span class="counter">07 / 10</span></div>
+  </section>
+
+  <section class="slide layout-full" data-slide-kind="must-fix">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Lista</b> · bezwzględne poprawki</span></div><div class="right"><span class="coral">•</span><span>08 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Przed realizacją badania</span>
+        <h2>Co trzeba poprawić <em>koniecznie</em><span class="dot">.</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="tile bad"><span class="sign">1</span><strong>Rozdzielić zmiany</strong><span>Nie testować naraz koloru, rozmiaru i tekstu.</span></div>
+        <div class="tile bad"><span class="sign">2</span><strong>Poprawić metrykę</strong><span>Jeśli celem jest sprzedaż, główną metryką ma być zakup.</span></div>
+        <div class="tile bad"><span class="sign">3</span><strong>Ustalić próbę</strong><span>Określić minimalną liczbę użytkowników na grupę.</span></div>
+        <div class="tile bad"><span class="sign">4</span><strong>Ustalić sukces</strong><span>Wpisać minimalny praktyczny efekt, nie tylko p &lt; 0.05.</span></div>
+        <div class="tile bad"><span class="sign">5</span><strong>Ujednolicić ścieżkę</strong><span>„Kup teraz” nie może zmieniać procesu zakupu, jeśli testujemy tylko tekst.</span></div>
+        <div class="tile bad"><span class="sign">6</span><strong>Wyczyścić dane</strong><span>Wykluczyć boty, pracowników i wejścia techniczne.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>To jest rdzeń krytycznej oceny</span><span class="counter">08 / 10</span></div>
+  </section>
+
+  <section class="slide layout-left" data-slide-kind="fix">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Poprawka</b> · wersja lepsza</span></div><div class="right"><span class="coral">•</span><span>09 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Jak zaprojektować to lepiej?</span>
+        <h2>Jedna zmiana na raz<span class="dot">.</span></h2>
+        <p class="lead">Wtedy wynik mówi, co faktycznie działa. Bez tego eksperyment może wskazać zwycięzcę, ale nie wyjaśni powodu zwycięstwa.</p>
+        <span class="ribbon fix">Lepszy plan = czystsze wnioski</span>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate">
+          <div class="plate-label">Proponowany plan</div>
+          <div class="grid-3">
+            <div class="tile fix"><span class="sign">1</span><strong>Test koloru</strong><span>Ten sam rozmiar i tekst, zmienia się tylko kolor.</span></div>
+            <div class="tile fix"><span class="sign">2</span><strong>Test tekstu</strong><span>Ten sam kolor i rozmiar, zmienia się tylko napis.</span></div>
+            <div class="tile fix"><span class="sign">3</span><strong>Test ścieżki</strong><span>Osobno sprawdzić „Kup teraz”, jeśli prowadzi do innego procesu.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Prosty, ale metodologicznie czystszy wariant</span><span class="counter">09 / 10</span></div>
+  </section>
+
+  <section class="slide layout-full" data-slide-kind="verdict">
+    <div class="slide-chrome"><div class="left"><span class="mark">O</span><span><b>Werdykt</b> · podsumowanie</span></div><div class="right"><span class="coral">•</span><span>10 / 10</span></div></div>
+    <div class="slide-inner">
+      <div class="copy">
+        <span class="eyebrow">Ocena końcowa</span>
+        <h2>Dobry szkic, ale <em>niegotowy</em> eksperyment<span class="dot">.</span></h2>
+      </div>
+      <div class="big-verdict">
+        <div class="score">6/10</div>
+        <div class="copy">
+          <p class="lead">Projekt ma sensowny temat, grupę kontrolną, randomizację i dobry kierunek analizy. Nie powinien jednak ruszyć bez poprawek.</p>
+          <div class="grid-2">
+            <div class="tile ok"><span class="sign">✓</span><strong>Największy plus</strong><span>Autorzy rozumieją ideę testu A/B/C i potrzebę statystyki.</span></div>
+            <div class="tile bad"><span class="sign">!</span><strong>Największy minus</strong><span>Mieszają kilka zmian naraz i mylą sprzedaż z dodaniem do koszyka.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Koniec · ESC pokazuje przegląd slajdów</span><span class="counter">10 / 10</span></div>
+  </section>
+</div>
+
+<div id="nav" aria-label="Nawigacja slajdów"></div>
+<div id="hint">← / → · wheel · ESC</div>
+<div class="deck-progress"><div class="bar"></div></div>
+
+<script>
+(function () {
+  var deck = document.getElementById("deck");
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var nav = document.getElementById("nav");
+  var bar = document.querySelector(".deck-progress .bar");
+  var total = slides.length;
+  var idx = 0;
+  var lock = false;
+
+  slides.forEach(function (_, i) {
+    var b = document.createElement("button");
+    b.className = "dot";
+    b.setAttribute("aria-label", "Slajd " + (i + 1));
+    b.onclick = function () { go(i); };
+    nav.appendChild(b);
+  });
+
+  function applySlide(n) {
+    idx = Math.max(0, Math.min(total - 1, n));
+    deck.style.transform = "translateX(" + (-idx * 100) + "vw)";
+    slides.forEach(function (s, i) { s.classList.toggle("active", i === idx); });
+    nav.querySelectorAll(".dot").forEach(function (d, i) { d.classList.toggle("active", i === idx); });
+    bar.style.width = (((idx + 1) / total) * 100) + "%";
+  }
+
+  function go(n) {
+    if (lock) return;
+    applySlide(n);
+    lock = true;
+    setTimeout(function () { lock = false; }, 650);
+  }
+
+  var overviewOn = false;
+  var ov = document.createElement("div");
+  ov.id = "overview";
+  document.body.appendChild(ov);
+
+  function buildOverview() {
+    ov.innerHTML = "";
+    var head = document.createElement("div");
+    head.className = "ov-head";
+    head.innerHTML = "<span><b>Przegląd slajdów</b> · ESC zamyka</span><span>" +
+      String(idx + 1).padStart(2, "0") + " / " + String(total).padStart(2, "0") + "</span>";
+    ov.appendChild(head);
+    var grid = document.createElement("div");
+    grid.className = "ov-grid";
+    slides.forEach(function (s, i) {
+      var card = document.createElement("div");
+      card.className = "ov-card" + (i === idx ? " active" : "");
+      var thumb = document.createElement("div");
+      thumb.className = "ov-thumb";
+      var clone = s.cloneNode(true);
+      clone.className = clone.className + " clone";
+      clone.style.transform = "scale(0.18)";
+      thumb.appendChild(clone);
+      var label = document.createElement("div");
+      label.className = "ov-label";
+      label.innerHTML = "<b>" + String(i + 1).padStart(2, "0") + "</b><span>" + (s.dataset.slideKind || "") + "</span>";
+      card.appendChild(thumb);
+      card.appendChild(label);
+      card.onclick = function () { toggleOverview(); applySlide(i); };
+      grid.appendChild(card);
+    });
+    ov.appendChild(grid);
+  }
+
+  function toggleOverview() {
+    overviewOn = !overviewOn;
+    if (overviewOn) { buildOverview(); ov.style.display = "block"; }
+    else { ov.style.display = "none"; }
+  }
+
+  addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); toggleOverview(); return; }
+    if (overviewOn) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " " || e.key === "ArrowDown") {
+      e.preventDefault(); go(idx + 1);
+    } else if (e.key === "ArrowLeft" || e.key === "PageUp" || e.key === "ArrowUp") {
+      e.preventDefault(); go(idx - 1);
+    } else if (e.key === "Home") {
+      e.preventDefault(); go(0);
+    } else if (e.key === "End") {
+      e.preventDefault(); go(total - 1);
+    }
+  });
+
+  var wheelTO = null;
+  var wheelAcc = 0;
+  addEventListener("wheel", function (e) {
+    if (overviewOn) return;
+    wheelAcc += e.deltaY + e.deltaX;
+    if (Math.abs(wheelAcc) > 70) {
+      go(idx + (wheelAcc > 0 ? 1 : -1));
+      wheelAcc = 0;
+    }
+    clearTimeout(wheelTO);
+    wheelTO = setTimeout(function () { wheelAcc = 0; }, 150);
+  }, { passive: true });
+
+  var tx = 0;
+  var ty = 0;
+  addEventListener("touchstart", function (e) {
+    tx = e.touches[0].clientX;
+    ty = e.touches[0].clientY;
+  }, { passive: true });
+  addEventListener("touchend", function (e) {
+    if (overviewOn) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    var dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      go(idx + (dx < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+
+  applySlide(0);
+})();
+</script>
+</body>
+</html>

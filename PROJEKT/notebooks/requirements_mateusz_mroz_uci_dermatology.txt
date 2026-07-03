@@ -1,0 +1,23 @@
+# Zależności dla notebooka: mateusz_mroz_uci_dermatology.ipynb
+# UCI Dermatology - klasyfikacja chorób erytemato-łuskowych
+# seed = 42
+#
+# Instalacja:  pip install -r requirements_mateusz_mroz_uci_dermatology.txt
+
+# --- Środowisko uruchomieniowe (kernel do uruchomienia .ipynb w VS Code / Jupyter) ---
+ipykernel==7.2.0
+
+# --- Analiza i przetwarzanie danych ---
+numpy==2.4.2
+pandas==3.0.1
+
+# --- Wizualizacja ---
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# --- Uczenie maszynowe ---
+scikit-learn==1.8.0
+xgboost==3.2.0
+
+# --- Interpretowalność modelu ---
+shap==0.51.0
