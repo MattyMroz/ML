@@ -50,13 +50,15 @@ W ostatnich dekadach opracowano wiele klasycznych i głębokich modeli uczenia m
 |-----|-------|-----|---------|----------|------------------|-------------------|-------|-------|
 | **1.1** | **UCI Dermatology** | tabularny | 366 × 34 cechy | ~110 KB (CSV) | 6 chorób erytemato-łuskowych (łuszczyca, łojotokowe ZS, liszaj płaski, łupież różowy, przewlekłe ZS, łupież rumieniowaty) | [UCI ML Repository](https://archive.ics.uci.edu/dataset/33/dermatology) (CC BY 4.0) | 8 braków w `age` | Mateusz Mróz |
 | 1.2 | ACNE04 (Hayashi grading) | obrazy | 1 457 obrazów | ~1.2 GB (JPG) | 4 klasy (skala nasilenia trądziku Hayashi) | [GitHub xpwu95/LDL](https://github.com/xpwu95/LDL) (research-only) | — | Mateusz Mróz |
-| 1.3 | SD-198 | obrazy | 6 584 obrazów | ~1.3 GB (JPG) | 198 klas chorób skóry (m.in. łuszczyca, trądzik, egzema) | [Sun et al. 2016 (ECCV)](https://link.springer.com/chapter/10.1007/978-3-319-46466-4_13) (research-only) | — | Mateusz Mróz |
+| 1.3 | PAD-UFES-20 | obrazy + metadane | 2 298 obrazów | PNG + CSV | 6 klas zmian skórnych (BCC, SCC, melanoma, actinic keratosis, nevus, seborrheic keratosis) | [Mendeley Data](https://data.mendeley.com/datasets/zr7vgbcyr2/1) (CC BY 4.0) | — | Mateusz Mróz |
 | **2.1** | **DermNet (Kaggle mirror)** | obrazy | 19 500 obrazów | ~1.6 GB | 23 klasy chorób skóry (m.in. trądzik, egzema, łuszczyca) | [Kaggle](https://www.kaggle.com/datasets/shubhamgoel27/dermnet) / [DermNet.com](http://www.dermnet.com/) (CC BY-NC-ND 4.0) | — | Dawid Kośka |
 | 2.2 | Skin Disease Dataset (Autor - Prashant Kumar Mishra) | obrazy | 15 444 obrazów | ~1.47 GB | 22 klasy chorób skóry (m.in. trądzik, egzema, łuszczyca) | [Kaggle](https://www.kaggle.com/datasets/pacificrm/skindiseasedataset) (CC0: Public Domain) | — | Dawid Kośka |
 | 2.3 | Symptom2Disease | tabularny | 1200 punktów danych | 229.85 kB | 24 klas chorób, każda posiada 50 opisów symptomów | [Kaggle](https://www.kaggle.com/datasets/niyarrbarman/symptom2disease) (CC0: Public Domain) | — | Dawid Kośka |
 | **3.1** | **Fitzpatrick17k** | obrazy + metadane | 16 577 obrazów | ~12 GB (JPG + meta) | 114 chorób skóry × 6 typów skóry Fitzpatrick'a | [GitHub mattgroh/fitzpatrick17k](https://github.com/mattgroh/fitzpatrick17k) (CC BY-NC-SA) | — | Wiktor Grzyb |
 | 3.2 | HAM10000 | obrazy + metadane | 10 015 obrazów | ~1.5 GB (JPG + meta) | 7 klas zmian barwnikowych (m.in. czerniak, znamię melanocytarne, BCC) | [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T) (CC BY-NC 4.0) | — | Wiktor Grzyb |
 | 3.3 | SD-198 | obrazy | 6 584 obrazów | ~1.3 GB (JPG) | 198 klas chorób skóry (m.in. łuszczyca, trądzik, egzema) | [Sun et al. 2016 (ECCV)](https://link.springer.com/chapter/10.1007/978-3-319-46466-4_13) (research-only) | — | Wiktor Grzyb |
+
+Zbiór **PAD-UFES-20** nie dubluje zbiorów Dawida ani Wiktora: jest osobnym zbiorem klinicznych zdjęć zmian skórnych ze smartfonów oraz metadanych pacjentów. W pracy osoby 1 nie został wybrany do eksperymentu, ponieważ wymagałby pipeline'u obrazowego/CNN i większych zasobów obliczeniowych, natomiast celem tej części było porównanie klasycznych metod ML na dobrze opisanym zbiorze tabelarycznym.
 
 #### 2.1.1. UCI Dermatology - Mateusz Mróz
 
@@ -515,7 +517,7 @@ ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w s
 
 [1] H. A. Güvenir, G. Demiröz, and N. Ilter, "Learning differential diagnosis of erythemato-squamous diseases using voting feature intervals," *Artificial Intelligence in Medicine*, vol. 13, no. 3, pp. 147–165, 1998. DOI: [10.1016/S0933-3657(98)00028-1](https://doi.org/10.1016/S0933-3657(98)00028-1).
 
-[2] J. Xie and C. Wang, "Using support vector machines with a novel hybrid feature selection method for the diagnosis of erythemato-squamous diseases," *Expert Systems with Applications*, vol. 38, no. 5, pp. 5165–5172, 2011. DOI: [10.1016/j.eswa.2010.10.050](https://doi.org/10.1016/j.eswa.2010.10.050).
+[2] J. Xie and C. Wang, "Using support vector machines with a novel hybrid feature selection method for the diagnosis of erythemato-squamous diseases," *Expert Systems with Applications*, vol. 38, no. 5, pp. 5809–5815, 2011. DOI: [10.1016/j.eswa.2010.10.050](https://doi.org/10.1016/j.eswa.2010.10.050).
 
 [3] M. J. Abdi and D. Giveki, "Automatic detection of erythemato-squamous diseases using PSO–SVM based on association rules," *Engineering Applications of Artificial Intelligence*, vol. 26, no. 1, pp. 603–608, 2013. DOI: [10.1016/j.engappai.2012.01.017](https://doi.org/10.1016/j.engappai.2012.01.017).
 
