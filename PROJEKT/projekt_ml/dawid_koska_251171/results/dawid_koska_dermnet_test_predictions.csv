@@ -1,0 +1,974 @@
+true_label,predicted_label,prob_Acne,prob_Eczema,prob_Psoriasis
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.954304,0.025690788,0.020005226
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9953075,0.004629965,6.25445e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97969806,0.019012995,0.0012888459
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99921906,0.0007799738,9.563964e-07
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.013444199,0.013826536,0.97272927
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.71899056,0.026518278,0.2544912
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7723358,0.13720253,0.09046172
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99448025,0.0022138804,0.0033058731
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9750176,0.024373591,0.00060884457
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8247919,0.06998109,0.105227
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9511606,0.036036137,0.01280325
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7410076,0.08030244,0.17868991
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.55067605,0.18495162,0.26437226
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9986505,1.2921222e-05,0.0013365605
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.96992964,0.026475325,0.003594998
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9300371,0.04244169,0.027521249
+Acne and Rosacea Photos,Eczema Photos,0.3660376,0.39447385,0.23948859
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9732824,0.020470414,0.0062471544
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.020933423,0.012438026,0.9666286
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99459416,0.0053508463,5.4968412e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7090726,0.28084406,0.010083385
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97238696,0.026859654,0.000753483
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9960877,0.0036159845,0.00029633328
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9989937,0.0009905144,1.5874777e-05
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.02140098,0.072486825,0.9061122
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8897891,0.046876818,0.063333966
+Acne and Rosacea Photos,Eczema Photos,0.043996982,0.89252454,0.063478515
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9994399,0.00056011626,5.5848133e-08
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.96053153,0.025858039,0.013610423
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99881244,0.0011753031,1.226815e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9474833,0.051395938,0.0011208112
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9810083,0.009566287,0.009425401
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8193389,0.010645781,0.1700153
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97837,0.018394189,0.0032358556
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9168976,0.059983224,0.023119181
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9962179,0.002459029,0.0013231257
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9662831,0.03358455,0.00013231035
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9891663,0.005443962,0.0053898413
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9923229,0.0028333166,0.0048437514
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.969197,0.030107336,0.0006957538
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8591565,0.14072518,0.000118414195
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9771921,0.007007474,0.015800443
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.79877985,0.013239346,0.18798077
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9299376,0.053141125,0.016921222
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98335844,0.014320727,0.0023208398
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99538416,0.0040631387,0.000552655
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.92181593,0.057395436,0.020788623
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97263765,0.02724709,0.000115223345
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99986744,7.717716e-05,5.5401215e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5991781,0.20545068,0.19537129
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9994628,0.0005359569,1.288427e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.80117965,0.19041733,0.008402972
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.93662107,0.060583487,0.0027954138
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9949831,0.0033781945,0.00163876
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9411502,0.04843411,0.0104157245
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8646387,0.08193734,0.05342395
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5327831,0.014396363,0.45282057
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99939835,0.0002076162,0.00039399308
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9260688,0.07223311,0.0016980744
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.956398,0.03242959,0.011172492
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99883133,0.0005276853,0.00064097496
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9990595,1.1383107e-06,0.00093929324
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.96594876,0.03395819,9.308433e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9971079,0.0028735006,1.8595756e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7710057,0.022973787,0.20602055
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5409095,0.4113947,0.04769577
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9859449,0.009724447,0.004330595
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.73742175,0.041979134,0.22059919
+Acne and Rosacea Photos,Eczema Photos,0.10946515,0.84436834,0.046166435
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99472153,0.005263095,1.5367725e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9574016,0.041643158,0.0009553019
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.73384136,0.19967788,0.06648075
+Acne and Rosacea Photos,Eczema Photos,0.35544094,0.40702626,0.23753282
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8324843,0.0023448323,0.16517082
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99634016,0.0036310744,2.8721066e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.96700555,0.023273293,0.009721068
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9842509,0.007514583,0.0082344515
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.975627,0.0040558707,0.020317083
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.6728236,0.3263341,0.0008422395
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8792064,0.11855273,0.002240793
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9977719,0.0013343432,0.0008937284
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9428027,0.0018000347,0.055397205
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.022803912,0.0023646737,0.97483146
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8308224,0.0156738,0.15350382
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.78453624,0.18503875,0.030425081
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9703855,0.016780633,0.01283383
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9596047,0.02543519,0.014960029
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99885654,0.0011111326,3.2238207e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99938476,0.0005290134,8.625527e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99699676,0.0013705351,0.0016326234
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9441512,0.025948497,0.029900277
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.80557483,0.19272383,0.0017013139
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9812289,0.001174213,0.017596936
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9105172,0.0014347543,0.08804803
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98355836,0.000753233,0.015688442
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9867387,0.003366579,0.009894743
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9755914,0.0030888068,0.021319807
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9990325,0.0002407256,0.0007268646
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9962992,0.0034261195,0.00027466967
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99911493,0.0002938346,0.00059124053
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.93166333,0.0151392855,0.053197313
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7525574,0.2415593,0.0058833007
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.913167,0.0508841,0.035948787
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.89071465,0.05397126,0.055314012
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98207736,0.009995978,0.007926655
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99023646,0.006606337,0.0031572708
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9873563,0.008735003,0.0039086444
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99898607,0.0009801942,3.3743876e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.6395954,0.2174771,0.14292754
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99474806,0.005228346,2.3607536e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9349895,0.00097301474,0.0640375
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8284401,0.16689079,0.0046691396
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9881245,0.009494643,0.0023808505
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.87366444,0.016843494,0.10949212
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9885638,0.00035852127,0.011077799
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9399028,0.052329995,0.0077672494
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9195373,0.0069451965,0.0735174
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99999964,3.0081287e-07,1.13984155e-08
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.93350774,0.05334805,0.0131441755
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99998415,1.4504344e-05,1.3468914e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9996524,0.00021816076,0.00012947434
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9413869,0.02830532,0.030307762
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.95518756,0.039875988,0.004936528
+Acne and Rosacea Photos,Eczema Photos,0.09936369,0.5271339,0.3735024
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.84204936,0.09591256,0.06203798
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.0009293123,0.09845462,0.90061605
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.92550224,0.07129969,0.003198081
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9986657,0.0006208184,0.00071341364
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5802731,0.4101863,0.0095406175
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9963498,0.0035769853,7.3154195e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9264362,0.014493177,0.059070695
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99313885,0.006838559,2.2585416e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.84949243,0.11864576,0.031861786
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.91313165,0.08623293,0.0006354601
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98519796,0.008746268,0.0060558068
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9978974,0.0020077145,9.489349e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.89982337,0.036383525,0.06379309
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9868383,0.009799685,0.0033620528
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.6667477,0.31601328,0.017239045
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99740344,0.002151177,0.00044538328
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.64152175,0.22832069,0.13015763
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9999851,1.3315241e-05,1.5143335e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9974607,0.0007086146,0.0018306295
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97140265,0.0204405,0.008156855
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9991665,0.0008206731,1.286186e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5391674,0.024796601,0.43603593
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99929714,0.0006608488,4.191992e-05
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.34116563,0.30276546,0.35606894
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9960223,0.003886212,9.1575246e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9996308,0.0002118112,0.0001574436
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9772321,0.012320363,0.010447505
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9923664,0.007574734,5.8883066e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99910945,0.00086268684,2.7894986e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9969265,0.0026340652,0.0004395299
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9890865,0.01039072,0.00052274833
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.971067,0.028215032,0.0007179854
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9980088,0.0018690717,0.00012221631
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.871507,0.061825253,0.066667706
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99955183,0.00033375507,0.00011439432
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9995339,8.4521176e-05,0.00038162954
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9960414,0.00063234643,0.0033262148
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9999585,4.0848754e-05,6.553292e-07
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98076355,0.008511555,0.010724849
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97867554,0.01782463,0.0034997931
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9946026,0.00095636037,0.004440957
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7303454,0.006840898,0.26281372
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8555294,0.04102165,0.10344889
+Acne and Rosacea Photos,Eczema Photos,0.14092693,0.7971157,0.061957356
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9718237,0.021528447,0.006647809
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.93563557,0.05984011,0.0045243814
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99047977,0.006264366,0.0032559147
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99765044,0.0021183991,0.00023124568
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99885976,0.00030857432,0.0008317082
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.94065976,0.054935608,0.004404673
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8751842,0.12418699,0.00062881573
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9945687,0.003913343,0.0015179707
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7759049,0.05143979,0.17265537
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9978683,0.0006701636,0.001461429
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9749297,0.02425566,0.0008146537
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7951819,0.20112164,0.0036964475
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9873885,0.0065955594,0.0060159694
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7367156,0.21761914,0.045665212
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97641164,0.022533448,0.0010549459
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9957814,0.0041999193,1.85814e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7417404,0.23964198,0.018617552
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.93434817,0.06514355,0.00050823437
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5762629,0.005095823,0.4186414
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9862976,0.012349578,0.0013527715
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9979284,0.0020576473,1.39187805e-05
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.2940732,0.2934693,0.41245756
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9211549,0.0774417,0.0014034158
+Acne and Rosacea Photos,Eczema Photos,0.13228615,0.86145025,0.0062635117
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.0035118333,0.26200843,0.7344798
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.95231766,0.02096065,0.02672174
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9962985,0.0026589807,0.0010425416
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.90777546,0.09119739,0.0010271401
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9224851,0.06453997,0.012974859
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9997708,0.00021331166,1.580677e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98768264,0.009464434,0.0028528061
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9746844,0.019361774,0.0059537976
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9997725,0.00022249117,5.052797e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9646752,0.03332663,0.0019982345
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.96329194,0.032470517,0.0042376053
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.932491,0.029527767,0.037981234
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.585975,0.35047132,0.06355371
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9452816,0.018775411,0.035942912
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9949831,0.0033781945,0.00163876
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99787235,0.001534666,0.00059294107
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.75092834,0.24226883,0.006802782
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9968039,0.0021400824,0.0010560761
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.6004221,0.38476065,0.014817277
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99912125,0.0005513193,0.00032738305
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9981882,0.0015975458,0.00021424476
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99652016,0.003061264,0.0004186178
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99930096,0.0006985495,4.242996e-07
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99939775,0.0005964854,5.673978e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.5480026,0.20771918,0.24427824
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9835759,0.008826989,0.007597086
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9750224,0.0062238043,0.018753808
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.6941666,0.01824966,0.28758368
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.12666266,0.008132461,0.86520493
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98924994,0.009415114,0.0013349798
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.15700218,0.001044382,0.84195346
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9696079,0.022802504,0.0075895814
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99984956,7.533057e-05,7.5120304e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99975306,0.00024489057,2.0647315e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7019166,0.12650819,0.17157525
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9999317,3.3653476e-05,3.4713274e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97897935,0.01870991,0.0023107007
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9658233,0.034120828,5.5871016e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9996125,0.00035865634,2.8863198e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.67756736,0.1157282,0.20670444
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99993706,2.3459781e-05,3.9472816e-05
+Acne and Rosacea Photos,Eczema Photos,0.456221,0.53863865,0.005140375
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99629444,0.0031527737,0.0005527354
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.95126987,0.0468767,0.0018534167
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9844446,0.0150745325,0.00048091213
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9994118,0.0005124071,7.5809825e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9999763,2.359533e-05,1.3417481e-07
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9567813,0.042832855,0.0003858396
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99515,0.002870017,0.0019799273
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99996626,2.9243756e-05,4.5773204e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9639562,0.03279315,0.0032506725
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.59325075,0.39122272,0.015526609
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99857986,0.00089992385,0.00052018
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99983907,0.000108610904,5.2307412e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9960376,0.0036805149,0.00028188742
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8620985,0.014666257,0.123235285
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9766449,0.017384974,0.005970218
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9994067,0.00054674124,4.65421e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99793965,0.002058323,2.00241e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99224466,0.006172078,0.0015832896
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9818802,0.0049054483,0.013214355
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99881494,3.6467002e-06,0.0011814205
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9687552,0.022915848,0.008329016
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7609853,0.05942819,0.1795865
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.43198642,0.008680703,0.5593329
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99659973,0.0008742728,0.0025260686
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9951438,0.0046540117,0.00020224079
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9980921,0.0013598143,0.0005480266
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.72934157,0.21885903,0.05179938
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.7759049,0.05143979,0.17265537
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9993067,0.000578466,0.000114782575
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98478967,0.015018282,0.00019201
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9252352,0.0057334327,0.06903133
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98681426,0.010876557,0.0023091952
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9912578,0.0031870448,0.0055551515
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9602694,0.033984404,0.005746251
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9303874,0.0632907,0.00632195
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99937695,0.0006117277,1.1305781e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99890184,0.0010974965,6.159339e-07
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9673962,0.020814719,0.011789057
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.995843,0.0009376063,0.0032194552
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9860284,0.0102091255,0.0037624566
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.82709473,0.16588706,0.007018277
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99546826,0.0001641503,0.004367661
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99341315,0.005299385,0.0012875112
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99837226,0.0013424902,0.00028531277
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.14201905,0.0059722275,0.85200876
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99911743,0.0008735645,9.052889e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97994494,0.01986784,0.0001872316
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9987562,0.00048161807,0.00076217146
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9909957,0.0010515972,0.007952613
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.80722845,0.0027533523,0.19001822
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99977857,0.000103941675,0.00011754222
+Acne and Rosacea Photos,Eczema Photos,0.254089,0.70235085,0.04356016
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.933477,0.03228488,0.034238163
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.02731771,0.0038650248,0.9688173
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99775094,0.0022470641,2.0393945e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9950004,0.0049957237,3.8113276e-06
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9964761,0.0020417902,0.0014821001
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98408866,0.002222856,0.013688455
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9004344,0.0750589,0.02450674
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.89703536,0.08272793,0.020236721
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98991257,0.0056365365,0.0044508227
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98219407,0.014372955,0.003433008
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.999086,0.00067339366,0.00024055604
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.8782165,0.12165377,0.00012971216
+Acne and Rosacea Photos,Psoriasis pictures Lichen Planus and related diseases,0.14227428,0.04378756,0.8139382
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9784566,0.01934486,0.002198572
+Acne and Rosacea Photos,Eczema Photos,0.3794441,0.5249374,0.0956185
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9985073,0.0009518527,0.00054071116
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.88518894,0.11421075,0.00060036447
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.99636817,0.0030785992,0.0005532484
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9855752,0.0024605729,0.011964202
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9993117,0.0004556043,0.00023265467
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.97996885,0.017581925,0.0024492189
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.98313254,0.008282355,0.008585176
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9825156,0.017420413,6.392417e-05
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.974772,0.017229779,0.007998169
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9918385,0.0066269184,0.0015345677
+Acne and Rosacea Photos,Acne and Rosacea Photos,0.9988399,0.0011337579,2.6286589e-05
+Eczema Photos,Eczema Photos,5.4237864e-07,0.999548,0.00045135853
+Eczema Photos,Eczema Photos,6.877175e-05,0.9994234,0.0005079531
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.083931096,0.24293768,0.67313117
+Eczema Photos,Acne and Rosacea Photos,0.974819,0.0072994204,0.017881582
+Eczema Photos,Eczema Photos,0.122598164,0.8159213,0.061480492
+Eczema Photos,Eczema Photos,1.4514845e-05,0.9950819,0.0049036965
+Eczema Photos,Eczema Photos,0.00025885002,0.9861187,0.013622401
+Eczema Photos,Eczema Photos,0.00022232321,0.97026676,0.029510997
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.006280251,0.3376366,0.6560831
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.024426699,0.44075397,0.5348194
+Eczema Photos,Eczema Photos,2.9034204e-06,0.9859747,0.014022281
+Eczema Photos,Eczema Photos,7.5740895e-06,0.99134666,0.008645734
+Eczema Photos,Eczema Photos,9.641062e-06,0.98723453,0.012755791
+Eczema Photos,Eczema Photos,0.10111728,0.8766418,0.02224095
+Eczema Photos,Eczema Photos,1.513484e-09,0.99968505,0.0003149447
+Eczema Photos,Eczema Photos,0.023697201,0.8902445,0.08605834
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0040331264,0.47084197,0.5251249
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0031625652,0.13005856,0.8667789
+Eczema Photos,Eczema Photos,0.050720237,0.78087795,0.16840182
+Eczema Photos,Eczema Photos,0.004626287,0.93482006,0.06055358
+Eczema Photos,Eczema Photos,0.000105849635,0.9902451,0.0096489675
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.2975365,0.29702514,0.40543836
+Eczema Photos,Eczema Photos,5.7336296e-05,0.9964425,0.0035000877
+Eczema Photos,Eczema Photos,5.3165822e-05,0.760928,0.23901881
+Eczema Photos,Eczema Photos,3.8704693e-06,0.9881711,0.011825009
+Eczema Photos,Eczema Photos,0.0028724284,0.8488466,0.14828093
+Eczema Photos,Eczema Photos,1.0014178e-05,0.98854035,0.01144968
+Eczema Photos,Eczema Photos,0.00754664,0.97748,0.014973389
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.000115942195,0.333795,0.66608906
+Eczema Photos,Eczema Photos,0.38294277,0.59279805,0.024259131
+Eczema Photos,Eczema Photos,1.2830167e-05,0.97211736,0.027869776
+Eczema Photos,Eczema Photos,2.3125274e-05,0.9944166,0.0055603227
+Eczema Photos,Eczema Photos,9.395966e-07,0.9923883,0.0076107406
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.06322049,0.15951313,0.7772663
+Eczema Photos,Eczema Photos,1.970845e-05,0.9722253,0.02775499
+Eczema Photos,Eczema Photos,0.00014309978,0.82635826,0.17349862
+Eczema Photos,Eczema Photos,4.709704e-05,0.96352327,0.036429595
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.00039580392,0.027297962,0.97230625
+Eczema Photos,Eczema Photos,0.0042066816,0.92936474,0.06642858
+Eczema Photos,Eczema Photos,9.1477035e-05,0.9970372,0.0028712682
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.07497064,0.3107234,0.6143059
+Eczema Photos,Eczema Photos,0.008068028,0.98426545,0.00766653
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.007999165,0.01096684,0.98103404
+Eczema Photos,Eczema Photos,0.115588605,0.81389046,0.070520915
+Eczema Photos,Eczema Photos,0.0015504275,0.6929225,0.30552712
+Eczema Photos,Eczema Photos,0.00013387798,0.7900882,0.20977803
+Eczema Photos,Eczema Photos,0.24002874,0.6030317,0.15693958
+Eczema Photos,Eczema Photos,0.002408858,0.9656245,0.031966683
+Eczema Photos,Eczema Photos,0.00047046065,0.97619176,0.023337735
+Eczema Photos,Eczema Photos,0.0023888687,0.93087304,0.0667381
+Eczema Photos,Eczema Photos,8.9034404e-07,0.9999598,3.9370552e-05
+Eczema Photos,Eczema Photos,0.0007661452,0.99663603,0.0025976992
+Eczema Photos,Eczema Photos,7.199915e-05,0.9738477,0.02608038
+Eczema Photos,Eczema Photos,3.976764e-05,0.99917334,0.0007868811
+Eczema Photos,Eczema Photos,0.002881196,0.9578911,0.039227612
+Eczema Photos,Eczema Photos,6.7931585e-05,0.94546384,0.054468244
+Eczema Photos,Eczema Photos,2.5825948e-05,0.9039228,0.096051365
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0670775,0.05639936,0.87652314
+Eczema Photos,Eczema Photos,0.0018280384,0.9158997,0.08227229
+Eczema Photos,Eczema Photos,0.00025460433,0.72740644,0.27233905
+Eczema Photos,Eczema Photos,0.014800913,0.7509611,0.234238
+Eczema Photos,Eczema Photos,0.00020629007,0.9469884,0.05280531
+Eczema Photos,Eczema Photos,0.0060391515,0.9903532,0.0036074868
+Eczema Photos,Eczema Photos,0.01728854,0.9323482,0.05036326
+Eczema Photos,Eczema Photos,6.990909e-07,0.9867972,0.013202072
+Eczema Photos,Eczema Photos,1.44997175e-05,0.9852637,0.014721906
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.023199985,0.39339072,0.5834093
+Eczema Photos,Eczema Photos,0.0066658203,0.7664455,0.22688876
+Eczema Photos,Eczema Photos,0.0014679118,0.59065413,0.40787795
+Eczema Photos,Eczema Photos,0.015672585,0.7587663,0.2255611
+Eczema Photos,Eczema Photos,0.0009766943,0.9237334,0.075289816
+Eczema Photos,Eczema Photos,3.2490327e-05,0.99780506,0.0021624204
+Eczema Photos,Eczema Photos,0.00086848857,0.6443755,0.35475597
+Eczema Photos,Eczema Photos,0.0005846845,0.99697745,0.0024378682
+Eczema Photos,Eczema Photos,0.0043091276,0.7867067,0.2089842
+Eczema Photos,Eczema Photos,0.20419693,0.7709233,0.024879728
+Eczema Photos,Eczema Photos,9.648402e-05,0.74668586,0.2532176
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.020982778,0.21326792,0.76574934
+Eczema Photos,Eczema Photos,0.010980093,0.64759666,0.3414233
+Eczema Photos,Eczema Photos,0.00015456711,0.9916174,0.008227954
+Eczema Photos,Eczema Photos,0.014694806,0.9317349,0.053570338
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.00085506786,0.40780067,0.5913443
+Eczema Photos,Eczema Photos,0.00201648,0.98375493,0.014228575
+Eczema Photos,Acne and Rosacea Photos,0.81358415,0.1768115,0.009604455
+Eczema Photos,Eczema Photos,0.004735425,0.97592235,0.019342206
+Eczema Photos,Acne and Rosacea Photos,0.8427727,0.013351499,0.14387584
+Eczema Photos,Eczema Photos,4.6545728e-07,0.9779233,0.022076298
+Eczema Photos,Eczema Photos,5.9390833e-05,0.98385,0.01609072
+Eczema Photos,Eczema Photos,0.00982111,0.9644232,0.025755662
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.031618603,0.4471168,0.5212646
+Eczema Photos,Eczema Photos,5.4790857e-05,0.89132947,0.10861572
+Eczema Photos,Eczema Photos,6.0141238e-06,0.94155717,0.058436718
+Eczema Photos,Eczema Photos,8.128557e-05,0.9821515,0.017767191
+Eczema Photos,Eczema Photos,7.1415816e-05,0.9997093,0.00021924337
+Eczema Photos,Eczema Photos,6.0521534e-06,0.9990804,0.0009134555
+Eczema Photos,Eczema Photos,0.00013071114,0.9941923,0.005676943
+Eczema Photos,Eczema Photos,6.961432e-05,0.8072624,0.19266795
+Eczema Photos,Eczema Photos,0.00061504095,0.98939264,0.009992245
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.23568127,0.3777165,0.38660222
+Eczema Photos,Eczema Photos,0.0042748107,0.62044215,0.37528306
+Eczema Photos,Eczema Photos,3.1894315e-06,0.9976809,0.002315893
+Eczema Photos,Eczema Photos,3.5028404e-07,0.9998679,0.00013165885
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0018335625,0.07810238,0.9200641
+Eczema Photos,Eczema Photos,4.4837893e-07,0.99960333,0.00039619562
+Eczema Photos,Eczema Photos,0.0006695679,0.97826046,0.021069925
+Eczema Photos,Eczema Photos,1.0578891e-06,0.9996704,0.00032859895
+Eczema Photos,Eczema Photos,6.559672e-08,0.9939089,0.0060909702
+Eczema Photos,Eczema Photos,0.00205583,0.92860407,0.069340184
+Eczema Photos,Eczema Photos,8.252842e-07,0.9996165,0.0003826394
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0009464299,0.3025034,0.6965502
+Eczema Photos,Eczema Photos,0.023450632,0.90442306,0.0721263
+Eczema Photos,Eczema Photos,2.3125274e-05,0.9944166,0.0055603227
+Eczema Photos,Eczema Photos,0.0047021983,0.92110515,0.07419268
+Eczema Photos,Eczema Photos,0.07071679,0.6691718,0.2601114
+Eczema Photos,Eczema Photos,0.00039528034,0.9683663,0.031238347
+Eczema Photos,Eczema Photos,0.00012201629,0.99163556,0.008242417
+Eczema Photos,Eczema Photos,6.726484e-05,0.99763346,0.0022991796
+Eczema Photos,Eczema Photos,2.150175e-06,0.996696,0.0033019225
+Eczema Photos,Eczema Photos,0.0001803945,0.94200647,0.057813182
+Eczema Photos,Eczema Photos,0.23761246,0.45087364,0.31151393
+Eczema Photos,Eczema Photos,0.0011114938,0.9299522,0.06893626
+Eczema Photos,Eczema Photos,0.00043505421,0.82124454,0.17832042
+Eczema Photos,Acne and Rosacea Photos,0.5801762,0.412899,0.006924906
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0003581412,0.021089356,0.9785525
+Eczema Photos,Eczema Photos,0.0009290551,0.9253788,0.07369216
+Eczema Photos,Eczema Photos,0.18700023,0.81140816,0.0015915313
+Eczema Photos,Eczema Photos,2.3549957e-05,0.9923683,0.007608247
+Eczema Photos,Eczema Photos,4.28947e-06,0.9698776,0.030118188
+Eczema Photos,Eczema Photos,3.9569898e-07,0.9988846,0.0011150729
+Eczema Photos,Eczema Photos,0.34380043,0.4760492,0.18015036
+Eczema Photos,Acne and Rosacea Photos,0.80190665,0.17043947,0.027653966
+Eczema Photos,Eczema Photos,0.03648149,0.95566964,0.0078488905
+Eczema Photos,Eczema Photos,7.56607e-05,0.9929074,0.007016994
+Eczema Photos,Eczema Photos,4.623227e-05,0.99971396,0.00023977977
+Eczema Photos,Eczema Photos,3.5293428e-06,0.99504906,0.0049473676
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.015517575,0.33531314,0.6491693
+Eczema Photos,Eczema Photos,0.004605755,0.96608937,0.02930493
+Eczema Photos,Eczema Photos,0.013399009,0.9525254,0.034075625
+Eczema Photos,Eczema Photos,0.006549759,0.9886003,0.0048498525
+Eczema Photos,Eczema Photos,0.0105921775,0.9689697,0.020438192
+Eczema Photos,Eczema Photos,0.0012122812,0.9502007,0.048587143
+Eczema Photos,Eczema Photos,7.213609e-08,0.9993349,0.0006649426
+Eczema Photos,Eczema Photos,0.36156097,0.6256445,0.012794497
+Eczema Photos,Eczema Photos,0.0056723333,0.543679,0.45064867
+Eczema Photos,Eczema Photos,0.00031054707,0.994466,0.0052234377
+Eczema Photos,Eczema Photos,0.12608118,0.85100603,0.022912752
+Eczema Photos,Eczema Photos,0.036774117,0.8693487,0.09387712
+Eczema Photos,Eczema Photos,1.5576055e-05,0.99252534,0.0074589695
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.21473897,0.16533409,0.6199269
+Eczema Photos,Eczema Photos,0.046126507,0.94500786,0.008865614
+Eczema Photos,Eczema Photos,0.0012592427,0.95727134,0.041469403
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.053136516,0.4174075,0.529456
+Eczema Photos,Eczema Photos,0.0010371812,0.8867139,0.112248905
+Eczema Photos,Eczema Photos,0.025557755,0.6895527,0.28488955
+Eczema Photos,Eczema Photos,3.9865904e-06,0.9586917,0.041304328
+Eczema Photos,Eczema Photos,0.0118039455,0.9319044,0.056291662
+Eczema Photos,Eczema Photos,1.344251e-06,0.98793006,0.012068611
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.00012927328,0.016810797,0.98305994
+Eczema Photos,Eczema Photos,0.00018984586,0.6571744,0.34263572
+Eczema Photos,Eczema Photos,3.1102973e-05,0.98270196,0.01726692
+Eczema Photos,Acne and Rosacea Photos,0.584919,0.39681855,0.018262438
+Eczema Photos,Eczema Photos,0.00036773796,0.97906893,0.020563304
+Eczema Photos,Eczema Photos,0.36614135,0.6260273,0.0078313695
+Eczema Photos,Eczema Photos,0.03645681,0.9295584,0.033984803
+Eczema Photos,Eczema Photos,2.0899556e-08,0.9998136,0.00018638528
+Eczema Photos,Eczema Photos,0.009692001,0.7872106,0.20309746
+Eczema Photos,Eczema Photos,0.0010530185,0.9878698,0.01107722
+Eczema Photos,Eczema Photos,0.0008358171,0.95593655,0.04322758
+Eczema Photos,Eczema Photos,0.0063731666,0.53857565,0.4550511
+Eczema Photos,Eczema Photos,0.004513709,0.8883136,0.107172735
+Eczema Photos,Eczema Photos,2.0630818e-05,0.81925136,0.18072799
+Eczema Photos,Eczema Photos,0.0050323657,0.9734929,0.021474713
+Eczema Photos,Eczema Photos,8.677782e-05,0.9871072,0.012806049
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.112713076,0.38538054,0.5019064
+Eczema Photos,Eczema Photos,0.31367856,0.6860268,0.00029463056
+Eczema Photos,Eczema Photos,0.00027999675,0.9984126,0.0013073711
+Eczema Photos,Eczema Photos,0.0023318683,0.90143555,0.09623261
+Eczema Photos,Eczema Photos,0.008946405,0.8032859,0.18776765
+Eczema Photos,Eczema Photos,4.218825e-06,0.90977323,0.09022255
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.001732325,0.12586424,0.8724034
+Eczema Photos,Eczema Photos,0.05002085,0.8555939,0.09438525
+Eczema Photos,Eczema Photos,0.0023192973,0.9257821,0.0718986
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.30489427,0.1838453,0.51126045
+Eczema Photos,Eczema Photos,0.00084686757,0.6579791,0.341174
+Eczema Photos,Eczema Photos,0.0048755924,0.8711098,0.12401455
+Eczema Photos,Eczema Photos,3.99231e-05,0.99263895,0.007321229
+Eczema Photos,Eczema Photos,0.04148159,0.8606891,0.09782932
+Eczema Photos,Eczema Photos,0.0007702267,0.8697099,0.1295199
+Eczema Photos,Eczema Photos,0.0044787214,0.77539474,0.2201265
+Eczema Photos,Eczema Photos,5.7780983e-07,0.99999547,3.982859e-06
+Eczema Photos,Eczema Photos,0.00084940396,0.9894447,0.009706
+Eczema Photos,Eczema Photos,2.1035132e-05,0.9951586,0.00482037
+Eczema Photos,Eczema Photos,0.011053007,0.9514885,0.0374584
+Eczema Photos,Eczema Photos,0.0010280185,0.5959267,0.4030453
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.00788247,0.09004067,0.9020769
+Eczema Photos,Eczema Photos,0.082667805,0.87119764,0.0461345
+Eczema Photos,Eczema Photos,1.3939527e-05,0.9953505,0.004635639
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0076766494,0.13319243,0.859131
+Eczema Photos,Eczema Photos,0.00095978007,0.7984979,0.20054232
+Eczema Photos,Eczema Photos,0.0015497429,0.85551727,0.1429329
+Eczema Photos,Eczema Photos,0.00062497647,0.71838206,0.28099293
+Eczema Photos,Eczema Photos,0.0014926784,0.9668568,0.031650536
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.04280751,0.09279239,0.8644001
+Eczema Photos,Acne and Rosacea Photos,0.52575886,0.35954317,0.11469792
+Eczema Photos,Eczema Photos,0.29856437,0.3543276,0.34710798
+Eczema Photos,Eczema Photos,3.6652448e-06,0.98491096,0.015085341
+Eczema Photos,Eczema Photos,0.021491567,0.9715803,0.0069280337
+Eczema Photos,Eczema Photos,0.00010955238,0.9954181,0.0044724275
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0007049342,0.20166227,0.79763275
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.283619,0.28477454,0.4316065
+Eczema Photos,Eczema Photos,7.508317e-05,0.95027786,0.049647067
+Eczema Photos,Eczema Photos,0.04233101,0.92691624,0.030752748
+Eczema Photos,Eczema Photos,1.906471e-05,0.9905156,0.009465462
+Eczema Photos,Eczema Photos,0.003425251,0.98132896,0.015245734
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.019712262,0.37234017,0.6079476
+Eczema Photos,Eczema Photos,0.0019696904,0.88763934,0.110391065
+Eczema Photos,Eczema Photos,0.016643986,0.86997473,0.11338131
+Eczema Photos,Eczema Photos,0.0065823817,0.96322685,0.030190758
+Eczema Photos,Eczema Photos,0.0001084936,0.97943306,0.020458508
+Eczema Photos,Eczema Photos,8.4941576e-07,0.9870919,0.012907248
+Eczema Photos,Eczema Photos,0.0038547842,0.9872658,0.008879429
+Eczema Photos,Eczema Photos,0.00028311953,0.9537373,0.04597963
+Eczema Photos,Eczema Photos,0.013958044,0.6741774,0.31186458
+Eczema Photos,Eczema Photos,3.35713e-06,0.9804314,0.01956529
+Eczema Photos,Eczema Photos,0.00096121244,0.90666234,0.09237642
+Eczema Photos,Eczema Photos,0.0006071164,0.979563,0.019829962
+Eczema Photos,Eczema Photos,0.024922486,0.84271693,0.13236064
+Eczema Photos,Eczema Photos,2.7286043e-07,0.99818593,0.0018138208
+Eczema Photos,Eczema Photos,0.008632847,0.87198687,0.11938027
+Eczema Photos,Eczema Photos,0.0005468463,0.99000543,0.009447671
+Eczema Photos,Eczema Photos,0.001535293,0.89739954,0.10106525
+Eczema Photos,Eczema Photos,1.293016e-05,0.9977034,0.0022836458
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.009897108,0.06574378,0.92435914
+Eczema Photos,Eczema Photos,3.724959e-05,0.9982798,0.0016829207
+Eczema Photos,Eczema Photos,0.004655201,0.8866511,0.1086937
+Eczema Photos,Eczema Photos,0.0007272284,0.78623486,0.2130379
+Eczema Photos,Eczema Photos,0.0009584168,0.83332616,0.16571535
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.012398175,0.30206373,0.68553805
+Eczema Photos,Eczema Photos,0.00025217322,0.87500846,0.12473936
+Eczema Photos,Eczema Photos,0.00023405372,0.9930033,0.0067626718
+Eczema Photos,Eczema Photos,7.980479e-05,0.98723745,0.012682698
+Eczema Photos,Eczema Photos,0.0341873,0.9424464,0.023366276
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.2163018,0.06055675,0.72314143
+Eczema Photos,Eczema Photos,0.00081153575,0.9905291,0.008659303
+Eczema Photos,Eczema Photos,0.00014105436,0.99946064,0.0003982949
+Eczema Photos,Eczema Photos,1.7699766e-06,0.98110986,0.018888397
+Eczema Photos,Eczema Photos,0.026215198,0.8673906,0.10639427
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,8.913407e-05,0.39533502,0.6045758
+Eczema Photos,Eczema Photos,6.329803e-05,0.9904931,0.009443566
+Eczema Photos,Eczema Photos,0.000523327,0.98108804,0.018388538
+Eczema Photos,Eczema Photos,1.3040508e-05,0.99690515,0.0030818142
+Eczema Photos,Eczema Photos,0.024467785,0.6187121,0.35682005
+Eczema Photos,Eczema Photos,0.0048755924,0.8711098,0.12401455
+Eczema Photos,Acne and Rosacea Photos,0.45954648,0.12557067,0.41488284
+Eczema Photos,Eczema Photos,0.0027326182,0.9293122,0.06795522
+Eczema Photos,Eczema Photos,0.10283278,0.6873605,0.2098067
+Eczema Photos,Eczema Photos,0.0006379074,0.9954627,0.0038993715
+Eczema Photos,Eczema Photos,1.363941e-05,0.98497343,0.015012965
+Eczema Photos,Eczema Photos,2.591661e-05,0.99737847,0.0025956817
+Eczema Photos,Eczema Photos,0.015198879,0.5141526,0.4706485
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0012265331,0.00814974,0.9906238
+Eczema Photos,Eczema Photos,0.019140815,0.92375743,0.05710173
+Eczema Photos,Eczema Photos,0.00087096705,0.9651771,0.033951897
+Eczema Photos,Eczema Photos,1.5246033e-07,0.99915266,0.0008472471
+Eczema Photos,Eczema Photos,8.22711e-07,0.99959034,0.00040880608
+Eczema Photos,Eczema Photos,8.993707e-06,0.99393094,0.0060600284
+Eczema Photos,Eczema Photos,0.21005313,0.69095296,0.09899389
+Eczema Photos,Eczema Photos,0.0004214214,0.9353861,0.06419254
+Eczema Photos,Eczema Photos,0.042120315,0.89085287,0.06702679
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.28425044,0.16377608,0.55197346
+Eczema Photos,Eczema Photos,0.0024215346,0.9662014,0.03137704
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,5.4791562e-05,0.09431194,0.9056332
+Eczema Photos,Eczema Photos,0.00057556777,0.95671695,0.04270743
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,3.6376256e-05,0.0052467976,0.9947168
+Eczema Photos,Eczema Photos,6.4768166e-05,0.9980925,0.0018427758
+Eczema Photos,Eczema Photos,2.4836292e-05,0.5075735,0.49240172
+Eczema Photos,Eczema Photos,0.0054019657,0.97979933,0.0147987325
+Eczema Photos,Eczema Photos,0.08482222,0.7336596,0.18151812
+Eczema Photos,Eczema Photos,0.00051226345,0.8422845,0.1572032
+Eczema Photos,Eczema Photos,0.013399009,0.9525254,0.034075625
+Eczema Photos,Acne and Rosacea Photos,0.9446733,0.0058542313,0.04947248
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,4.272938e-05,0.051693153,0.9482641
+Eczema Photos,Eczema Photos,1.0428755e-07,0.9989009,0.0010989533
+Eczema Photos,Eczema Photos,0.000568559,0.6218403,0.3775912
+Eczema Photos,Eczema Photos,0.027408492,0.9644947,0.00809677
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0033848525,0.49436677,0.5022484
+Eczema Photos,Eczema Photos,0.1377662,0.6415938,0.22063997
+Eczema Photos,Eczema Photos,7.96666e-05,0.98262054,0.017299762
+Eczema Photos,Eczema Photos,5.242794e-05,0.99962103,0.0003265139
+Eczema Photos,Eczema Photos,0.0052482267,0.8955744,0.0991774
+Eczema Photos,Eczema Photos,0.00013595643,0.9967572,0.003106859
+Eczema Photos,Eczema Photos,0.00051008875,0.9617935,0.037696365
+Eczema Photos,Acne and Rosacea Photos,0.44869232,0.28794077,0.26336688
+Eczema Photos,Eczema Photos,1.4401707e-05,0.99905246,0.0009330762
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.00014407227,0.0069239396,0.99293196
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0068695988,0.45714208,0.5359883
+Eczema Photos,Eczema Photos,0.4423032,0.45113543,0.10656139
+Eczema Photos,Eczema Photos,3.4482313e-05,0.7984188,0.20154674
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.0012404183,0.46597642,0.5327832
+Eczema Photos,Eczema Photos,2.1711742e-06,0.99472946,0.0052684247
+Eczema Photos,Eczema Photos,0.00562435,0.993246,0.0011296626
+Eczema Photos,Eczema Photos,5.201549e-07,0.9983133,0.0016861733
+Eczema Photos,Eczema Photos,0.0026772853,0.9771992,0.020123456
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,0.1961436,0.3657435,0.43811288
+Eczema Photos,Eczema Photos,0.11002852,0.7824673,0.1075042
+Eczema Photos,Eczema Photos,3.9994195e-09,0.9978999,0.0021000546
+Eczema Photos,Psoriasis pictures Lichen Planus and related diseases,2.8564907e-07,0.0002489425,0.9997508
+Eczema Photos,Eczema Photos,0.005880023,0.59043515,0.40368485
+Eczema Photos,Eczema Photos,0.0012394183,0.8201143,0.17864631
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00014419678,0.89323515,0.10662068
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00027791763,0.043622687,0.95609945
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00988453,0.5293845,0.460731
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0040516756,0.03726831,0.95868
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0025456392,0.15117387,0.84628046
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,8.82951e-05,0.9782236,0.021688148
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.030504603,0.89968854,0.06980682
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.06916915,0.12521903,0.80561185
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.30792844,0.00550154,0.68657005
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.03275433,0.17047065,0.796775
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.01308846,0.020946924,0.9659647
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.018776156,0.017129863,0.964094
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.016832743,0.00018692848,0.9829804
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.024737187,0.03164623,0.94361657
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.5167476,0.43957433,0.04367805
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.16927336,0.08871959,0.7420071
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,8.23966e-06,0.9262338,0.07375787
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0038344327,0.5739324,0.4222332
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0015832798,0.010720764,0.98769593
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.17916551,0.18293427,0.6379002
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0001484285,0.05334638,0.94650525
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.014563417,0.040644635,0.9447919
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,5.900535e-05,0.12238294,0.87755805
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.024483427,0.066183016,0.9093336
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.084322594,0.24272056,0.6729569
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,2.1281203e-06,7.535827e-05,0.9999225
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.035469044,0.8057033,0.15882768
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.04707806,0.37671998,0.5762019
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00040968234,0.009254597,0.9903357
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0040009576,0.053981908,0.94201714
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.9974739,7.1940813e-06,0.0025188862
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0074200183,0.49999654,0.4925834
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.008491204,0.02675009,0.96475875
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.010702434,0.0676354,0.9216622
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0004736389,0.002017808,0.9975085
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.006759629,0.59842783,0.39481258
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,6.0355997e-05,0.011369547,0.98857003
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00083143864,0.0075615356,0.99160707
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.032657593,0.1021173,0.8652251
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.03449089,0.44331253,0.52219653
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.01227101,0.015867705,0.9718613
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.066636965,0.05095499,0.88240796
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.31942046,0.53978175,0.14079781
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00035534045,0.72235084,0.27729386
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.010922908,0.8794097,0.10966736
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0022449752,0.015818309,0.98193675
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.017500654,0.18018168,0.8023176
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.981361,0.011507186,0.0071318187
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0033839075,0.028392226,0.9682238
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002751158,0.061935868,0.935313
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0004992503,0.26715794,0.73234284
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002708809,0.032164253,0.96512693
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.012242741,0.17829871,0.8094586
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.015869072,0.6369886,0.3471424
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.001607261,0.008478233,0.98991454
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004050035,0.019505464,0.9764445
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.2638267,0.35910827,0.37706506
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.01677075,0.013327918,0.9699014
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002288772,0.40315658,0.5945547
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.015518224,0.008004592,0.9764772
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0077245315,0.004270076,0.98800534
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,9.143611e-05,0.99616736,0.0037411784
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0034214742,0.20366205,0.7929164
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.26929507,0.020435896,0.71026903
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0028329676,0.32059073,0.67657626
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0014346389,0.20274188,0.79582345
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.4837892,0.021300683,0.49491012
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,6.8318827e-06,0.001076738,0.9989164
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.010604064,0.16592763,0.82346827
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00659999,0.15898433,0.8344157
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,5.7842203e-07,0.85146695,0.1485325
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.29011226,0.05514092,0.6547469
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.94911623,0.029026035,0.021857763
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00021285,0.29856804,0.7012191
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.015881026,0.7435388,0.24058014
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.01556125,0.032728545,0.9517102
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0024616932,0.0028535381,0.99468476
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.20306918,0.25015125,0.5467795
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.04619453,0.17159359,0.78221184
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0003833156,0.0041642818,0.99545246
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.000105053725,0.0009656669,0.9989293
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.5456983,0.44519264,0.009109115
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.040340364,0.43153104,0.52812856
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0024525097,0.55520153,0.442346
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.01068013,0.5593544,0.42996544
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0229803,0.32355794,0.65346175
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.13375537,0.5253867,0.3408579
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004588186,0.04031733,0.95509446
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004765332,0.4675079,0.52772677
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.21007846,0.082801454,0.70712006
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0025799407,0.01483833,0.98258173
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0011208312,0.52118003,0.47769916
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002592499,0.042163987,0.9552436
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0050505353,0.009341304,0.9856082
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,3.9018643e-05,0.00061386556,0.99934715
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.07867802,0.09529865,0.82602334
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0030184714,0.008696526,0.98828506
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00014998767,0.94227076,0.057579245
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.2333715,0.41044995,0.35617852
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.012332656,0.0371057,0.9505617
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0001671124,0.9230145,0.07681836
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.48277223,0.08578744,0.43144026
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.019398563,0.061871186,0.91873026
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.120164305,0.051570475,0.8282652
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004685219,5.7580905e-06,0.99530905
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002144385,0.0022095302,0.99564606
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0011091764,0.93365204,0.06523873
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0019037409,0.09552257,0.90257365
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.05393867,0.31525037,0.630811
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.053097624,0.45052785,0.49637452
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.007446045,0.48130104,0.5112529
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.007896547,0.39937896,0.5927245
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,5.5832265e-06,0.0033880428,0.99660635
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.02492036,0.09372315,0.8813565
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,2.1712833e-05,0.0022732005,0.99770516
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.50262403,0.08651044,0.41086555
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.51595604,0.054378748,0.4296652
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0029887524,0.15058193,0.8464293
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00015450054,0.637665,0.36218053
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0101682255,0.0006121759,0.9892196
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,4.6583114e-05,1.6976e-05,0.99993646
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.07334173,0.015636738,0.91102153
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0010843461,0.85189754,0.14701807
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.75971353,0.08536686,0.15491958
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002198802,0.010471017,0.9873302
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0067302682,0.90588516,0.087384574
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.012101876,0.06657671,0.9213214
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009788005,0.12699421,0.8632178
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.026071455,0.26002413,0.7139044
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,7.2110845e-07,0.0020896436,0.9979096
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,5.2609932e-05,0.019441392,0.98050594
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.18636174,0.13133591,0.6823023
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.010145799,0.73437214,0.2554821
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.017968519,0.083415665,0.8986158
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00037817075,0.16829564,0.8313262
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0014952429,0.595423,0.40308183
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,6.694936e-07,0.0001526241,0.9998467
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.020759359,0.19546735,0.7837733
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00047094186,1.2261825e-05,0.99951684
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,4.917653e-08,0.99972445,0.00027550283
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.38454527,0.323124,0.29233077
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.38637173,0.16816181,0.4454665
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.01225607,0.5303183,0.45742556
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.817861,0.1340802,0.048058823
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.006622557,0.016584111,0.9767933
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0023096055,0.011948493,0.98574185
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,1.3317908e-06,0.9970688,0.0029298882
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.1201736,0.11947593,0.7603505
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.02095477,0.70721287,0.2718324
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.39883822,0.1690823,0.4320795
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0034754572,0.91610134,0.0804232
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.020239513,0.49932364,0.4804368
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0352755,0.12410261,0.8406219
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.114870936,0.18447001,0.70065904
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0002937383,0.21846202,0.7812442
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0003997572,0.3928399,0.6067603
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,3.1906686e-05,0.9183147,0.08165342
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0023732472,0.11105582,0.88657093
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0026222484,0.015072558,0.98230517
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,5.696822e-06,0.0036160839,0.99637824
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.024364563,0.060812097,0.91482335
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,2.3546196e-05,0.37947124,0.6205053
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0058800015,0.21976668,0.7743533
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,3.3733137e-05,0.22666542,0.7733008
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.014143753,0.709596,0.27626023
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0018145678,0.95631546,0.041869976
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.44923836,0.27368775,0.27707395
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.29317403,0.20783417,0.49899173
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0061969785,0.9683385,0.025464494
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00072712963,0.02200146,0.97727144
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.30377528,0.15421492,0.54200983
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.02592242,0.6577701,0.3163075
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.99368,0.0060114088,0.00030859967
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.05282461,0.16481131,0.7823641
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0002119597,0.5768934,0.42289463
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.02767862,0.59225756,0.3800638
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0016424389,2.1826867e-05,0.9983358
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,4.6583114e-05,1.6976e-05,0.99993646
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0061699045,0.032459665,0.96137047
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.31236997,0.42632893,0.26130107
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.9419763,0.0087765595,0.049247097
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0001920905,0.22501877,0.77478915
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.061444513,0.58164066,0.3569148
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.022446577,0.71004367,0.2675097
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.14180522,0.30017015,0.5580246
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0054132054,0.049344927,0.9452419
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0092857145,0.027011072,0.9637033
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.043277,0.042655222,0.91406775
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.006440975,0.9354446,0.05811435
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.12423594,0.14245777,0.7333063
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00014303337,0.018764038,0.9810929
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,1.6537486e-05,0.0024379434,0.99754554
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.13397303,0.024827916,0.841199
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.30900443,0.34424055,0.34675506
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.006282262,0.49693114,0.49678662
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.010502335,0.026729323,0.9627683
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.03933715,0.002128641,0.9585342
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0038204123,0.0034313628,0.9927482
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.048547927,0.016150296,0.93530184
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0095187435,0.38127726,0.60920393
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0014744985,0.9030547,0.09547075
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0044562975,0.12163144,0.8739123
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,1.3799984e-05,0.0036981285,0.99628806
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.032605268,0.13785025,0.82954454
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0018083534,0.0717804,0.9264113
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0072052125,0.17957617,0.81321865
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.001403635,0.0016146068,0.9969818
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0014661126,0.26528567,0.7332483
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.082518965,0.04091278,0.8765682
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.010649906,0.59603584,0.39331433
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009447726,0.24926175,0.7412905
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0017352268,0.08684148,0.9114233
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0074639395,0.32089746,0.6716386
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.24037462,0.3169627,0.44266266
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0008640623,0.12759084,0.87154514
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0015975663,0.025149252,0.97325313
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.011565901,0.048598252,0.93983585
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,1.1193657e-05,8.759835e-05,0.9999012
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,8.980136e-05,0.044074405,0.9558358
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.021968892,0.18083455,0.79719657
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0018970789,0.050525825,0.94757706
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.7156211,0.23142388,0.052955057
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.02369968,0.6082398,0.36806047
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0049014497,0.0034049875,0.99169356
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.012440221,0.1273792,0.86018056
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,4.1988595e-05,0.75120807,0.24874993
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.045684665,0.014055682,0.94025964
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.14407267,0.42726377,0.4286636
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00018401115,0.00066030485,0.99915564
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0032535272,0.919945,0.07680135
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,4.7391177e-06,0.0023051156,0.9976902
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.082608275,0.004382288,0.9130094
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,7.0467206e-05,0.0023712013,0.99755836
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0063352673,0.33686465,0.65680015
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0011590524,0.011063996,0.987777
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.012991813,0.005706863,0.9813013
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.042412747,0.52282315,0.43476412
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0035205346,0.62540805,0.3710715
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0077230176,0.009289999,0.9829869
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00010861342,0.0017811555,0.9981102
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.99948514,0.00013712874,0.00037772258
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0011479701,0.0068222308,0.9920298
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.035750613,0.44862586,0.5156235
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0001990776,0.019324496,0.9804764
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.001468246,0.023413481,0.9751183
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.008792883,0.035256512,0.9559506
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0031052327,0.3568425,0.64005226
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.23186505,0.011423276,0.7567117
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0007867799,0.16795868,0.83125454
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0092539275,0.67688173,0.31386435
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.032206763,0.7704016,0.19739166
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.016995918,0.016826129,0.96617794
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009071663,0.010162756,0.98076564
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00020463332,0.5191366,0.48065877
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00012307648,0.96490777,0.034969177
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.016694073,0.049730837,0.9335751
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009194436,0.17984077,0.81096476
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.55763406,0.09504279,0.34732318
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0023114344,0.09778327,0.8999053
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.003294405,0.34720138,0.6495042
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0006871187,0.15242912,0.8468838
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.07802616,0.000239429,0.9217344
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00048713383,0.042001203,0.9575116
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.013672282,0.009394551,0.97693324
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0018031375,0.2185097,0.77968717
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00072653295,0.096070565,0.9032029
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009612201,0.0057778354,0.98460996
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,8.7925326e-07,0.9845716,0.015427641
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002841049,0.036350533,0.96080846
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0112077305,0.001638701,0.9871536
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.003028595,0.2759517,0.7210196
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00577127,0.06627241,0.9279563
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.4764973,0.49132696,0.03217573
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.027240926,0.19784397,0.7749151
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.020619456,0.21977006,0.7596105
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.21552289,0.11729457,0.66718256
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.012990343,0.90840167,0.078607924
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.5014253,0.17944296,0.3191317
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.019766333,0.08226799,0.8979657
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.05227583,0.026038222,0.9216859
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,7.671591e-05,0.9739267,0.025996603
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.19704281,0.083568566,0.7193886
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00013129684,0.0927434,0.90712535
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.006323379,0.0032348863,0.9904418
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0012656166,1.5844273e-05,0.9987186
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.019088842,0.07869336,0.9022178
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.881568,0.009223303,0.10920868
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.54429674,0.084141344,0.37156188
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.41687632,0.008907901,0.57421577
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.002972844,0.091245435,0.90578175
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00018498751,0.26654452,0.7332705
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0008723191,0.078973174,0.9201545
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,2.5404359e-05,0.6638621,0.3361125
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0039589163,0.49135894,0.5046821
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0008030204,0.10142963,0.89776736
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0017079053,0.06969652,0.92859554
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.003046253,0.1164246,0.8805291
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,1.519139e-05,0.00053758576,0.99944717
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.011500252,0.83049077,0.15800895
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.009910436,0.17159651,0.81849307
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00016213063,0.035297327,0.96454054
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.003011486,0.044094976,0.95289356
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0032150696,0.32321405,0.6735709
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00013779817,0.26446187,0.7354003
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0452776,0.18558124,0.76914114
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.3508742,0.28795332,0.3611725
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0066189757,0.3002133,0.69316775
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.019977544,0.033444997,0.9465774
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0038842415,0.7508842,0.24523154
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.002255059,0.8732106,0.1245342
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00090113917,0.40168256,0.59741634
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.07725252,0.004406042,0.9183414
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.16976175,0.7005418,0.1296965
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0011870589,0.0036723902,0.99514055
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004483649,0.029255422,0.96626097
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.3774373,0.16686974,0.45569298
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0023329575,0.23462273,0.76304424
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.010134571,0.52767915,0.4621863
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00935843,0.4079155,0.58272606
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,3.3566364e-05,0.00802787,0.99193853
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00053051196,0.9236957,0.07577375
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.16976175,0.7005418,0.1296965
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0849159,0.89617306,0.018911097
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00080170797,0.048029944,0.9511684
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,4.9399074e-05,0.075199716,0.9247509
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00018545923,0.022117814,0.9776968
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.004500021,0.30512613,0.69037384
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0027698607,0.03667003,0.96056014
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.17619637,0.21588914,0.60791445
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.001219135,0.05223168,0.9465491
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00016531872,0.014352166,0.98548245
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0014967994,0.8153409,0.18316223
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,2.7244874e-07,0.004566036,0.9954336
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0021939334,0.026927952,0.97087806
+Psoriasis pictures Lichen Planus and related diseases,Acne and Rosacea Photos,0.5635275,0.0009693258,0.4355031
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.0881685,0.81318885,0.098642744
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.045338646,0.018379578,0.93628174
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.0010554945,0.104230665,0.8947139
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.10261682,0.50086117,0.396522
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.07074286,0.11916865,0.81008846
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,9.18034e-06,0.00096339756,0.9990274
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,6.0146605e-05,0.000414094,0.9995258
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.02895539,0.24625906,0.72478557
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.05283059,0.855423,0.09174644
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,6.940882e-05,0.0033444862,0.9965861
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.011082966,0.98487306,0.0040439116
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00013179547,0.0035130966,0.9963552
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.00025819015,0.011741989,0.98799986
+Psoriasis pictures Lichen Planus and related diseases,Psoriasis pictures Lichen Planus and related diseases,0.03272692,0.11008341,0.85718966
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.00023095569,0.60134166,0.39842737
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.110612154,0.6400123,0.24937555
+Psoriasis pictures Lichen Planus and related diseases,Eczema Photos,0.120126925,0.60167456,0.2781985

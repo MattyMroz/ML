@@ -17,7 +17,7 @@
 >
 >**Osoba 2** (DermNet) na pełnym zbiorze 3 klas porównała fine-tuning ResNet18 z modelami klasycznymi na zamrożonych embeddingach. Po hiperparameter tuningu i augmentacji danych, **ResNet18 uzyskał 81.3% accuracy** bez przeuczenia. Random Forest na embeddingach osiągnął 77.1%, LogisticRegression 73.0%. Pipeline „embeddingi + ML klasyczne" pozostaje stabilny, ale fine-tuning z early stopping daje znacznie lepsze wyniki.
 >
->**Osoba 3** (Fitzpatrick17k) zastosowała transfer learning z MobileNetV2 na 10% próbce. W walidacji 5-fold CV model uzyskał średnie **accuracy 73.63% i macro-F1 65.94%**.
+>**Osoba 3** (Fitzpatrick17k) zastosowała transfer learning z ResNet-18 na 10% próbce. W walidacji 5-fold CV model uzyskał średnie **accuracy 73.93% i weighted-F1 67.16%**.
 >
 >**Wnioski:** Metody tabelaryczne oraz konwolucyjne z transfer learningiem są skuteczne w dermatologii. Przy małych zbiorach obrazów (<1000 próbek) pipeline „zamrożone embeddingi + ML klasyczne” wykazuje znacznie większą odporność na overfitting niż pełny fine-tuning sieci głębokich.
 
@@ -154,7 +154,7 @@ Rozkład typów skóry jest silnie niezbalansowany — typy I–III (jasna skór
 
 **Biblioteki:** scikit-learn 1.8.0, xgboost 3.2.0, shap 0.51.0.
 
-**Reprodukcja:** `notebooks/mateusz_mroz_uci_dermatology.ipynb` (seed = 42).
+**Reprodukcja:** `mateusz_mroz_251190/notebooks/mateusz_mroz_uci_dermatology.ipynb` (seed = 42).
 
 ---
 
@@ -171,26 +171,26 @@ Rozkład typów skóry jest silnie niezbalansowany — typy I–III (jasna skór
 
 **Biblioteki:** PyTorch (torchvision), scikit-learn, numpy, pandas, Pillow, opencv-python.
 
-**Reprodukcja:** `notebooks/dawid_koska_dermnet.ipynb` (seed = 42).
+**Reprodukcja:** `dawid_koska_251171/notebooks/dawid_koska_251171.ipynb` (seed = 42).
 
 ### Fitzpatrick17k
 
 **Pipeline:**
 1. Wczytanie metadanych z `fitzpatrick17k.csv`, filtracja do próbek z dostępnymi obrazami (16 574), losowe próbkowanie 10% zbioru (1657 próbek) ze względu na ograniczenia CPU
-2. Podział stratyfikowany 80/20 (train/test, `random_state=42`)
-3. Preprocessing obrazów: resize 224×224, normalizacja [0,1], augmentacja (flip, rotate ±15°, color jitter)
-4. Model: **MobileNetV2** pre-trenowany na ImageNet (transfer learning) — zamrożone warstwy konwolucyjne, nowa głowa klasyfikacyjna (`GlobalAveragePooling2D` → `Dense(256, relu)` → `Dropout(0.5)` → `Dense(n_classes, softmax)`)
+2. Mapowanie etykiet z `three_partition_label` (jeśli dostępne; w przeciwnym razie `label`) i kodowanie klas do indeksów
+3. Preprocessing obrazów: resize 224×224, losowe odbicie poziome, konwersja do tensora i normalizacja ImageNet
+4. Model: **ResNet-18** pre-trenowany na ImageNet (transfer learning) — zamrożone warstwy bazowe, nowa warstwa `fc` dopasowana do liczby klas
 5. Walidacja: `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`
-6. Trening: optymalizator Adam (lr=1e-4), `categorical_crossentropy`, 10 epok per fold, `class_weight` dla niezbalansowanych klas
-7. Ewaluacja: accuracy i macro-F1 raportowane jako `mean ± std` z 5 foldów
+6. Trening: optymalizator Adam (lr=0.001), `CrossEntropyLoss`, batch size 16, 1 epoka per fold ze względu na ograniczenia CPU
+7. Ewaluacja: accuracy i weighted-F1 raportowane jako `mean ± std` z 5 foldów
 
-**Uzasadnienie wyboru modelu:** MobileNetV2 to lekka architektura CNN z odwróconymi blokami residualnymi, zaprojektowana pod kątem efektywności obliczeniowej. Przy ograniczeniach CPU (brak GPU) oferuje dobry kompromis między jakością ekstrakcji cech obrazowych a czasem treningu. Transfer learning z ImageNet pozwala na skuteczne uczenie nawet na małej próbce (1657 obrazów).
+**Uzasadnienie wyboru modelu:** ResNet-18 to relatywnie lekka architektura CNN z residualnymi połączeniami skrótowymi, dostępna w `torchvision` z wagami ImageNet. Przy ograniczeniach CPU pozwala użyć transfer learningu bez trenowania pełnej sieci od zera, a zamrożenie warstw bazowych ogranicza koszt obliczeniowy.
 
-**Użyte metryki:** accuracy, macro-F1 — raportowane jako `mean ± std` z 5 foldów.
+**Użyte metryki:** accuracy, weighted-F1 — raportowane jako `mean ± std` z 5 foldów.
 
-**Biblioteki:** TensorFlow/Keras 2.x, scikit-learn 1.x, Pillow, pandas, numpy.
+**Biblioteki:** PyTorch (torchvision), scikit-learn, Pillow, pandas, numpy, matplotlib, seaborn.
 
-**Reprodukcja:** `notebooks/wiktor_grzyb_fitzpatrick17k.ipynb` (seed = 42).
+**Reprodukcja:** `wiktor_grzyb_251151/wiktor_grzyb_fitzpatrick17k.ipynb` (seed = 42).
 
 ## 3. Eksperymenty i wyniki
 
@@ -244,7 +244,7 @@ Rozkład typów skóry jest silnie niezbalansowany — typy I–III (jasna skór
 |------|---------|---------|---------------------------------------|---------------------------|---------------|
 | 1.1 | UCI Dermatology | klasyfikacja wieloklasowa (6 klas) | VFI5 — 99.20% acc (Güvenir 1998) | Random Forest (n=200, max_depth=None, min_samples_leaf=4, max_features=sqrt) | **acc CV: 97.60 ± 0.85%**<br>**f1_macro CV: 96.91 ± 1.51%** *(baseline)*<br>**f1_macro CV: 0.9810** *(GridSearch best_score_)*<br>**acc test: 95.95%**<br>**f1_macro test: 94.31%** |
 | 2.1 | DermNet | klasyfikacja wieloklasowa (3 klasy: trądzik, egzema, łuszczyca) | SDNet (Frontiers AI 2026) — 99.10% acc dla 5 klas DermNet | **(A) Logistic Regression (L2, C=0.01, class_weight='balanced')** na embeddingach ResNet18 (512D, zamrożony ImageNet)<br>**(B) Random Forest (n=200, max_depth=10, class_weight='balanced')** na embeddingach ResNet18<br>**(C) ResNet18 fine-tuned** (zamrożone layer1-3, odblokowane layer4+fc, Adam lr=1e-3, 5 epok, augmentacja, early stopping, CPU) | **(A) acc CV: 65.52 ± 2.73%** **acc test: 72.97%**,<br>**(B) acc CV: 68.68 ± 3.06%**, **acc test: 77.08%**<br>**(C) (brak CV, hold-out validation)**,  **acc test: 81.29%** |
-| 3.1 | Fitzpatrick17k | klasyfikacja wieloklasowa (114 klas / 3 klasy) | ResNet-50 — acc 65%, F1 macro 0.61 (Groh 2021) | MobileNetV2 (transfer learning, ImageNet, głowa: GAP→Dense256→Dropout0.5→Softmax, Adam lr=1e-4, 10 epok) | **acc CV: 73.63 ± 1.30%**<br>**f1_macro CV: 65.94 ± 1.21%** |
+| 3.1 | Fitzpatrick17k | klasyfikacja wieloklasowa (3 klasy: `three_partition_label`) | ResNet-50 — acc 65%, F1 macro 0.61 (Groh 2021) | ResNet-18 (transfer learning, ImageNet, zamrożone warstwy bazowe, nowa warstwa FC, Adam lr=0.001, 1 epoka/fold, CPU) | **acc CV: 73.93 ± 1.61%**<br>**weighted-F1 CV: 67.16 ± 2.12%** |
 
 *\* nr_osoby_wg_listy_autorów.nr_zbioru_danych*
 
@@ -321,21 +321,21 @@ Rozkład typów skóry jest silnie niezbalansowany — typy I–III (jasna skór
 
 ### 3.2.3 Szczegóły wyników osoby 3 (Fitzpatrick17k)
 
-**Wyniki 5-fold CV (MobileNetV2, transfer learning):**
+**Wyniki 5-fold CV (ResNet-18, transfer learning):**
 
-| Fold | Accuracy | Macro-F1 |
+| Fold | Accuracy | Weighted-F1 |
 |------|----------|----------|
-| 1 | 0.7380 | 0.6704 |
-| 2 | 0.7169 | 0.6611 |
-| 3 | 0.7492 | 0.6716 |
-| 4 | 0.7462 | 0.6451 |
-| 5 | 0.7311 | 0.6487 |
-| **Średnia ± Std** | **0.7363 ± 0.0130** | **0.6594 ± 0.0121** |
+| 1 | 0.7199 | 0.6989 |
+| 2 | 0.7410 | 0.6548 |
+| 3 | 0.7462 | 0.6547 |
+| 4 | 0.7281 | 0.6595 |
+| 5 | 0.7613 | 0.6899 |
+| **Średnia ± Std** | **0.7393 ± 0.0161** | **0.6716 ± 0.0212** |
 
 **Obserwacje:**
-- Wyniki są stabilne między foldami (std accuracy ~1.3 pp, std F1 ~1.2 pp), co świadczy o dobrej generalizacji modelu na zredukowanej próbce.
-- Różnica między accuracy (73.6%) a macro-F1 (65.9%) wskazuje na niezbalansowanie klas — model lepiej radzi sobie z klasami częstymi niż rzadkimi.
-- Fold 2 osiągnął najniższe wyniki (acc 71.7%, F1 66.1%), co może wynikać z losowego podziału danych i trafienia trudniejszych przypadków do zbioru walidacyjnego.
+- Wyniki są stabilne między foldami (std accuracy ~1.6 pp, std F1 ~2.1 pp), co świadczy o powtarzalnym zachowaniu modelu na zredukowanej próbce.
+- Różnica między accuracy (73.9%) a weighted-F1 (67.2%) wskazuje na nierówną jakość predykcji między klasami.
+- Fold 1 osiągnął najniższe accuracy (71.99%), a fold 3 najniższy weighted-F1 (65.47%), co sugeruje że przy małej próbce (1657 obrazów) podział danych istotnie wpływa na wyniki.
 
 ## 4. Dyskusja
 
@@ -371,11 +371,11 @@ Uzyskane wyniki (accuracy **81.29%**, macro-F1 **81.44%**) na 3-klasowym podzbio
 
 **Fitzpatrick17k:**
 
-Uzyskane wyniki dla Fitzpatrick17k (accuracy **73.63 ± 1.30% CV**, macro-F1 **65.94 ± 1.21%**) są porównywalne lub lepsze od wyników z literatury dla podobnych warunków eksperymentalnych:
+Uzyskane wyniki dla Fitzpatrick17k (accuracy **73.93 ± 1.61% CV**, weighted-F1 **67.16 ± 2.12%**) są porównywalne z wynikami z literatury dla podobnych warunków eksperymentalnych:
 
 - Groh et al. [7] (ResNet-50, pełny zbiór): acc ~65%, F1 ~0.61 — nasz model osiąga wyższe wyniki mimo użycia tylko 10% danych, co potwierdza siłę transfer learningu na małych próbkach.
 - Daneshjou et al. [8] (EfficientNet-B3): F1 macro 0.58–0.72 — nasze wyniki mieszczą się w tym przedziale.
-- Pakzad et al. [9] (ViT-B/16): acc 71.3% — nasz model osiąga porównywalny wynik (73.6%) przy znacznie mniejszym koszcie obliczeniowym.
+- Pakzad et al. [9] (ViT-B/16): acc 71.3% — nasz model osiąga porównywalny wynik (73.9%) przy znacznie mniejszym koszcie obliczeniowym.
 
 Kluczowe różnice metodologiczne: (1) zredukowana próbka (10%) vs pełny zbiór w literaturze; (2) ResNet-18 vs ResNet-50/EfficientNet — lżejsza architektura wystarczająca w warunkach CPU; (3) 3-klasowy podział etykiet zamiast 114 klas stosowanego w części publikacji.
 
@@ -406,11 +406,11 @@ Fine-tuned ResNet18 z early stopping uzyskał **accuracy testowe 81.29%** przy *
 
 **Fitzpatrick17k — analiza błędów:**
 
-Model ResNet-18 (transfer learning, 1 epoka/fold) osiągnął accuracy **73.63 ± 1.30%** i macro-F1 **65.94 ± 1.21%**. Różnica między accuracy a macro-F1 (~7.7 pp) wskazuje na nierówne wyniki między klasami — model lepiej radzi sobie z klasami częstymi (*inflammatory*, *non-neoplastic*) niż z rzadkimi.
+Model ResNet-18 (transfer learning, 1 epoka/fold) osiągnął accuracy **73.93 ± 1.61%** i weighted-F1 **67.16 ± 2.12%**. Różnica między accuracy a weighted-F1 (~6.8 pp) wskazuje na nierówne wyniki między klasami — model prawdopodobnie lepiej radzi sobie z klasami częstszymi w zredukowanej próbce.
 
-- Fold 2 osiągnął najniższe wyniki (acc 71.69%, F1 66.11%), co sugeruje że przy małej próbce (1657 obrazów) podział danych istotnie wpływa na wyniki.
-- Klasy rzadkie z <10 próbkami w zredukowanym zbiorze mają praktycznie zerowy recall — odzwierciedla to fundamentalne ograniczenie uczenia przy średnio ~14 próbkach/klasę.
-- Stabilność między foldami (std acc 1.30 pp, std F1 1.21 pp) świadczy o dobrej reprodukowalności pipeline'u pomimo małej próbki.
+- Fold 1 osiągnął najniższe accuracy (71.99%), a fold 3 najniższy weighted-F1 (65.47%), co sugeruje że przy małej próbce (1657 obrazów) podział danych istotnie wpływa na wyniki.
+- Do pełnej analizy błędów potrzebna byłaby dodatkowa macierz pomyłek i metryki per-klasa; zapisany wynik zawiera metryki foldów.
+- Stabilność między foldami (std acc 1.61 pp, std F1 2.12 pp) świadczy o dobrej reprodukowalności pipeline'u pomimo małej próbki.
 
 ### 4.3. Interpretowalność modeli
 
@@ -437,7 +437,7 @@ Zbieżność cech SHAP z klasycznymi markerami histopatologicznymi sugeruje, że
 
 **Fitzpatrick17k — interpretowalność:**
 
-ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w sensie medycznym. Ekstrakcja cech opiera się na hierarchicznych reprezentacjach wizualnych (krawędzie → tekstury → wzorce → obiekty). W kontekście dermatologii oznacza to, że model prawdopodobnie koduje cechy takie jak kolor i tekstura zmiany skórnej, jej granice oraz rozkład przestrzenny, jednak nie można ich jednoznacznie powiązać z konkretnymi markerami klinicznymi bez analizy Grad-CAM lub podobnych metod wizualizacji. Wyższa wartość macro-F1 dla klas częstych (*inflammatory*, *non-neoplastic*) potwierdza, że model nauczył się ogólnych wzorców wizualnych tych kategorii.
+ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w sensie medycznym. Ekstrakcja cech opiera się na hierarchicznych reprezentacjach wizualnych (krawędzie → tekstury → wzorce → obiekty). W kontekście dermatologii oznacza to, że model prawdopodobnie koduje cechy takie jak kolor i tekstura zmiany skórnej, jej granice oraz rozkład przestrzenny, jednak nie można ich jednoznacznie powiązać z konkretnymi markerami klinicznymi bez analizy Grad-CAM lub podobnych metod wizualizacji. Wynik weighted-F1 potwierdza ogólną skuteczność modelu, ale nie zastępuje szczegółowej analizy per-klasa.
 
 ### 4.4. Ograniczenia
 
@@ -463,7 +463,7 @@ ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w s
 **Fitzpatrick17k — ograniczenia:**
 
 - **Bias danych (Fitzpatrick17k)**: zbiór jest zdominowany przez typy skóry I–III (~75%), co może powodować gorsze wyniki dla ciemniejszych typów skóry (IV–VI) — zjawisko udokumentowane przez Daneshjou et al. [8].
-- **Mała próbka treningowa**: 10% zbioru (1657 próbek) to ~14 próbek na klasę średnio przy 114 klasach — wiele klas ma zbyt mało przykładów do skutecznego uczenia.
+- **Mała próbka treningowa**: 10% zbioru (1657 próbek) ogranicza stabilność walidacji; eksperyment wykorzystuje 3-klasowy podział `three_partition_label`, a nie pełną klasyfikację 114 diagnoz.
 - **Brak GPU**: ograniczenie do CPU wymusiło redukcję zbioru i liczby epok, co może nie być wystarczające do pełnej konwergencji modelu.
 - **Niezbalansowanie klas**: mimo zastosowania `class_weight`, rzadkie dermatozy (<5 próbek w próbce) są praktycznie niemożliwe do nauczenia.
 
@@ -499,7 +499,7 @@ ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w s
 
 **Fitzpatrick17k:**
 
-1. **Transfer learning (MobileNetV2) na Fitzpatrick17k** osiąga accuracy ~73.6% i macro-F1 ~65.9% na 10% zbioru, co jest wynikiem porównywalnym z literaturą (ResNet-50 na pełnym zbiorze: ~65%). Potwierdza to skuteczność transfer learningu nawet przy ograniczonych zasobach obliczeniowych.
+1. **Transfer learning (ResNet-18) na Fitzpatrick17k** osiąga accuracy ~73.9% i weighted-F1 ~67.2% na 10% zbioru, co jest wynikiem porównywalnym z literaturą (ResNet-50 na pełnym zbiorze: ~65%). Potwierdza to skuteczność transfer learningu nawet przy ograniczonych zasobach obliczeniowych.
 2. **Bias rasowy** w zbiorze Fitzpatrick17k (dominacja typów skóry I–III) jest istotnym ograniczeniem — modele dermatologiczne trenowane na takich danych mogą gorzej działać dla pacjentów z ciemniejszą karnacją.
 3. **Propozycje ulepszeń (Fitzpatrick17k):**
    - Trening na pełnym zbiorze z GPU (EfficientNet-B3 lub ViT).
@@ -523,7 +523,7 @@ ResNet-18 jako model CNN nie oferuje bezpośredniej interpretowalności cech w s
 
 [4] "Machine Learning Techniques in the Diagnosis of Skin Diseases: A Review," *IOP Conference Series: Materials Science and Engineering*, vol. 1076, p. 012045, 2021. DOI: [10.1088/1757-899X/1076/1/012045](https://doi.org/10.1088/1757-899X/1076/1/012045). (Praca przeglądowa cytująca wyniki dla podzbioru DermNet: CNN accuracy 98.60%–99.04% dla wyselekcjonowanych klas.)
 
-[5] A. B. Author et al., "Mitigating algorithmic bias in dermatology AI through unsupervised zero-shot lesion segmentation," *Scientific Reports* (Nature), vol. 16, p. 35697, 2026. DOI: [10.1038/s41598-026-35697-x](https://doi.org/10.1038/s41598-026-35697-x). (Hybrydowa CNN-ViT + segmentacja; accuracy ~81% dla pełnego DermNet z redukcją bias'u rasowego.)
+[5] "Mitigating algorithmic bias in dermatology AI through unsupervised zero-shot lesion segmentation," *Scientific Reports* (Nature), vol. 16, p. 35697, 2026. DOI: [10.1038/s41598-026-35697-x](https://doi.org/10.1038/s41598-026-35697-x). (Hybrydowa CNN-ViT + segmentacja; accuracy ~81% dla pełnego DermNet z redukcją bias'u rasowego.)
 
 [6] "SDNet: A novel parallel-arm convolutional network for skin disease detection with explainable AI," *Frontiers in Artificial Intelligence*, vol. 9, p. 1732440, 2026. DOI: [10.3389/frai.2026.1732440](https://doi.org/10.3389/frai.2026.1732440). (Autorska sieć SDNet; accuracy 99.10%, F1 98.95% dla 5 wybranych klas DermNet.)
 
