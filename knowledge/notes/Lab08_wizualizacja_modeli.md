@@ -54,7 +54,7 @@ from sklearn.model_selection import TunedThresholdClassifierCV
 
 scorer = make_scorer(f1_score, pos_label=1)
 tuned_model = TunedThresholdClassifierCV(
-    estimator=LogisticRegression(), 
+    estimator=LogisticRegression(),
     scoring=scorer
 )
 tuned_model.fit(X_train, y_train)
@@ -214,7 +214,7 @@ fig, axes = plt.subplots(2, 2, figsize=(12, 8))
 
 # Real vs Pred
 axes[0, 0].scatter(y_pred, y_test, alpha=0.5)
-axes[0, 0].plot([y_test.min(), y_test.max()], 
+axes[0, 0].plot([y_test.min(), y_test.max()],
                 [y_test.min(), y_test.max()], 'r--')
 
 # Residuals vs Pred

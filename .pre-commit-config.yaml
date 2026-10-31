@@ -110,19 +110,6 @@ repos:
         args: [--force-exclude]
         types_or: [python, pyi, javascript, jsx, ts, tsx, rust, shell]
 
-# ── MARKDOWN — delete unless the repo carries prose worth formatting ──────────
-
-  - repo: https://github.com/hukkin/mdformat
-    rev: 0.7.22
-    hooks:
-      - id: mdformat
-        args: [--number]
-        # Without these plugins it wrecks GFM tables.
-        additional_dependencies:
-          - mdformat-gfm==0.4.1
-          - mdformat-tables==1.0.0
-          - mdformat-frontmatter==2.0.8
-
 # ── PYTHON — delete unless the repo tracks *.py files ─────────────────────────
 
   - repo: https://github.com/pre-commit/pre-commit-hooks

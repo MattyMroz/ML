@@ -1,4 +1,4 @@
-﻿Ocena merytoryczna eksperymentu: test przycisku w sklepie internetowym
+Ocena merytoryczna eksperymentu: test przycisku w sklepie internetowym
 
 Oceniany eksperyment dotyczy sklepu internetowego. Autorzy chcą sprawdzić, czy zmiana wyglądu przycisku na stronie produktu zwiększy liczbę dodań do koszyka. Porównują trzy warianty: obecny szary przycisk, duży zielony przycisk oraz duży pomarańczowy przycisk z tekstem "Kup teraz".
 

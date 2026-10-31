@@ -351,7 +351,7 @@ Projekt u dr. Smółki wymaga raportowania **do każdego modelu**:
 3. **K-fold walidacja w teamach**
    ```python
    from sklearn.model_selection import cross_validate
-   
+
    cv_results = cross_validate(
        RandomForestClassifier(),
        X_train, y_train,
@@ -376,7 +376,7 @@ Projekt u dr. Smółki wymaga raportowania **do każdego modelu**:
 6. **Hiperparametr tuning**
    ```python
    from sklearn.model_selection import GridSearchCV
-   
+
    param_grid = {
        'n_estimators': [50, 100, 200],
        'max_depth': [3, 5, 10],

@@ -1,4 +1,4 @@
-﻿Projekt eksperymentu A/B/C dla sklepu z luksusowymi bidonami
+Projekt eksperymentu A/B/C dla sklepu z luksusowymi bidonami
 
 Scenariusz
 

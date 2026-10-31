@@ -6,9 +6,9 @@
 2.	Grupa kontrolna oraz grupy eksperymentalne:
 
 Grupa	Rola	Wygląd przycisku
-A	Grupa kontrolna	Szary przycisk z tekstem 
+A	Grupa kontrolna	Szary przycisk z tekstem
 "Dodaj do koszyka"
-B	Grupa eksperymentalna 1	Duży, zielony przycisk z tekstem 
+B	Grupa eksperymentalna 1	Duży, zielony przycisk z tekstem
 "Dodaj do koszyka".
 C	Grupa eksperymentalna 2	Duży, pomarańczowy przycisk z tekstem "Kup teraz".
 
@@ -19,7 +19,7 @@ C	Grupa eksperymentalna 2	Duży, pomarańczowy przycisk z tekstem "Kup teraz".
 •	Współczynnik konwersji (CR) - wyrażony w procentach stosunek liczby użytkowników, którzy kliknęli przycisk i dodali produkt do koszyka, do całkowitej liczby unikalnych użytkowników, którzy odwiedzili daną stronę produktu.
 
 5.	Metoda randomizacji:
-a)	Mechanizm losujący: System oparty na hashowaniu identyfikatora użytkownika (dla zalogowanych) lub identyfikatora pliku cookie 
+a)	Mechanizm losujący: System oparty na hashowaniu identyfikatora użytkownika (dla zalogowanych) lub identyfikatora pliku cookie
 (dla niezalogowanych gości).
 b)	Przydział: Algorytm wykonuję na User ID lub zahashowanym identyfikatorze sesji (dla niezalogowanych) operację modulo 3. Wynik tej operacji determinuje przydział do konkretnej grupy:
 •	Jeśli reszta z dzielenia wynosi 0, użytkownik trafia do grupy A (szary przycisk)

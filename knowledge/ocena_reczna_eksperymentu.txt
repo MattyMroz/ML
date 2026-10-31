@@ -1,4 +1,4 @@
-﻿Ręczna ocena krytyczna projektu eksperymentu
+Ręczna ocena krytyczna projektu eksperymentu
 
 Przedmiot oceny:
 Oceniany projekt dotyczy eksperymentu A/B/C dla sklepu internetowego. W eksperymencie przewidziano jedną grupę kontrolną oraz dwie grupy eksperymentalne. Celem badania jest sprawdzenie, czy personalizacja rekomendacji produktów oraz dodanie komunikatu promocyjnego wpływają na konwersję użytkowników.
