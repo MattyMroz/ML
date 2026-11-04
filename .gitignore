@@ -290,7 +290,7 @@ logs/
 
 # ── Project-specific — fill in, delete the rest ───────────────────────────────
 # GitHub Copilot customizations (portable framework – not tracked in this repo)
-.github/
+.github/*
 
 # Python
 .eggs/
@@ -305,6 +305,7 @@ logs/
 !.claude/
 !.claude/settings.json
 !.claude/commands/
+!.github/workflows/
 !.worktrees/
 !.worktrees/.gitkeep
 !.vscode/
